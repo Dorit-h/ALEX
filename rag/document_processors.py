@@ -227,7 +227,8 @@ def load_multimodal_data(files, llm):
         file_extension = os.path.splitext(file.name.lower())[1]
         if file_extension in ('.png', '.jpg', '.jpeg'):
             image_content = file.read()
-            image_text = describe_image(image_content)
+            # image_text = describe_image(image_content)
+            image_text = "This is an image."
             doc = Document(text=image_text, metadata={"source": file.name, "type": "image"})
             documents.append(doc)
         elif file_extension == '.pdf':
@@ -258,7 +259,8 @@ def load_data_from_directory(directory, llm):
         if file_extension in ('.png', '.jpg', '.jpeg'):
             with open(filepath, "rb") as image_file:
                 image_content = image_file.read()
-            image_text = describe_image(image_content)
+            # image_text = describe_image(image_content)
+            image_text = "This is an image."
             doc = Document(text=image_text, metadata={"source": filename, "type": "image"})
             print(doc)
             documents.append(doc)

@@ -52,6 +52,7 @@ def process_graph(image_content, llm):
     return response.text
 
 def describe_image(image_content):
+    return "Hello "
     """Generate a description of an image using the multimodal LLM."""
     vlm_model, vlm_processor = initialize_vlm()
     image = Image.open(BytesIO(image_content))
