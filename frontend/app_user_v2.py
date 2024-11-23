@@ -13,7 +13,6 @@ def response_generator(user_input: str):
     return rag.run(user_input, lecture="I2DL", lecture_id="l02")
     
 
-
 # Add the logo to the main page
 logo_url = "https://softwarecampus.de/wp-content/uploads/logo-partner-software-campus-tum.webp"
 
@@ -24,13 +23,23 @@ st.markdown(
         body {
             background: linear-gradient(to right, #FFFFFF 20%, white 20%, white 80%, #8ACEF1 80%);
         }
-       
+        .sidebar-logo-container {
+            display: flex; /* Use flexbox for alignment */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
         .sidebar-logo-container img {
             width: 200px; /* Adjust the width */
             border-radius: 10px; /* Optional rounded corners */
             background-color: white; /* Optional background */
             padding: 10px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+        }
+        /* Styling for chat input */
+        div[data-testid="stChatInput"] {
+            background-color: #D9E8F1 !important; /* Set the background color */
+            border-radius: 10px; /* Optional rounded corners */
+            padding: 0px; /* Optional padding for spacing */
         }
     </style>
     """,
@@ -51,6 +60,9 @@ with st.sidebar:
     )
 
 st.sidebar.markdown("***")
+
+for i in range(10):
+    st.sidebar.markdown("\n")
 
 # Add a session state to track whether live selection is active
 if "liveselection" not in st.session_state:
@@ -86,6 +98,14 @@ with st.sidebar:
             "Select a lecture:", [f"Lecture {i}" for i in range(1, 13)]
         )
 
+for i in range(10):
+    st.sidebar.markdown("\n")
+
+st.sidebar.markdown("***")
+with st.sidebar:
+    time_keeper.setup_lecture(120, 5)
+    time_keeper.time_display()   
+
 ## Main
 
 # Title and Subtitle
@@ -120,13 +140,3 @@ for message in st.session_state.messages:
     )
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
-
-
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("***")
-with st.sidebar:
-    time_keeper.setup_lecture(120, 5)
-    time_keeper.time_display()   
