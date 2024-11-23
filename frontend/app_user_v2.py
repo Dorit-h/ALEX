@@ -95,7 +95,6 @@ if live_lecture:
 
     st.sidebar.markdown("***")
     with st.sidebar:
-        time_keeper.setup_lecture(120, 5)
         time_keeper.time_display()   
 
 ## Main
