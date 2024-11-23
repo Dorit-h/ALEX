@@ -12,7 +12,7 @@ def response_generator(user_input: str):
 
     rag = Rag()
     return rag.run(user_input, lecture="I2DL", lecture_id="l02")
-    
+
 
 # Add the logo to the main page
 logo_url = "https://softwarecampus.de/wp-content/uploads/logo-partner-software-campus-tum.webp"
@@ -79,10 +79,10 @@ with st.sidebar:
     selected_course = st.selectbox(
         "Select a Course:",
         [
+            "Introduction to Deep Learning",
             "Introduction to Computer Science",
             "Data Structures and Algorithms",
             "Operating Systems",
-            "Introduction to Deep Learning",
             "Machine Learning",
             "Artificial Intelligence",
             "Computer Networks",
@@ -129,7 +129,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input
-if prompt := st.chat_input("Ask me anything."):
+if prompt := st.chat_input("Nice to meet you. Ask me about your lecture."):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"):
