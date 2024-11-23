@@ -38,7 +38,7 @@ st.set_page_config(layout="wide")
 @st.cache_resource
 def initialize_llm():
     model_id = ""
-    llm = OpenAILike(model="NousResearch/Meta-Llama-3-8B-Instruct", api_base="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/", api_key="token-abc123")
+    llm = OpenAILike(model="unsloth/Llama-3.2-11B-Vision-Instruct", api_base="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/", api_key="volker123")
     return llm
 
 @st.cache_resource

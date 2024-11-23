@@ -22,14 +22,17 @@ from io import BytesIO
 from PIL import Image
 import requests
 from transformers import MllamaForConditionalGeneration, AutoProcessor
+from llama_index.llms.openai_like import OpenAILike
+from openai import OpenAI
+
 
 @st.cache_resource
 def initialize_vlm():
     """Initialize and load the Vision-Language Model (VLM) for image description from a specified model ID."""
-    model_id = "meta-llama/Llama-3.2-11B-Vision-Instruct"
-    vlm_model = MllamaForConditionalGeneration.from_pretrained(model_id, device_map="auto", torch_dtype=torch.float16)
-    vlm_processor = AutoProcessor.from_pretrained(model_id)
-    return vlm_model, vlm_processor
+    # model_id = "meta-llama/Llama-3.2-11B-Vision-Instruct"
+    # vlm_model = MllamaForConditionalGeneration.from_pretrained(model_id, device_map="auto", torch_dtype=torch.float16)
+    vlm_model = OpenAI(base_url="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/", api_key="volker123")
+    return vlm_model
 
 def get_b64_image_from_content(image_content):
     """Convert image content to base64 encoded string."""
@@ -52,54 +55,57 @@ def process_graph(image_content, llm):
     return response.text
 
 def describe_image(image_content):
-    return "Hello "
     """Generate a description of an image using the multimodal LLM."""
-    vlm_model, vlm_processor = initialize_vlm()
+    vlm_model = initialize_vlm()
     image = Image.open(BytesIO(image_content))
+    base64_image = get_b64_image_from_content(image_content)
     messages = [
-    {
+        {
         "role": "user",
         "content": [
-            {"type": "image"},
-            {"type": "text", "text": "Describe what you see in this image"}
-        ]
-    }
-    ]
-    text = vlm_processor.apply_chat_template(messages, add_generation_prompt=True)
-    inputs = vlm_processor(text=text, images=image, return_tensors="pt").to(vlm_model.device)
-    output = vlm_model.generate(**inputs, max_new_tokens=1024)
-    text = vlm_processor.decode(output[0], skip_special_tokens=True)
-    return text
-
-def process_graph_deplot(image_content):
-    """Process a graph image using NVIDIA's Deplot API."""
-    invoke_url = "https://ai.api.nvidia.com/v1/vlm/google/deplot"
-    image_b64 = get_b64_image_from_content(image_content)
-    api_key = os.getenv("NVIDIA_API_KEY")
-    
-    if not api_key:
-        raise ValueError("NVIDIA API Key is not set. Please set the NVIDIA_API_KEY environment variable.")
-
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Accept": "application/json"
-    }
-
-    payload = {
-        "messages": [
             {
-                "role": "user",
-                "content": f'Generate underlying data table of the figure below: <img src="data:image/png;base64,{image_b64}" />'
-            }
+            "type": "text",
+            "text": "What is in this image?",
+            },
+            {
+            "type": "image_url",
+            "image_url": {
+                "url":  f"data:image/jpeg;base64,{base64_image}"
+            }, 
+            },
         ],
-        "max_tokens": 1024,
-        "temperature": 0.20,
-        "top_p": 0.20,
-        "stream": False
-    }
+        }
+    ]
+    response = vlm_model.chat.completions.create(messages=messages, model="unsloth/Llama-3.2-11B-Vision-Instruct")
+    print(response.choices[0].message.content)
+    return response.choices[0].message.content
 
-    response = requests.post(invoke_url, headers=headers, json=payload)
-    return response.json()["choices"][0]['message']['content']
+ 
+def process_graph_deplot(image_content):
+    """Generate a description of an image using the multimodal LLM."""
+    vlm_model = initialize_vlm()
+    image = Image.open(BytesIO(image_content))
+    base64_image = get_b64_image_from_content(image_content)
+    messages = [
+        {
+        "role": "user",
+        "content": [
+            {
+            "type": "text",
+            "text": "What is in this image?",
+            },
+            {
+            "type": "image_url",
+            "image_url": {
+                "url":  f"data:image/jpeg;base64,{base64_image}"
+            }, 
+            },
+        ],
+        }
+    ]
+    response = vlm_model.chat.completions.create(messages=messages, model="unsloth/Llama-3.2-11B-Vision-Instruct")
+    print(response.choices[0].message.content)
+    return response.choices[0].message.content
 
 def extract_text_around_item(text_blocks, bbox, page_height, threshold_percentage=0.1):
     """Extract text above and below a given bounding box on a page."""
