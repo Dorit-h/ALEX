@@ -1,21 +1,23 @@
 import streamlit as st
 import random
 import time
-
+from openai import OpenAI
 
 # Streamed response emulator
-def response_generator():
-    
-    response = random.choice(
-        [
-            "Hello there! How can I assist you today?",
-            "Hi, human! Is there anything I can help you with?",
-            "Do you need help?",
-        ]
+def response_generator(user_input: str):
+    vlm_model = OpenAI(base_url="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/", api_key="volker123")
+
+    return vlm_model.chat.completions.create(
+        messages=[
+            {
+                "role": "user",
+                "content": user_input,
+            }
+        ],
+        model="unsloth/Llama-3.2-11B-Vision-Instruct",
+        stream=True
     )
-    for word in response.split():
-        yield word + " "
-        time.sleep(0.05)
+    
 
 
 st.title("ALEX")
@@ -40,6 +42,6 @@ if prompt := st.chat_input("What is up?"):
 
     # Display assistant response in chat message container
     with st.chat_message("assistant"):
-        response = st.write_stream(response_generator())
+        response = st.write_stream(response_generator(prompt))
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
