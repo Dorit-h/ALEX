@@ -5,7 +5,7 @@ import streamlit as st
 st.set_page_config(page_title="Lecture Selector", layout="wide")
 
 if "time_elapsed" not in st.session_state:
-    st.session_state.time_elapsed = datetime.timedelta(minutes=52)
+    st.session_state.time_elapsed = datetime.timedelta(minutes=50)
 import random
 from openai import OpenAI
 import time_keeper
@@ -157,7 +157,7 @@ def execute_python_code(code, code_type):
 
 if prompt := st.chat_input("Nice to meet you. Ask me about your lecture."):
     # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
+
     with st.chat_message("user", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"):
         st.markdown(prompt)
 
@@ -191,4 +191,5 @@ if prompt := st.chat_input("Nice to meet you. Ask me about your lecture."):
             text_output.markdown(response)
         
     # Add assistant response to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
     st.session_state.messages.append({"role": "assistant", "content": response})
