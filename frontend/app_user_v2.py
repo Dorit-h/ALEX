@@ -144,16 +144,3 @@ if prompt := st.chat_input("Ask me anything."):
         st.markdown(response)
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
-
-
-
-
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("***")
-with st.sidebar:
-    if "time_elapsed" not in st.session_state:
-        time_keeper.setup_lecture(120, 5)
-    time_keeper.time_display()
