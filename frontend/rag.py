@@ -23,9 +23,7 @@ from llama_index.core.llms import ChatMessage, MessageRole
 import datetime
 
 
-# check if storage already exists
-if 'time_elapsed' not in st.session_state:
-    st.session_state.time_elapsed = datetime.timedelta(minutes=52)
+
 
 
 
