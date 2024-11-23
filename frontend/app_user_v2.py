@@ -48,6 +48,9 @@ st.markdown(
         div[data-baseweb="select"] > div {
             background-color: #D9E8F1 !important;
         }
+        div[data-testid="stCode"] {
+            background-color: #D9E8F1 !important;
+        }
     </style>
     """,
     unsafe_allow_html=True
@@ -162,26 +165,30 @@ if prompt := st.chat_input("Nice to meet you. Ask me about your lecture."):
     response = ""
     
     with st.chat_message("assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"):
-        with st.spinner("Getting your answer..."):
-            response = response_generator(prompt)
+        text_output = st.empty()
+        with text_output:
+            with st.spinner("Getting your answer..."):
+                response = st.write_stream(response_generator(prompt))
         
         if "```" in response:
-            st.markdown(response.split("```")[0])
-            code_segment: str = response.split("```")[1]
-            code = code_segment.split("\n", 1)[1]
-            code_type = code_segment.split("\n")[0]
-            with st.expander("Show code"):
-                st.code(code)
-            with st.expander("Output", True):
-                st.markdown("#### Code Output")
-                if code_type == "python":
-                    execute_python_code(code, code_type)
-                else:
-                    with st.container(border=True):
-                        st.components.v1.html(code, height=600)
+            
+            with text_output.container():
+                st.markdown(response.split("```")[0])
+                code_segment: str = response.split("```")[1]
+                code = code_segment.split("\n", 1)[1]
+                code_type = code_segment.split("\n")[0]
+                with st.expander("Show code"):
+                    st.code(code)
+                with st.expander("Output", True):
+                    st.markdown("#### Code Output")
+                    if code_type == "python":
+                        execute_python_code(code, code_type)
+                    else:
+                        with st.container(border=True):
+                            st.components.v1.html(code, height=600)
             st.markdown(response.split("```")[2])
         else:
-            st.markdown(response)
+            text_output.markdown(response)
         
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})

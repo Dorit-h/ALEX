@@ -73,11 +73,11 @@ class Rag:
         
     def run(self, prompt: str, lecture:str, lecture_id: str):
         index = self.load_vectors(lecture=lecture, lecture_id=lecture_id)
-        curr_transcript = self.load_transcript(st.session_state.time_elapsed, lecture='I2DL', lecture_id='l01')
-        old_transcript = self.load_transcript(timedelta(minutes=300), lecture=lecture, lecture_id=lecture_id)
+        curr_transcript = self.load_transcript(st.session_state.time_elapsed, lecture='I2DL', lecture_id='l02')
+        # old_transcript = self.load_transcript(timedelta(minutes=300), lecture=lecture, lecture_id=lecture_id)
 
         index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': lecture_id, 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in curr_transcript])
-        index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': 'l01', 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in old_transcript])
+        # index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': 'l01', 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in old_transcript])
         query_engine = VectorIndexRetriever(index=index, similarity_top_k=5, embed_model=get_embedding_model())
         chunks = query_engine.retrieve(prompt)
 
@@ -91,7 +91,7 @@ class Rag:
 
 
     def response_generator(self, user_input: str, retrieved_text: str, current_slide: int, slide_text: str):
-        messages = [{"role": "system", "content": f"You are Alex Plainer, an virtual TA tasked with answering student questions based on the lecture transcript and slides given below. When showing formulas you should use Latex. Additionally, if relevant please provide a d3.js visualization to explain the concept. When providing a d3.js visualization it is important that you always provide a full html page. If possible, make it interactive. When providing code, always only provide a single code output that is fully working. For python code only use the stdout. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide, the lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}."}]
+        messages = [{"role": "system", "content": f"You are Alex Plainer, an virtual TA tasked with answering student questions based on the lecture transcript and slides given below. When showing formulas you should use Latex. Additionally, if the user asks for it please provide a d3.js visualization to explain the concept. When providing a d3.js visualization it is important that you always provide a full html page. If possible, make it interactive. When providing code, always only provide a single code output that is fully working. For python code only use the stdout. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide, the lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}."}]
         for m in st.session_state.messages:
             if m['role'] == "user":
                 messages.append({"role": "user", "content": m['content']})
@@ -103,8 +103,9 @@ class Rag:
         return self.llm.chat.completions.create(
             messages=messages,
             model="unsloth/Llama-3.2-11B-Vision-Instruct",
-            max_tokens=1000
-        ).choices[0].message.content
+            max_tokens=1000,
+            stream=True
+        )
         # return self.llm.chat(
         #     messages=messages,
         #     max_tokens=1000
