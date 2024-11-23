@@ -17,7 +17,7 @@ def response_generator(user_input: str):
 
 
 # Add the logo to the main page
-logo_url = "https://softwarecampus.de/wp-content/uploads/logo-partner-software-campus-tum.webp"
+logo_url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJXx0UCQv_9GASiIk2qqtv4hT7m9Mp1F-fQ&s"
 
 # Inject custom CSS for blue sidebars
 st.markdown(
@@ -28,21 +28,22 @@ st.markdown(
         }
         .sidebar-logo-container {
             display: flex; /* Use flexbox for alignment */
-            justify-content: center; /* Center horizontally */
+            justify-content: right; /* Center horizontally */
             align-items: center; /* Center vertically */
         }
         .sidebar-logo-container img {
-            width: 200px; /* Adjust the width */
-            border-radius: 10px; /* Optional rounded corners */
-            background-color: white; /* Optional background */
-            padding: 10px;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+            width: 100px; /* Adjust the width */
+            padding: 0px;
         }
         /* Styling for chat input */
         div[data-testid="stChatInput"] {
             background-color: #D9E8F1 !important; /* Set the background color */
             border-radius: 10px; /* Optional rounded corners */
             padding: 0px; /* Optional padding for spacing */
+        }
+        /* Styling for select boxes */
+        div[data-baseweb="select"] > div {
+            background-color: #D9E8F1 !important;
         }
     </style>
     """,
@@ -51,20 +52,7 @@ st.markdown(
 
 ## Sidebar
 
-with st.sidebar:
-    # Centered logo at the top
-    st.markdown(
-        f"""
-        <div class="sidebar-logo-container">
-            <img src="{logo_url}" alt="TUM Logo">
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-st.sidebar.markdown("***")
-
-for i in range(10):
+for i in range(2):
     st.sidebar.markdown("\n")
 
 # Add a session state to track whether live selection is active
@@ -72,7 +60,6 @@ if "liveselection" not in st.session_state:
     st.session_state.liveselection = False
 
 # Top bar with dropdown and slider button
-col1, col2 = st.columns([4, 1])
 with st.sidebar:
     live_lecture = st.toggle("Live Lecture", value=True)
     st.session_state.liveselection = live_lecture
@@ -101,19 +88,34 @@ with st.sidebar:
             "Select a lecture:", [f"Lecture {i}" for i in range(1, 13)]
         )
 
-for i in range(10):
+for i in range(2):
     st.sidebar.markdown("\n")
 
-st.sidebar.markdown("***")
-with st.sidebar:
-    time_keeper.setup_lecture(120, 5)
-    time_keeper.time_display()   
+if live_lecture:
+
+    st.sidebar.markdown("***")
+    with st.sidebar:
+        time_keeper.setup_lecture(120, 5)
+        time_keeper.time_display()   
 
 ## Main
-
+col1, col2, col3 = st.columns(3)
+with col1:
 # Title and Subtitle
-st.title("ALEX")
-st.subheader("Augmented Lecture Explainer")
+    st.title("ALEX")
+    st.subheader("Augmented Lecture Explainer")
+with col3:
+    # Centered logo at the top
+    #st.image("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTJXx0UCQv_9GASiIk2qqtv4hT7m9Mp1F-fQ&s", width=100)
+    st.markdown(
+        f"""
+        <div class="sidebar-logo-container">
+            <img src="{logo_url}" alt="TUM Logo">
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+    
 
 # Initialize chat history
 if "messages" not in st.session_state:
