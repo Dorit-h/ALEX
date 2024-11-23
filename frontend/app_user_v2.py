@@ -130,9 +130,9 @@ if "messages" not in st.session_state:
 for message in st.session_state.messages:
     # Assign avatar based on role
     avatar = (
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"
+        "frontend/icons/user.jpeg"
         if message["role"] == "user"
-        else "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"
+        else "frontend/icons/robot.jpeg"
     )
     with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
@@ -157,14 +157,14 @@ def execute_python_code(code, code_type):
 
 if prompt := st.chat_input("Nice to meet you. Ask me about your lecture."):
     # Add user message to chat history
-
-    with st.chat_message("user", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user", avatar="frontend/icons/user.jpeg"):
         st.markdown(prompt)
 
     # Display assistant response in chat message container
     response = ""
     
-    with st.chat_message("assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"):
+    with st.chat_message("assistant", avatar="frontend/icons/robot.jpeg"):
         text_output = st.empty()
         with text_output:
             with st.spinner("Getting your answer..."):
