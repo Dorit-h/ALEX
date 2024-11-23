@@ -78,14 +78,21 @@ class Rag:
         with open(f"data/{lecture}/{lecture_id}/slides/text/{current_slide}.jpg.txt") as f:
             slide_text = f.read()
         
-        retrieved_text = "\n".join([chunk.get_content(metadata_mode="ALL") for chunk in chunks])
+        retrieved_text = "\n==========\n".join([chunk.get_content(metadata_mode="ALL") for chunk in chunks])
         
         return self.response_generator(user_input=prompt, retrieved_text = retrieved_text, current_slide=current_slide, slide_text=slide_text)
 
 
     def response_generator(self, user_input: str, retrieved_text: str, current_slide: int, slide_text: str):
-        messages = [ChatMessage(role=MessageRole.USER, content=f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. Always refer to the slide number and lecture minute. \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}:\n{slide_text}"),
-        ChatMessage(role=MessageRole.USER, content=user_input)]
+        messages = [ChatMessage(role=MessageRole.USER, content=f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide. The lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}.")]
+        for m in st.session_state.messages:
+            if m['role'] == "user":
+                messages.append(ChatMessage(role=MessageRole.USER, content=m['content']))
+            else:
+                messages.append(ChatMessage(role=MessageRole.ASSISTANT, content=m['content']))
+        messages.append(ChatMessage(role=MessageRole.USER, content=user_input))
+        with st.expander("Query"):
+            st.write(messages)
         return self.llm.chat(
             messages=messages,
             num_ctx=30000,
