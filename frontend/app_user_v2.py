@@ -2,6 +2,8 @@ import streamlit as st
 import random
 import time
 from openai import OpenAI
+import time_keeper
+
 
 # Streamed response emulator
 def response_generator(user_input: str):
@@ -17,6 +19,11 @@ def response_generator(user_input: str):
         model="unsloth/Llama-3.2-11B-Vision-Instruct",
         stream=True
     )
+    
+time_keeper.setup_lecture(120, 5)
+time_keeper.time_display()
+
+
 
 st.title("ALEX")
 st.subheader("Augmented Lecture Explainer")
