@@ -69,6 +69,7 @@ with st.sidebar:
             "Introduction to Computer Science",
             "Data Structures and Algorithms",
             "Operating Systems",
+            "Introduction to Deep Learning",
             "Machine Learning",
             "Artificial Intelligence",
             "Computer Networks",
@@ -123,10 +124,10 @@ if prompt := st.chat_input("Ask me anything."):
 
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
-st.sidebar.markdown("\n\n\n\n\n\n")
-st.sidebar.markdown("\n\n\n\n\n\n")
-st.sidebar.markdown("\n\n\n\n\n\n")
-st.sidebar.markdown("\n\n\n\n\n\n")
+st.sidebar.markdown("\n")
+st.sidebar.markdown("\n")
+st.sidebar.markdown("\n")
+st.sidebar.markdown("\n")
 st.sidebar.markdown("***")
 with st.sidebar:
     time_keeper.setup_lecture(120, 5)
