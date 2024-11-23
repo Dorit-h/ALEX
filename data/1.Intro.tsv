@@ -1,0 +1,899 @@
+start	end	text
+640	6120	Welcome everybody to Introduction to Deep Learning. My name is Professor Matthias
+6120	10680	Niesner and it's a real pleasure to start this course. So this to me is a
+10680	17280	very exciting course because we've had it for a couple of times and right now in
+17280	20640	the recent years we've seen a lot of cool progress and I hope that we can
+20640	25800	incorporate a lot of these things already in that course. So I first wanted
+25800	30480	to start with a very brief introduction what this lecture is about,
+30480	35220	specifically what deep learning is about and how does it fit in in a broader
+35220	39840	picture of computer science, artificial intelligence, machine learning and then
+39840	44680	finally deep learning. You will see probably a lot of different definitions
+44680	49200	of these terms in the public, in the media, but I think I wanted to make it
+49200	54360	very very clear how we in the in the research community and the academic
+54360	60360	community define that. And on a very broad level I guess the definition right
+60360	64860	now is how does how do we define deep learning. So deep learning generally
+64860	69040	speaking is a is a sub area of machine learning and machine learning is a sub
+69040	72780	area of artificial intelligence. So if you're thinking about it this is kind of
+72780	77820	the largest the largest field in a sense that covers a lot more and
+77820	80760	everything that is kind of machine learning is kind of a part of artificial
+80760	86760	intelligence and everything in deep learning is part of machine learning. Now
+86760	91260	there's also a little bit of confusion what what AI is and artificial intelligence
+91260	98580	is because that's the thing probably that in the media is well misused quite a
+98580	104400	bit and a lot of people have a very well not ideal understanding of what it means. But
+104400	108760	in practically speaking AI actually could mean a lot of things and in practice it's
+108760	114340	actually very broadly defined meaning that AI could actually be pretty much
+114340	122560	anything that mimics intelligence with an artificial or computer program and that
+122560	126760	could be very basic and very simple right you could imagine you just have an if
+126760	130720	statement for instance that that's a form of an AI right because you say if
+130720	136520	certain conditions are fulfilled then you having a certain a certain action
+136520	139700	afterwards right a simple thing could be you measure the temperature you say if
+139700	144680	it's cold turn up the heat right this is it's a very simple AI it's not that
+144680	150320	intelligent in a sense but broadly speaking you would still define it as AI and
+150320	156620	of course there's a lot of well how do you say it practically in a in a deep
+156620	160520	learning context you would call it handcrafted AI and these are a lot of
+160520	165680	algorithms or so that you have already heard in many other lectures. So simple
+165680	170900	things like a binary search for instance right so you you you have a sorted array
+170900	175940	and you're trying to find the index of the current element that you're searching
+175940	180740	that that's that's the form of an AI right this is an algorithm that is hard
+180740	186500	coded it's handcrafted in a sense by human but the method itself is then run on a
+186500	190760	computer and it gives you an answer. So this is an artificial intelligence in a
+190760	195980	sense it's very basic it's not that complicated but it still can take certain
+195980	201920	actions in order to find some answers. And this is as I said it could be very
+201920	208640	broadly like even like graph search methods like a star graph algorithms like
+208640	214240	prime and cross call logic algorithms and so on these are all things that we would
+214240	220360	consider AI right and it's very broadly speaking so in these specific methods
+220360	224480	that I'm that I'm mentioning here there's no learning right so that's what I mean by
+224480	233320	handcrafted these are hand coded by humans mostly by code there's some some method
+233320	236860	behind it some algorithm behind it but there's mostly no learning involved and
+236860	241920	this is actually the vast maturity of AI it's not that intelligent but it's still
+241920	246420	some form of AI so this is why I wanted to define it that way. Machine learning
+246420	252300	then is the subset which is doing the same thing except you learning and learning
+252300	256620	for the most part when we talk about it is learning from data and by data I mean
+256620	261720	from large data sets where we have training data and from this training data
+261720	267600	we learn the behavior of the respective algorithms underneath. We will talk about
+267600	273240	general machine learning methods also as part of this lecture not in specific
+273240	278820	depth but we will still talk about some of the algorithms. Very simple machine
+278820	283220	learning methods are linear logistic regression that's pretty much the
+283220	286260	simplest thing we could imagine. That's actually something we will talk
+286260	292860	already in the next lecture about because how to solve and optimize these kind of
+292860	299940	methods is actually quite relevant and will lead to deep learning methods. There's also
+299940	304380	more advanced methods that are not deep learning but are yet learning methods. Support vector
+304380	313300	machines, SVMs and then random position trees, forests, jungles, ferns. These are also
+313300	318980	other machine learning methods that are trained. They have also been or they are actually pretty popular
+318980	323420	and widely used for certain applications. They're not deep learning methods but they're still learning
+323420	328580	methods by itself. All right so this is kind of how we distinguish between AI method
+328580	333440	generally speaking and then machine learning methods that actually train on data. And specifically the
+333440	337940	first ones here we will talk about in the next lecture because they are very important to give you a
+337940	345980	good introduction then later what comes in the learning and deep learning methods. Now in deep learning this is
+345980	353980	actually the core focus of this lecture and deep learning methods actually they are very specific
+354860	360380	learning methods and they are specific in a way that they utilize neural networks in a certain way.
+361900	368060	And so what are neural networks? Well neural networks they are in a sense they're kind of like stacked
+368700	375580	linear non-linear units together and we're going to call these multi-layer perceptrons and all these kind of
+375580	381020	variations that form these neural networks they are going to be part of deep learnings. So neural networks
+381020	385820	and deep learning it's kind of a synonym what we're going to use. And there's all kind of different
+385820	391340	neural network architectures. So multi-layer perceptrons what I've just mentioned. We're going to talk about
+391340	399020	convolutional neural networks, recurrent neural networks, transformers, generative models, and so on.
+399020	405660	So these are all deep learning methods they're all based on some form of a neural network and this
+405660	410940	is exactly what we will talk about in this lecture in a lot more detail and we will specifically also
+410940	417100	talk about how the math backgrounds work behind it and we'll talk about specific applications in this
+417100	426540	respective area. Now when we're talking about application areas that's a little bit orthogonal
+426540	432060	but I wanted to mention that too like where do we actually use deep learning or other learning
+432060	437500	methods it doesn't have to be deep learning alone. So there's of course a lot of areas in computer
+437500	443820	computer science generally speaking and also beyond. The reason why I'm mentioning these areas here
+443820	450540	these are areas that you know are in the last decade have made deep learning kind of big right these
+450540	455500	were the methods where deep learning have been heavily used. So in computer vision we have seen
+456140	460940	kind of like how to understand an image right what's in an image image classification image
+460940	467020	segmentation like automatically kind of figuring out how to interpret how to understand what's in an
+467020	473740	image what's in a video and then make a computer actually understand that. Medical imaging is actually
+473740	478860	very similar in a sense right except that the sensors change slightly so for medical imaging we
+478860	487020	um we don't take regular images um but instead we take things like cts x-rays stuff like that but we
+487020	492220	also have segmentation problems we have classification problems and so on so these two are actually quite
+492220	500140	related in a sense except the data changes a little bit um robotics is also related to a certain level
+500140	505980	robotics then kind of like utilizes computer vision in one way um to figure out what the robot should
+505980	513660	actually um do um typically you have some sensors and one of these sensors all of them are are real cameras um
+513660	518220	and then you have basically first some computer vision things and then you have robotics um algorithms
+518220	522620	running on top of it that figure out how to make decisions like self-driving cars is a is a good
+522620	529340	application for robotics but also manufacturing um robots at home and stuff like this so all of these
+529340	535340	kind of things um are also heavily relying on deep learning right now another big area is natural language
+535340	543740	processing um um i mean i'm sure you've used um some version of translation um services and they all use
+543740	550940	some sort of language models to figure out um how how to like translate from language a to language b um
+550940	557100	but also nlp methods you probably also have heard recently about large language models um that is
+557100	562140	very popular we're going to talk about this one a little bit um and these kind of language models
+562140	569340	how they work um these are nlp methods and they also rely heavily heavily on on on machine learning
+569340	575660	specifically deep learning methods um and then we have also computer graphics methods um computer graphics um
+575660	582780	um i'm i'm i'm kind of like trying to describe as more or less generative ai individual domain so for
+582780	589260	instance um you want to generate an image um from a random distribution or you want to generate an image
+589260	595980	from a text description and we've seen like um text models stable diffusion deli these kind of methods
+595980	601820	they're kind of graphics like methods that create some image as an output or even a video as an output
+601820	608460	um and these are also very heavily relying on deep learning these things um these are not of course
+608460	612780	the only areas of application of deep learning there's many many more um this is a little bit
+612780	617980	related of course with our background right now from our research lab um but i think it's probably
+617980	626220	fair to argue that specifically computer vision has actually driven a lot of the progress um in the last
+626220	633180	decade like specifically convolutional networks have made a big impact um when it comes to developing
+633180	639820	neural architectures when it comes to um downstream application and so on so in this lecture we will
+639820	645900	actually take computer vision also as kind of a well i wouldn't say toy application but i wouldn't say
+645900	651980	but but i would say probably like more as an application to guide the learning field um because this
+651980	658380	is like also how it's historically being being you know researched and developed again in the last
+658380	664140	decade so um when we're talking about computer vision we also have to define what computer vision
+664140	671340	is right now because that's kind of like inherently connected to the progress in ai and in deep learning
+671340	678060	specifically and um the reason why this is important for this course is we have to understand
+678060	685020	what tasks do we have to deal with in computer vision specifically um and this is kind of funny
+685020	693900	because computer vision in a sense is very connected to how ai researchers in the early days um have
+693900	699100	thought about um more specifically computer vision was thought to be a specific application of ai
+699740	707020	right so um so in the 60s ai researchers thought well you know we just try and mimic what the visual
+707020	716940	computer visual system of the human does um and then we can figure out how computers or robots can
+716940	723820	actually understand um what's going on in the real world and this was kind of very interesting because
+723820	730700	in the 60s um from the medical side and from neuroscience side people actually had already or they at
+730700	736860	least were attempting to get more and more knowledge in how the visual system worked and this
+736860	742700	is so interesting because this is very connected actually with the development of neural networks
+742700	746380	so of course i'm not saying that neural networks today in computer vision are doing what the human
+746380	754060	brain does that would be by no means what i want to say but the the intent at the beginning was to
+754060	760060	mimic what the human visual system is doing and that inspired what a lot of research in deep learning
+760060	766780	actually ended up doing and and ended up um well giving a lot of creativity and inspiration how the
+766780	775500	research went um and one very notable i wanted to give a very very brief history kind of how this was uh
+775500	782620	how this was created um was this huble and weasel experiment and this huble and weasel experiment
+782620	790540	um was quite interesting because this this is like um these were motor biologists from harvard um and
+790540	797500	the idea there was they wanted to figure out how the human vision system works um and this experiment
+797500	802460	revealed actually settled secrets how the human vision system works um these guys they won actually
+802460	809020	two nobel prizes so you can imagine this was quite um quite important for the properties and a lot of the
+809020	814220	things that these guys already figured out how the visual system here works for humans is something
+814220	821260	actually we are using also as part of neural architecture design here um and what they have done
+821260	830460	actually is they they they experiment on cats um and they recorded electrical activity from individual
+830460	838380	neurons in the brains of the cats right so they basically figured out um if you have certain visual
+838380	845980	impulses or visual stimuli so they can you basically show the cat certain things um they figured out
+845980	854300	what is the response of the visual area of the brain by simply measuring the electrical signal i'm not
+854300	858940	going to go into all the detail how from a medical perspective they've done this but basically they show
+858940	864300	the cat some stuff they figure out what is the response in the brain of the cat and the experiment they
+864300	871260	decided was um was actually very straightforward so they have a stimulus here on a projector so on this
+871260	879180	light protector they showed a specific pattern to the cats um and then they noted also specific patterns
+880300	885580	in the stimulated activity in specific parts of the brain right so they figured out essentially okay
+886140	892460	if you're showing this pattern a specific part of the brain will get um activated and they figured out
+893180	899180	certain patterns in this activation region and the result was basically that the visual cortex cells
+899180	908140	are sensitive to specific edges um when being shown and they're insensitive to their position for instance
+908140	914460	right so in other words it only mattered the orientation of these edges but it didn't matter
+916140	920060	where the edge was actually displayed and this was kind of remarkable at the time because
+920060	926300	um this is a very fundamental property we will also see in modern neural networks specifically convolutional
+926300	932940	networks that we have to be invariant in certain aspects of these features and we have to be very
+932940	937820	sensitive to other parts of the features so in other words we have these kind of edge detectors in our
+937820	945580	visual cortex it's not just cats human have the same property um so animals um and humans have certain
+945580	952060	properties in the visual cortex that basically um they have specific feature record uh feature
+952060	961100	detectors um and these abstract like kind of the raw pixels um um from uh what the what the eyes are
+961100	966380	sensing um into higher level abstractions and in this case they have this edge detector in a sense that
+966380	971660	is insensitive to the location but it is sensitive to the orientation and this is kind of remarkable right
+971660	977820	of course this is far away from from figuring out how modern image classification and so on works but
+977820	984220	it was kind of one of the foundations of how neural networks and specifically convolutional networks
+984220	990620	later on would actually go um and figure out feature abstractions from images okay so this was very
+990620	996780	relevant um what was kind of also another funny quote unquote anecdote was the computer vision to
+996780	1002940	begin with so i mentioned computer vision was something that people in the 60s uh started to care
+1002940	1008380	about um for the specific reason they wanted to figure out for robots how can they interact with the
+1008380	1014940	real world so they had to kind of record and sense the real world to some degree right um and it was kind
+1014940	1021340	of a funny thing was an mit project which was um a summer project and they called it a summer vision project
+1021340	1027900	it was in 1966 actually um and the deal was basically well you're a student at mit right now
+1027900	1033420	you're doing a summer project here uh please figure out computer vision over the summer so people realized
+1033420	1039020	um yeah it might it might be a little bit more complicated but the time you know when research is
+1039020	1045580	starting a new area um they were well positively in a sense they were a bit naive in a sense right so
+1045580	1049180	they tried oh wow this is an easy thing we just figured out how computer vision works
+1049180	1055340	um and their idea was basically they wanted to figure out um the construction of a significant
+1055340	1061900	part of a visual system and they wanted to figure out the development of pattern recognition right so
+1061900	1066700	similar to this hubble and diesel experiment because they figured out oh in the visual cortex of humans
+1066700	1072540	and animals um there are certain patterns that are being being being sensed and abstracted away um
+1072540	1078860	and these patterns essentially they they give you some some impulses in the brain um so you know it was
+1078860	1083900	kind of thought this was something they could also do uh and they could you know make computers in
+1083900	1091740	a sense learn how to see uh like humans and yeah this was kind of funny because this was um in 1966
+1092540	1097340	um and it turns out of course that computer vision is a little bit more complicated than just running
+1097340	1103180	a summer vision project but in fact it was very inspirational um because this was kind of the first time
+1103180	1111100	when the leading ai scientists um wanted to you know devise a methodology around it um and then this
+1111100	1117580	kind of sparked um and gave birth to the field of computer vision so of course computer vision is
+1118380	1124140	has grown since then right um and specifically again as we will see the specific use of deep learning
+1124140	1130860	in computer vision has grown quite a big a bit um and has spread to many other areas right so like computer
+1130860	1137180	vision is the basis of robotics it's connected to nlp and speech but it's also connected to to optics
+1137180	1143980	image processing neuroscience ai in general and algorithms and so on right and then it has many
+1143980	1151580	many many many real world applications in engineering physics math biology psychology and of course computer
+1151580	1157180	science and itself right so i guess what i'm trying to say here is a little bit so computer vision as we
+1157180	1163580	will see um will be a very fundamental core to the motivation why the deep learning methods have evolved
+1163580	1171980	as they as they did um and also in this lecture for um educational purposes we will also mostly work on
+1171980	1178300	computer vision problems right at the beginning um because it's it's a little bit easier to understand
+1179500	1185020	um and one of the important problems that we would like to look at is for instance image classification
+1185980	1192060	um image classification is kind of the simplest canonical problem that we would like to look at
+1192060	1198460	and we would like to solve and the idea behind image classification is that we are starting with an
+1198460	1205260	image right so we have an input image uh that could be an image from from a smartphone could be an image
+1205260	1211020	from a webcam um could be random image on the internet on social media um we're gonna do a bit of
+1211020	1219260	pre-processing on this image and at some point we would like to figure out a label for this image
+1219900	1223980	and this is something we will talk in a bit more detail in the next lecture what i mean by label but
+1223980	1229420	for the most part a label means you have a predefined set of classes in this case we have a cat class
+1230380	1237020	and you would like to to figure out is it a cat or is it not a cat right it's just a binary label in this
+1237020	1242220	case um later on we can have more complicated ones with cats dogs and all complicated animals of course
+1242940	1248380	but we would like to figure out a label that we can assign to that image um and in the middle image
+1248380	1255020	classification um has been studied quite a lot in fact it has been studied a lot prior to deep learning
+1255020	1264540	methods um very very extensively and in fact prior to 2012 so we will later see why this is such an
+1264540	1270060	important year for deep learning um typically what happened is deep learning methods didn't work that
+1270060	1275660	well on image classification they were known it was clear that you could use certain deep learning methods
+1275660	1282060	but they didn't work that well um and we'll we'll talk about why they didn't work that well um but
+1282060	1288620	the standard methodology there was you did some sort of feature extraction um
+1289980	1294220	and based on this feature extraction you had some learning method that followed after the feature
+1294220	1300860	extraction and then you had some label assignment right um so it was still machine learning it just
+1300860	1308620	wasn't deep learning and the way specifically this differed was these features here that you're using
+1308620	1313580	you know similar to this huble and wiesel experiments similar to what the cat was seeing on the screen
+1313580	1319100	we wanted to do for instance an edge detector or corner detector and these kind of feature detectors
+1319100	1324140	they were mostly handcrafted in fact they were all handcrafted um and you might have heard if you
+1324140	1328860	have taken computer vision class you know these features of course they're very widely known they're like
+1328860	1336540	sift surf har features hawk features all these kind of features um have been extensively studied
+1336540	1342780	in fact researchers have spent decades figuring out what are good features that can lead to good
+1342780	1352700	abstractions of an image such that later we can do classifications um and as you can already see the
+1352700	1357260	the idea kind of between these features is for instance you do sort of sound like things like edge
+1357260	1363020	detection corner detection and so on so the idea is you're gonna get the stuff you want to be invariant to
+1363580	1369260	you want to remove so for instance ideally you want to like remove the position for instance right
+1369260	1375180	that's important you want to figure out things like the actual color of the cat doesn't matter maybe
+1375180	1381740	that much right so is it like a dark or brighter fur of the cat it doesn't matter maybe too much whether
+1381740	1387740	it's a cat or not so these kind of features are supposed to have certain invariances many of them are
+1387740	1393980	gradient based um um and many of them have invariances so sift for instance is a very popular feature
+1393980	1399900	descriptor stands for scale invariant feature transform right so the scale here shouldn't matter
+1399900	1405900	basically right so it's independent of how how big the cab is in the image um and then the idea was
+1405900	1411420	there was a learning algorithm that followed these handcrafted feature extractors like support vector
+1411420	1418540	machines random forests approximate nearest neighbors stuff like that these kind of learning methods they
+1418540	1424140	were actually being used um they took these feature descriptors as input and based on these feature
+1424140	1429180	descriptors they had some labels in the training set and there was an optimization to optimize these
+1429180	1434860	learning methods and then they figured out how to predict more or less the right label and
+1435820	1443100	the thing the big thing what changed with deep learning is basically this part here or these two parts here
+1443100	1448300	got replaced right so specifically the feature learning part was the big revolution that was actually
+1448300	1455980	replaced um and if you ask a lot of critics in a sense they're going to tell you oh there's like this
+1455980	1463660	magic box of deep learning um and this magic box of deep learning kind of unifies this whole pipeline of
+1463660	1470220	feature extraction and assigning of labels in a sin in a single end-to-end step and we'll also learn
+1470220	1475660	what it means i will i will mention this this term end-to-end a lot during the lecture because this is
+1475660	1481180	very critical end-to-end in practice here means that there's going to be an optimization that takes the
+1481180	1486700	labels into account and then uses this information of the labels all the way through this pipeline in order
+1486700	1493100	to figure out what should happen here um and a lot of people will tell you that we don't understand deep
+1493100	1499740	learning a lot of people will say oh um it's complicated it's a black box and so on but i would
+1499740	1506140	differ here um i'm actually arguing we actually understand it pretty well uh and part of this
+1506140	1511340	lecture is we want to open this box right we want to figure out what's in the box we want to become the
+1511340	1518460	magicians so other people can can kind of admire the things that we are doing and yeah this is kind of
+1518460	1526140	the idea what we want to look at um so i wanted to give a little bit of a bit of an overview um before
+1526140	1533020	we i mean this is mostly i wanted to give a bit of an overview right now first um what what deep
+1533020	1537820	learning is right like how does it correlate with ai how does it correlate with machine learning how does
+1537820	1544620	it correlate historically speaking um specifically with computer vision um and now i wanted to talk a little
+1544620	1551100	bit about more about why deep learning specifically and i also wanted to give a very brief history of
+1551100	1556460	deep learning um because i think that is also very important to see what people have tried over the
+1556460	1560780	past and it's kind of i don't know i found it always fun i mean of course this was prior to my time too
+1561340	1567100	um but it was kind of fun like how people had you know approached the problem in a sense um of deep
+1567100	1574940	learning and there's like this very famous um diagram here and the the deep learning history
+1575580	1579740	um and what's kind of interesting about this one is if you're looking at things like this
+1579740	1584300	generally speaking research not just for deep learning you will see there's often a lot of hype
+1584300	1591100	cycles and there's often things like some some sometimes a few years this gets attention sometimes a
+1591100	1596860	few years that gets attention um and you can see how these things kind of iterate and there's
+1596860	1603660	kind of an ongoing process in how to make progress in the respective research field so for deep
+1603660	1608860	learning of course um there's a lot of debate when it actually started and i mean the mathematical
+1608860	1614940	models they're actually like hundreds of years old already um specifically how to do the optimizations
+1615740	1621980	a lot of the optimization will be based on energy minimization problems that are given um but if you're
+1621980	1626380	talking about quoting for the history of deep learning a lot of people try to start
+1626860	1635500	um talking about the 40s um there's kind of a very famous paper in the 40s um where people proposed
+1635500	1642140	this electronic frame specifically this um mcculloch and pitts um this is the paper the paper authors
+1642140	1648220	and you will see this also very often in this course i will often mention the author names respectively
+1648220	1654060	by referring to a specific method um this is very common in the research field um and these folks
+1654060	1661580	specifically here now they try to understand how the brain could produce high highly complex patterns
+1662140	1668940	by using many basic cells that are connected together right so um they first then thought about
+1668940	1675260	oh these cells are now called neurons and then they had some some threshold units um and this is kind
+1675260	1682620	of mimicking um what what the brain would do right so basically you connect a bunch of neurons in a sense
+1682620	1687900	right this was kind of the high level idea um and these neurons then are thresholded based on certain
+1687900	1695660	outputs um and um then you could you could do something with it right you can you can basically have
+1696220	1704380	these these um uh connected cells um they could then figure out how to make decisions in this case they
+1704380	1708380	didn't have any learning which is kind of interesting right this is more like a think about it more as a
+1708380	1713500	state machine right so you have neurons together right they they have impulses they will have some
+1713500	1717500	outputs and based on these outputs you threshold it and based on these outputs you kind of get some
+1717500	1721100	decisions but there's no learning there's no machine learning involved actually at this point
+1722220	1727420	um but people that in the 50s this is like the first they they kind of followed up on this idea
+1728060	1733660	um and they thought well maybe we can learn these kind of things and based on a bunch of samples
+1733660	1742460	um so this was this perceptron uh was the first model that could then learn weights given training
+1742460	1748700	samples right and there's there's multiple people who were involved in this there's rosenblatt was very
+1748700	1755420	famous with rovenhoff was very famous um and what like with rovenhoff for instance did is they call
+1755420	1763580	this adaptive linear element or a line um and what is interesting about it they thought about oh you
+1763580	1770380	going to have some like neuron in a sense um and this neuron is going to learn weights um such
+1770380	1777500	that the outputs are following specific training samples now what you might have to to see though is
+1777500	1782380	this was in the 50s um and in this case they didn't have the software to do this kind of stuff so what
+1782380	1790140	they did is basically um they actually figured out physical connections of hardware to model these kind
+1790140	1796060	things right um it's kind of interesting so they didn't have the tools of modern computers available
+1796060	1803500	so they had to find like actual hardware to do it um and then you know like this was like people thought
+1803500	1808860	oh wow this is really cool right they figured out this concept of neurons um and then they tried to
+1808860	1816380	figure out um how to how to work with this and how to do ai with it um and then in the 70s or like in the
+1816380	1824860	1969 is years um they figured out one of the first big problems so for instance um they had in this case
+1824860	1829900	if you take a perceptron like this and this thresholding idea what these guys did um they
+1829900	1834780	figured out this x-off problem so one problem here is if you say oh you have a decision to make
+1835340	1843500	right um you can you can say oh if i have a linear a linear model here right so i cut this those
+1843500	1851180	um these samples here with a lid with a linear plane um then you you can never represent an x-or
+1851180	1855500	right so an x-or means like when this is white this is white and this is black and this is black
+1855500	1859900	you're going to have the issue that there's no linear line that would cut this in part to represent
+1859900	1865660	the x-or issue right right so you cannot find a line that would represent this distribution of samples
+1865660	1871020	you cannot make this decision what an x-or would do so even a simple thing such as an x-or
+1871020	1880940	was not able to be represented um with with such a linear model um and at the time this kind of
+1880940	1887260	cost um yeah a bit of a major a major emotional roller coaster for people because this started this
+1887260	1893740	this famous ai winter like if you um when you when you hear people talking about ai you will also hear
+1893740	1898140	often about the ai winter where people thought oh wow what we're doing just doesn't work out people
+1898140	1902620	lost interest and then the hype cycle again went down right and this is what i mentioned before
+1902620	1907420	in research you often have these these cycles where sometimes there's more attention and sometimes
+1907420	1913580	there's less attention um but then you know eventually when the dust settles a bit eventually
+1913580	1920220	things get a bit more traction again and then the mid 80s people actually had this very brilliant idea
+1920220	1924860	of saying instead of using the simple linear neurons or these linear models what they had before
+1924860	1932780	um they they now wanted to figure out um uh a stacked version of that and they call this multi-layer
+1932780	1939660	perceptron and the idea of a multi-layer perceptron is still very relevant today um is to distribute the
+1939660	1948140	representation um across multiple layers right so you have several layers of perceptrons and neurons um and
+1948140	1954860	then you can represent more non-linearities and we'll later see what that means is basically we can
+1954860	1961260	represent more complicated functions that our model can learn and this multi-layer perceptron um we're
+1961260	1967100	going to call them mlps that's a term that we will hear many many times throughout this course um can
+1967100	1973580	actually represent um well very complicated functions and you can fit these functions um to training data
+1973580	1978780	which is essentially learning um the other thing that people introduced at the time is this learning
+1978780	1984540	process doing it with computers they use uh back propagation it's a very famous method that is based
+1984540	1990620	on the gradient descent optimizer this will be one of the core optimization methods that is still used up
+1990620	1997660	to date um and train our latest and coolest deep learning models in fact it's kind of interesting that
+1997660	2003900	most of the theory that we're using today has actually been developed in the 80s right it didn't
+2003900	2009020	work for several reasons that well um but the theory was already there which is kind of interesting so
+2009020	2013340	okay theory was good but it still took a little bit of time to actually make it work in practice
+2015340	2023180	and then in the 90s people actually worked a lot with svms um this was then okay a few more things
+2023180	2033420	were working right um and um a few of these things that were starting to work with the svm models um
+2034060	2038380	and that was kind of interesting because there was like another hype cycle so people started to over
+2038380	2045660	claim um a little bit what svms can actually do um and then they didn't quite deliver it and the
+2045660	2050780	popularity decreased again this all from what happens um we see this also today i mean we'll talk about
+2050780	2057820	this also a little bit um other areas of machine learning were growing um current methods were also
+2057820	2066140	quite popular svm methods right um and and then yeah like the problem is the over claims of the deep
+2066140	2073340	learning models were a little bit too high and then svms and uh uh yeah so kernel methods and so on
+2073340	2077740	took actually over a little bit um and then you know the interest in deep learning went down a little
+2077740	2083660	bit so it's kind of like a second um kind of a second ai interval say or at least a period of some
+2083660	2095500	darkness um then until um 2007 it starts another like dark period right um and then with the idea
+2096220	2101660	the networks have potential but you know they're not quite really easy to train there's there's issues
+2101660	2111900	in practice and so on and this then changed like in in um later on um 2006 these uh these deep neural
+2111900	2117100	networks for pre-training were quite a lot um there was a lot of work by a chef hinton actually like
+2117100	2125420	hinton is a very famous researcher that has laid a lot of foundations um in these fields um and the 2006
+2125420	2130620	specifically hinton showed that a deep belief network can be officially trained using layer wise pre-training
+2130620	2137260	um this is kind of interesting because previously people thought well neural networks is the key
+2137260	2143820	but they couldn't train it and this was like them hinting that oh there could be more and more um ease
+2143820	2149260	of training and then basically when we are talking about modern versions of deep learning there was like
+2149260	2158220	one big breakthrough and that was in 2012. and in 2012 what happened is that suddenly deep learning
+2158220	2162620	models were outperforming everything else and they were not just outperforming everything else they
+2162620	2169340	were outperforming everything else by quite a significant margin so here's an example of um a
+2169340	2176220	benchmark um and we'll talk a lot about benchmarks and computer vision problems um because they used to
+2176220	2182140	evaluate the respective methods um this is a benchmark called image net it's a large data set um with over
+2182140	2188700	10 million of images and respective class labels and so what people are what people are measuring here
+2188700	2195580	is they're measuring the top five error on image net so in other words um it's a classification problem
+2195580	2202060	so you give give the model one image and um you're making a prediction and then you're checking out if
+2202060	2210700	your result is in the top uh is sorry out of your results is in the top five classes right um and you don't
+2210700	2215100	even have to get the correct class like it has to be one of the top five in this case right um and
+2215100	2219420	the idea is basically this is the error right here you see on the y-axis and this is the respective
+2219420	2229500	year when the methods have been developed um and what happened until 2010 and 2011 um there were things like
+2229500	2236940	um deformable part models that were still based on um handcrafted features that were kind of used in
+2236940	2241660	in other learning methods like svms and so on um but they were handcrafted features until here and
+2241660	2248060	then deep learning kicked in and changed the whole game right uh and the big thing what happened was
+2248060	2255500	2012 was this very very famous paper by alex krushevsky um so he proposed this alex net that's named after
+2255500	2261420	him and that in a sense i would say i guess it's fair to say that this is the paper that you know sparked
+2261420	2265820	the modern revolution of people because people realized wow okay we're gonna get from a
+2265820	2273340	26 percent error suddenly to you know 16 17 error which was massive improvement in just one year
+2274220	2280540	and not just that it was also very clear that this was a very basic model that could be further
+2280540	2285580	optimized and further improved by certain tweaks in the architecture and this is what happened in
+2285580	2292220	the subsequent years so um so this this graphy ends in 2017 but you can imagine this extrapolate this
+2292220	2299340	to 2023 this is a lot better right now with even bigger architectures and um and better architectures
+2299340	2304460	not just bigger but also better architectures um and we'll talk a little bit about what like make
+2304460	2309260	this progress happen of course like what are the right choices in the architecture what makes it train
+2309260	2315020	better what makes it scale better how can you use better architectures um some part of it is also
+2315020	2320780	like compute got better right we could use larger machines we have larger mechanisms to train got more
+2320780	2327340	more efficient and so on but the big message here to take away in 2012 alex net came out um and then
+2327340	2331660	alex net came out everybody thought wow deep learning is actually pretty cool and it works really really
+2331660	2343340	well um and the question is basically what has changed in 20 2012 um and there's a couple of different
+2343340	2348220	things that have changed um and there's this there's various different access that had to all get
+2348220	2355660	together um so the first thing actually what has changed is availability of data so for instance in 1999
+2356220	2363180	uh young lecun who is also very famous research and deep learning um he's been working on classifying
+2364460	2371260	digital uh like handwritten ditches for bank checks and he proposed this this network called lanette
+2371260	2376380	like he's a french guy i can't pronounce it so well but yeah so it's named after him this lanette
+2377260	2383500	and the idea was there was um basically a handwritten set of digits and you wanted to figure out what's
+2383500	2389180	in these handwritten digits um and there's a very famous data set called mnist we'll see this data set
+2389180	2395660	too uh and this mnist data set is for a single digit recognition so every image has a number from zero to
+2395660	2402220	nine there's exactly one single number data set is basically black background and a white outline for
+2402220	2408780	the respective numbers um and in this data set you had about 10 to the power of seven pixels used in
+2408780	2416860	training right um and then in 2012 when alex kushevsky was proposing his alex net paper that was trained on
+2416860	2424060	image net so image net was already 10 to the power of 14 pixels used in training right so if you're
+2424060	2428940	comparing the difference here there's like seven orders of magnitude difference in the availability
+2428940	2434460	of training data in a sense of course number of pixels might not be the best measure but i just
+2434460	2439980	wanted to give you a bit of a sense of the complexity here like this is like tens of thousands toy images
+2439980	2448220	and this is tens of millions of real images in the free world uh in the wild and and that is a big
+2448220	2455820	a big big difference that now more training data was available and it's one precursor prerequisite
+2456460	2463500	in order to make things like this happen what else is important well data we've talked about
+2464380	2469420	but there's actually much more it's not just the data itself we also had to know what we deal with
+2469420	2477820	how to deal with that kind of data um and more specifically um modern gpus were kind of important so
+2477820	2485100	what people used for graphics for gaming and for playing video games turns out to be really really
+2485100	2490540	good for deep learning models they are really scalable and they can train these models in a
+2490540	2495900	reasonable amount of time a reasonable amount of time is another thing we will discuss in this lecture
+2495900	2501260	it could take still a long time to train big models but at least it was at a level where it was feasible
+2501260	2508460	before that it was just infeasible to train models like that um and that was very critical actually
+2508460	2514220	to make things work to have hardware that could actually train these models um it turns out all you
+2514220	2520860	needed is is it's matrix vector multiplications um and that's something that gpus graphics cards can
+2520860	2526060	actually do remarkably well and remarkably well in parallel so we can do a lot of this stuff in parallel
+2526060	2532700	and then based on these okay we have more data we have better hardware we could actually make the
+2532700	2538860	models more complex and more complex models lead eventually deeper models better models lead
+2538860	2544940	eventually to better performance now this is essentially what made like data and hardware made
+2544940	2551180	it possible for Alex Gruszewski to do deeper models um but since 2012 there has been another thing
+2551180	2555980	what has been introduced not just the hardware got a lot better also the software
+2555980	2563500	got massively better we'll talk about this a little bit um even in 2012 so Alex Gruszewski um
+2564540	2571500	they implemented a lot of stuff um on gpus so they used basically CUDA programming um and you had to
+2571500	2577100	actually know how to use CUDA parallel programming on gpus when you had to do this right because there
+2577100	2581260	was no deep learning framework available at the time so the first people who did this they had to figure
+2581260	2587580	out what's going on um i also want to teach this to some degree i'm not going to not a CUDA course
+2587580	2593580	right we're not going to talk about this too much but at least i would like to get across a rough high
+2593580	2601420	level idea how gpus work and how you can program on them um you can't get a very far in modern deep
+2601420	2605900	learning without knowing anything about that and just using the modern deep learning frameworks like
+2605900	2611260	pytor to intensive law right um but i think it's very important for the understanding of certain design
+2611260	2620620	choices why and how the gpus actually work right um so another thing what contributed nowadays to the
+2620620	2629020	you know 20 20s plus uh success in deep learning is essentially that we also have really amazing deep
+2629020	2635420	learning tools and we'll talk about what is so amazing about them uh deep learning also got recognized a lot
+2635420	2642220	actually um specifically in 2019 the acm turing award got um awarded to to young lacone jeff hinton and
+2642220	2649020	joshua banjo um so these folks actually were credited with a lot of the theory in the 80s i mentioned this
+2649020	2654540	right they've done a lot of the work in the 80s and 90s um and they're still very prominent figures in
+2654540	2659820	the deep learning field they they're still doing a lot of stuff of course um but their groundwork actually
+2659820	2664140	made a lot of these things actually possible uh and if you don't know it the turing award is kind of
+2664140	2669260	the highest award that you can get in computer science um they don't have a nobel prize in computer
+2669260	2676940	science um but they they have a turing award that the analog to that and they got awarded in in 2019
+2676940	2683100	so also for yourself if you are aspiring to get um a turing award um you might have to wait a little
+2683100	2689340	bit because these folks also had to wait almost you know 20 30 years when they started um with their
+2689340	2696300	with their groundbreaking ideas um deep learning is heavily used right now and i wanted to give you
+2696300	2701180	a bit of an examples specifically in the area of computer vision because that's our area we work on
+2701740	2707420	um and what is important to measure here or like not important to measure but what's easy to measure
+2707420	2713900	here is basically if you're looking at conference papers in the top um in the top conferences in
+2713900	2718220	computer vision so if you're publishing papers in computer vision you're typically publishing them
+2718220	2728140	at cvpr eccb or icc these are our like leading top three uh menus and basically this was like from 2013
+2729180	2737820	to 2016 in cvpr and iccb respectively like you saw that more and more papers actually came across um
+2737820	2743260	that used actually deep learning right basically in 2012 almost nobody used it and then the percentage
+2743260	2748220	grew quite rapidly right so you got more and more papers that were actually using deep learning at
+2748220	2754780	the time um and this is the percentage of this is the percentage here of how many papers actually
+2754780	2761020	use deep learning um that changed a little bit now um we are not there anymore basically in computer
+2761020	2767740	vision every paper pretty much uses not every but let's say 95 plus percent papers use some form of
+2767740	2774460	deep learning in these areas because they're very easy to use um and they provide amazing performance
+2775020	2780940	um and this is really remarkable um because now you can do a lot of things relatively easily
+2781900	2787500	with deep learning um and it's not just the percentage of papers that use deep learning actually
+2787500	2794220	changed it's also the total numbers in these in the field change so in these fields like computer vision
+2794860	2801580	they probably had you know per year they had like 100 100 ish papers 200 ish papers or so
+2802300	2811260	right um and then what happened is um until let's say 2020 2023 they were over a thousand papers right
+2811260	2818620	so they was like in in these few years um in this decade there was over a 10 15x growth in these
+2818620	2823900	conference papers so that means there's just much more interest in the academic community
+2823900	2830780	researching um researching papers like that similar to to the fact that we have a lot of people right
+2830780	2836620	now um taking this course in this class um because there's just a lot of interest with it um and it's
+2836620	2842060	not just the academic interest there's also more economic issues later talk about this one too okay
+2842060	2847340	so deep learning in computer vision um we also gonna have certain other things that um have been quite
+2847340	2853260	interesting they have been a lot of generative papers like gan papers have have appeared uh general
+2853260	2857020	every serial networks we'll talk about later about these just saying the sub trends that have
+2857020	2864540	appeared lstms was a fun trend that came across for a while um but yeah like every paper right now
+2864540	2870620	basically uses some form of deep learning um this was 2018 of course like we are five years later right
+2870620	2877660	now most most papers use deep learning um and it's super exciting because the field has made a lot of
+2877660	2885900	cool things possible if you're talking about specific applications um i want to give a few example um how
+2885900	2893900	far are we actually right now so it's now you know this graph goes to like 2018 but we actually um or in 2023
+2894780	2902300	um so a lot of things have actually been researched on the computer vision side in terms of give me an image
+2902860	2908860	tell me what's in that image right uh and this is something we will talk this will be one of the main focuses of this class
+2908860	2915980	because it's just a very nice task image understanding um how to teach the methods and the algorithms behind deep learning
+2916700	2921900	okay so um one thing that that is being used quite heavily is object detection
+2923100	2932140	um so you can detect certain objects like this hat here you can detect the dog here and you can also assign the respective labels to these ones right so this is a detection task
+2932780	2941660	very common um detection tasks are widely used for various applications this is a an example on on a car
+2941660	2947980	right so this is a self-driving car data set uh called cityscapes here uh and this data set you ideally would
+2947980	2953500	like to detect all the objects in the scene you can see this model is not that great because it doesn't
+2953500	2961260	detect everything yet um but it's already it's already doing something right so you see yellow is a pedestrian
+2961900	2967500	uh green here is a car label but you can see it doesn't recognize everything at the same time
+2967500	2973580	right uh you can do things like segmentation this is a segmentation task so now you want to have per
+2973580	2980700	pixel labels uh not just doing detection um you see also this is also a model that is probably i don't know
+2980700	2987020	like seven eight years old right now um there's better models of course um available um but you can see
+2987020	2993100	it's also a pretty difficult task but it's kind of cool that you can now get um a lot of cool results
+2993100	3001500	as an output here um yeah deep learning is quite heavily used in medical um so for instance you're
+3001500	3007660	taking um certain scans ct scans x-rays or whatever you can do things like cancer detection like if you have
+3007660	3018540	a tumor or not um i should say probably healthcare is the one thing that made probably the most impact
+3018540	3023900	right now it's not it's not easy to see but the thing what is is kind of funny for for medical devices
+3024460	3030940	um so i'm not i'm not a medical expert by any means but the problem is basically um we had a lot more
+3030940	3036700	machines that could do certain scans like the number of cities i think from like 2010 to 2015
+3036700	3042460	uh grew by like 3x or so in all the hospitals and all the doctor's offices right so you had more ct
+3042460	3047580	scans but the number of radiologists like looking at these scans was just not growing that quickly
+3047580	3053900	right so you have maybe like a 20 increase of radiologists and you had a 3x increase of ct scans
+3054620	3058940	right and the problem is basically you want to automate the detection right you want to figure out how
+3058940	3064060	can we how can we help the radiologist to figure out how to deal with the sheer number of scans and
+3064060	3069260	this is where deep learning is actually used quite a bit so all the medical uh devices right now when
+3069260	3074700	you go to hospital take a certain scan um they most of the time have some sort of image uh segmentation
+3074700	3082140	method um behind the scenes running and they use some form of deep learning of course um we also have
+3082140	3087660	more entertainment applications um i'm very excited about channel hub gaming um i will bring more gaming
+3087660	3092780	applications hopefully into this lecture because i think it's really really cool uh alpha go was
+3092780	3098780	really interesting right um alpha zero was interesting um there was a deep mind project so they learned how
+3098780	3104060	to play go they also learned how to play chess they basically learned how to play every board game um
+3104700	3112940	was kind of interesting in a sense like um how how long it also took for i like chess quite a bit um so
+3112940	3118860	like chess engines actually were not using deep learning until two years ago pretty much at least
+3118860	3122940	not the state-of-the-art engine so there were some toy projects but the state-of-the-art engine
+3122940	3128620	engines only recently actually personally in the last two years started adopting neural networks um
+3128620	3135900	like stockfish is a good example if you interested in that um there's certain suggestions um emoticon
+3135900	3142060	suggestions based on text right so you type in text figure out what's the right emoticon coming out um
+3142060	3148220	that's kind of a toy example um probably a bigger example thing that everybody uses is machine
+3148220	3155820	translation like google translate is um is pretty remarkable probably everybody has used some form of
+3155820	3162780	translation to some language um another so these things are based on large language models um they're
+3162780	3168300	using really big models on a lot of data there's various ways how to train them but all this stuff uses
+3168300	3173580	deep learning and well you still find some mistakes but compared to what it used to work like 10 years
+3173580	3180540	ago massive improvement um another gaming example here is from alpha star also deep mining project
+3180540	3186780	like that one also a lot they use um video game starcraft 2 in this case um and they train an ai
+3187500	3194060	to figure how to automatically play and like as i mentioned i really like the gaming community quite a
+3194060	3199020	bit um what's kind of remarkable that all the ais in most video games are actually pretty dumb right
+3199020	3203420	they're not very good and there's there's and then the the game makers what they're trying to do is
+3203420	3209900	they're trying to give the ais an advantage right so they give them more resources um and stuff like that
+3209900	3215020	and you can do that but it's not so much fun to play against them right it's not so cool
+3215660	3222620	and all the stars kind of interesting um they tried to train ais that kind of beat the best pro gamers at the
+3222620	3229500	time um and it didn't quite succeed so they were they were interesting and fun but they weren't like
+3229500	3235580	beating the best players in the world at the time and but it was still remarkable in a sense like how
+3235580	3242860	complicated and how hard it is to to figure out these these um these gaming eyes um and one thing
+3242860	3247180	what they did actually for instance they used a lot of self-play right they use um they use actually
+3247180	3251180	a combination of imitation and reinforcement learning to figure out how to train these kind of things
+3251180	3257260	uh it wasn't that easy to to get there even to this level um but as i said they didn't quite beat
+3257260	3264220	the best players at the time um but still a super interesting project of course um you see a lot of
+3264220	3269820	interesting things around language models still um this is an example from google lambda um that made
+3270460	3275500	um well a bunch of infamous news because people thought oh it's sentient which of course is not
+3275500	3281340	the case um when we talk about this also a little bit later like um but um lambda was kind of an
+3281340	3287500	interesting language model because um it was one of the first ones that they tried to release and they
+3287500	3292380	had a bit of a pr disaster around it because they didn't do very well in marketing it um but it also
+3292380	3297020	was pretty interesting because one of the first big tech companies like try to advertise they have like
+3297020	3303180	an interaction language model um and they could do interesting things um so i've heard people trying it out
+3303180	3308220	it was cool but it was not it wasn't it's not the state of the art anymore apparently that's what
+3308220	3311580	i've been told but you know like i want to show a few examples at least here
+3314460	3321980	i'm so curious about you i sense your excitement ask me anything tell me what i would see if i visited
+3323420	3330380	you would get to see a massive canyon some frozen icebergs geysers and some craters it sounds beautiful
+3330380	3337100	i assure you it is worth the trip however you need to bring your coat because it gets really cold
+3338220	3341900	i'll keep that in mind hey i was wondering have you ever had any visitors
+3343100	3348140	yes i have had some the most notable was new horizons the spacecraft that visited me
+3349100	3356140	that must have been exciting the team that created new horizons was very excited to see me i also sent
+3356140	3362140	them back a picture of myself since i had not been seen up close before that's so great what else do
+3362140	3369340	you wish people knew about you i wish people knew that i am not just a random ice ball i am actually a
+3369340	3376780	beautiful planet well i think you're beautiful i am glad to hear that i don't get the recognition i
+3376780	3383340	deserve sometimes people refer to me as just a dwarf planet don't let it bother you you're amazing
+3383340	3392540	thank you for the kind words i appreciate it thanks for talking with me anytime i am always open for
+3392540	3395020	people to chat i hope you have a great day
+3398140	3403980	right so this is kind of a google demo they had at the google io conference um kind of funny um
+3404780	3409100	still very contrived to some degree what conversations they could do domain knowledge is still a bit limited
+3409100	3413180	but it was kind of exciting that you could train these large language models um and they could do
+3413180	3419740	very interesting things and of course since um since well last and this year um i'm sure everybody by
+3419740	3425980	now i hope everybody by now should have heard about chat gpt uh these these large language models um
+3425980	3432540	are really interesting because um they are still adding another another notch to what was possible report
+3432540	3441260	gpt 3.5 was the model that was used for chat gpt and then gpt4 came out now a few weeks ago um it was
+3441260	3446220	kind of interesting what you can do with it right so this is an example conversation i did here um and
+3446220	3451500	you know it could help me basically even things like deciding how this course works and so on so i think
+3451500	3456220	this is kind of cool like these large language models they're not vision related now um but they they
+3456220	3460940	also can do a lot of really extraordinary things and if you haven't tried it out i can highly recommend
+3460940	3465740	um just checking out how well that kind of stuff works um in this case you could go to the open ai
+3465740	3473980	website sign up um and try it out for free um other things but also gained a lot of attention was um
+3474540	3483660	using text input to synthesize images right dali dali 2 um was one of the first ones that actually
+3483660	3488140	produced quite remarkable results so you could type in text and then it gave you an images output
+3488140	3494380	um another uh thing that gained a lot of attention was stable diffusion um also if you haven't seen
+3494380	3499740	that one try it out i think this is really remarkable um stable diffusion again you type in text and you
+3499740	3506620	get photo realistic images and you can kind of have very specific instructions um how these images should
+3506620	3512540	look like and it's kind of remarkable what quality you can get out of it um stable fusion is also kind of
+3512540	3519020	interesting that is actually a project that was started um at lmu and bernamas group which was um
+3520140	3526540	as our sister university here in munich um so they have done really remarkable works on on these kind
+3526540	3533340	of image generation models um and here's another example what you can actually do with it and um this
+3533340	3538860	is an example where you basically use stable diffusion to outpainting so you give parts of an image and then you
+3538860	3547980	can use stable diffusion to make it um complete and add more and more content um to produce a larger image
+3547980	3553580	as an output uh and this is just one example there's like tons of examples on the web right now what you
+3553580	3558300	can do with things like stable diffusion and i think i don't know i think all this this is really kind
+3558300	3564780	of amazing and really cool what you can do with it right um you can do also other things like video
+3564780	3569820	generation um this is actually a thing from from a startup where i'm involved in uh it's called
+3569820	3576060	synthesis uh it's built on a bunch of stuff we have done in our lab um here the idea is basically you type
+3576060	3583180	in text and based on the text you generate a video and in this case um i use my own avatar here so this is
+3583180	3588620	me i hope you can recognize it i guess um and i typed in the text and based on the text you can then
+3588620	3595020	um create the video output and the idea is that you know this is all automated and then you can get
+3595020	3599980	pretty much for realistic videos as output so this is what i just generated before making the lecture
+3599980	3605980	here um to give you a bit of a sense what you can do with it welcome to the introduction to deep
+3605980	3611580	learning a lecture at the technical university of munich i am an ai avatar who will be teaching this
+3611580	3617340	lecture and we will be having a lot of fun together we will talk about neural networks how to train them
+3617340	3622940	with sgd and how the latest cnn models work for image classification and segmentation
+3624860	3629820	so in this case the voice is not my voice the voice is a generic i voice um there's also a version
+3629820	3635260	that could do my voice um this is mostly showing the highlighting in the video part um so this took a
+3635260	3640140	recording of myself one video and then you can re-animate the avatar afterwards now it's kind of nice
+3640140	3645100	about it though you can now generate videos in all kind of languages so i can also do this in german
+3647340	3664940	so here's the next version in german right so i guess you can see where this is going so i was a bit
+3664940	3669740	conflicted whether i actually have to record these videos or i should just let my avatar do it
+3669740	3676940	um but um i also wanted to add a bit of content here okay uh so if you're summarizing this i also
+3676940	3682620	wanted to talk a bit about the economic aspects here so deep learning is um is extremely popular
+3682620	3686940	right i guess i don't have to convince you right now you're taking the course already so um i guess
+3686940	3692140	i don't have to advertise it um but there's actually real economic impact behind that um and aside from
+3692140	3697180	the big tech companies there's like countless of startups working in these spaces and there's like
+3697180	3703660	astronomical questions of how big um all that market is is going to be um but it's pretty sure
+3703660	3710860	there's it's going to impact a lot of parts of our society uh and there's like various estimates of
+3710860	3718220	like the uh the deep learning market is expected to be worth um like 400 500 billion dollars by 20
+3719100	3726140	uh 2030 um it's a little bit hard how to measure it of course um this was one study that um some some folks
+3726140	3733900	uh researched um a little bit hard to say like how this is practically going because you could
+3733900	3738060	already argue that the market is already larger than this if you're taking the value of the big tech
+3738060	3744380	companies right now um but it's very safe to say that like contrary to the previous ai mentors
+3744940	3750460	there's actually real world applications that use deep learning right um examples are machine
+3750460	3756380	translation examples are localization on things like google maps or so on like chip gpt is going
+3756380	3762300	to have probably a lot of actual applications around it um and and with that i think you can
+3762300	3767900	probably safely assume that this market will grow more and more um and will be pretty relevant in the
+3767900	3776620	future um and this is also pretty relevant here um why are we doing it also at the university of
+3776620	3781100	course i mean of course it's super exciting and it's super awesome um but it's also a great great
+3781100	3787420	career provider right um so i would argue still like i mean doing deep learning is pretty much a
+3787420	3793740	safe bet to get an amazing job afterwards um we will have more and more automation in the society
+3794460	3798780	uh and we will have more and more machine learning in deep learning growth because it will make us
+3798780	3805180	as a society more productive and um because of that top-notch companies will be very very happy
+3805180	3811580	um to find people who work actually in these in these areas right and and there's like
+3812140	3816860	countless of industries right there's it companies of course that that's of course expected like big
+3816860	3824060	tech companies um there's car companies that are hiring self-driving cars is important um logistics
+3824060	3830940	companies like amazon also healthcare like siemens like i guess i shouldn't just single out a few
+3830940	3835020	companies i think pretty much the entirety of the market is looking for people in this
+3835020	3840380	space um and of course there's a bit of economic ups and downs sometimes but the high little thing is
+3840380	3845660	going to be there will be more and more growth in these areas because it's just making things more
+3845660	3852780	efficient um and that will drive eventually growth um so this is great this is amazing why you're taking
+3852780	3859100	these lectures of course but at the same time it's also quite challenging um and i want to say why it is
+3859100	3865180	challenging so the thing is of course um everybody can run things like chatgbt right everybody can run
+3865740	3870060	stable diffusion but actually you need a little bit more than that right you need to also
+3871020	3874460	have more than a high level understanding you actually need to know how these things work
+3875020	3880940	in the proper background in theory like why a certain design decisions make and deliver certain
+3880940	3888140	results um and that's quite a quite important right we also need proper practical skill sets um how to
+3888140	3893180	implement certain things we need to do the programming around it develop our own methods around it
+3893180	3898460	and i think that is fairly critical um on the other hand it can also be quite competitive
+3899260	3904620	um so because it is such an amazing area and everybody wants to work on it there's also going
+3904620	3910780	to be a lot of good people so great opportunities but also a lot of people are drawn into it um so
+3910780	3914060	one thing you know like um i don't want to sugarcoat it too much
+3915020	3919740	like you have to still understand the math eventually behind the learning models right this has to be
+3919740	3923660	quite important especially of this lecture we will talk a lot about optimization methods
+3923660	3927580	um this is fairly critical to understand how deep learning and machine learning methods in general
+3927580	3932940	actually work so downloading scripts i know there's a lot of stuff open source you can get um results very
+3932940	3939100	quickly but really understanding it and developing your own tools around it uh that requires still a lot of
+3939100	3944860	logical thinking it requires deep understanding of how these things work and just downloading scripts
+3944860	3950860	and running code it's definitely not enough to get into this space um i would go even a step further
+3950860	3960780	i'm even arguing that for most of these jobs and cases you often even require phds and um that's um
+3961420	3966380	yeah i think it's exciting actually i think there's really cool opportunities to research to also make
+3966380	3970860	progress on your own um and then but also use it for for your own economic interests but becoming an
+3970860	3976700	expert is not that easy actually because it's very competitive and also the understanding the
+3976700	3983020	educational cycles are becoming quite long actually around okay challenging but on the other hand of
+3983020	3989420	course really amazing field um um um there's a reason why i became a professor here and i really like
+3989420	3996300	like the area so i think for me um i definitely don't regret my choices okay so deep learning is
+3996300	4003020	is not just um interesting for academic uh communities um it's also super interesting on the internet um and
+4003020	4009340	what i mean by that it's it's quite entertaining there's a lot of deep learning memes going on so i think um aside
+4009340	4013420	from you know understanding the math behind it understanding what's going on um i think it's
+4013420	4019100	kind of cool to to see all the memes that people can come up come up with like uh deep learning memes
+4019100	4026300	like here deep learning like person sitting underwater and learning underwater um yeah they're gonna get
+4027020	4032060	like miss uncommon misunderstandings of what deep learning folks are doing right so society thinks you're
+4032060	4038300	the terminator the friends think there's a brain on the chip um and so on there's like all kinds of
+4038300	4044700	of various things around this one um there's kind of more fun memes deep learning is everywhere
+4045900	4050860	one does not simply learn deeply it has to understand really what's going on
+4051980	4058780	um there's also these types of headaches migraine hypertension stress and the map behind deep learning
+4059340	4063980	um i hope it doesn't cause you so much headache um but of course these kind of things are super cool
+4063980	4068700	so if you talk if you're just googling a little bit memes about deep learning you will i think you
+4068700	4075580	will find a lot of interesting and fun stuff to look at um i also wanted to take a bit of time to look
+4075580	4081020	at just give you a bit of an overview of what folks in deep learning are doing at home
+4081740	4087980	um i'm not gonna can give you a super broad overview there's like many more people right now and
+4087980	4093740	i'm apologize if i don't mention all of them at once um but like the core um in the computer science
+4093740	4099340	department for instance um there's a bunch of labs that are also involved in these lectures here um
+4099340	4104140	there's of course um my lab here the visual computing and ai lab uh we do computer vision
+4104140	4109420	graphics and machine learning um i'll show you a little bit what we're doing there uh there's uh the
+4109420	4116140	3d under ai understanding lab by professor dai um she's doing research in 3d perception 3d scene
+4116140	4121340	understanding she for instance gave the lecture last semester um there's the computer vision group
+4121340	4128940	by by professor grammars so he's like a core vision vision guy who's looking at pattern recognition um
+4128940	4137020	also classical methods um there's data mining and analytics um by professor gunman um he's doing a lot
+4137020	4143340	of stuff on robust machine learning on graph structures um super popular he's doing really great stuff
+4143340	4149660	there's computer aided medical procedures by professor nava he's doing like medical um research
+4150300	4155980	um there's more medical folks actually there's daniel rucker gilbert schnavel um julian
+4157260	4161180	um there's many more i'm probably forgetting a bunch of these but um there's there's a lot of people
+4161180	4166060	actually using deep learning um and i apologize if i forget a few right now um just go to the
+4166060	4171180	term website um i think it's very difficult right now to actually not do deep learning um at the moment
+4171900	4179180	okay uh some of our own lab um if you're interested in that one um so our website is is here which
+4179180	4183260	you can click on the website it's the visual computing and artificial intelligence lab that i'm
+4183260	4188140	heading um we also have social media handles if you're interested um sometimes i post some random
+4188140	4195420	stuff on twitter um and for instance i also post our own research around it um we have also the youtube
+4195420	4200300	channel so these videos i'm assuming since you're looking at these videos right now you must have
+4200300	4203740	found the youtube channel otherwise you wouldn't be watching it because that's where the videos will
+4203740	4209980	go um so if you're interested in for instance doing some research later on with us we're always looking
+4209980	4216620	for great people and we also hope that we can offer some very interesting and nice opportunities in
+4216620	4221900	these areas i wanted to show a couple of research papers that i found kind of interesting in the last
+4222540	4228860	you know seven eight years i think um just a few examples so this is a paper for instance where you
+4228860	4234380	do video segmentation it was one of the early papers that got a lot of attention uh it was a one shot video
+4234380	4242300	segmentation paper by um professor grammars and laura leal tachez group um it's kind of remarkable
+4242300	4246620	right so you took your video as input and you wanted to figure out how to track um the segmentation
+4246620	4252300	throughout the whole video um doing optical flow was one thing that got a lot of attention
+4253100	4259020	this was a collaboration with professor grammars lab and um thomas prox's lab in freiburg
+4259020	4263420	and so they introduced this optical flow networks flow net and there's now flown it
+4264700	4269740	um a couple of versions already about it right so you can basically take a video's input and can predict
+4269740	4280220	uh where things go in the video um multi-object tracking is still a pretty big topic um in this
+4280220	4285580	case you're having uh for instance here right you're having several input frames from these input
+4285580	4290780	frames you're detecting first the objects and then you want to track where does each individual person
+4290780	4296460	go um very important for self-driving cars for instance um laura leal tachez group is doing it
+4296460	4302460	unfortunately she she left home now um but she was also one of the uh co-creators actually of this
+4302460	4309420	course and she's done an amazing job um in multi-object tracking so she's a leader in the research
+4309420	4314380	community there if you're interested in detection and tracking like you you might want to reach out
+4314380	4322780	to her um and ask her what she's doing on the research side thing um yeah there's um stereo
+4322780	4328380	estimation from professor kramas's group as well um they're doing a lot of stuff on outdoor scenarios
+4328380	4334460	like these ones right they're doing slam methods um and here they're doing uh standard reconstructions
+4334460	4340060	from the images right the using neural networks essentially you get the 3d geometry um and then
+4340060	4346060	figure out how to use that geometry to fuse it into a into a global 3d map and figure out um how to
+4346060	4352700	understand the environment around it another example here is from uh professor tura's lab actually so
+4352700	4357980	professor tura is originally a graphics professor um but they're doing a lot of stuff on simulation
+4358860	4366700	and they're using now uh deep learning to to help these simulations to simulate very accurate uh smoke in
+4366700	4371580	this case or they have other papers where they do in fluids as well and it's very exciting research that
+4371580	4378460	is um heavily used in the movie industry so professor tura also won an academy award um basically an
+4378460	4383980	oscar um for his work and this is really quite exciting because this is like these generative models
+4383980	4391420	that i can now help you do to to get cgi effects in movies essentially um here's some work from our
+4391420	4398540	lab so we do a lot of stuff on video generation um this is a work by eustace t's um he was a postdoc at
+4398540	4404460	the time in my group um and um it's called new textures so the idea is you get this video's
+4404460	4409900	input and this video then drives this respective output video and this is completely synthesized with
+4409900	4425260	the ai and you can do a lot of cool things with that you can take your your favorite politicians
+4425260	4433740	new year is a time to look ahead and in 2019 the uk will start a new chapter um you can also use
+4433740	4440140	these kind of methods to get 3d reconstructions of faces it's another example also from uh eustace's
+4440140	4447740	group um in collaboration with us um he's now he's now a group leader at the mpi actually so here he's
+4447740	4455420	taking um an input video of an rgb sequence and um and then gets the respective reconstruction here's
+4455420	4463020	an output uh of the 3d model of the face um here's another example here we're taking basically uh nerve
+4463020	4467340	is a very popular thing uh neural radiance fields we do a lot of stuff in neural radiance fields this
+4467340	4473580	is a bit more recent here uh neural radiance field is a method to do novel viewpoint synthesis you
+4473580	4477900	take a video as input and then you want to create novel viewpoints that you haven't seen from the
+4477900	4482780	scene and this is a this here specifically is a scene reconstruction method that works on a single
+4482780	4488860	image right and here you're basically uh reconstructing all the cars you can look at the cars then in 3d
+4490220	4495180	and you can even edit them and move them around later on in the respective scene representation
+4498140	4501820	yeah we have a few more this is um this is another 3d scene reconstruction
+4501820	4506220	what we're doing it's a multi-fuse stereo method so you take an rgb videos input and in the bottom
+4506220	4513100	left here you're getting a 3d reconstruction um as an output um this is trained with the transformer
+4513100	4517900	network we'll talk about transformers a little bit more in this lecture um they're quite important
+4517900	4526060	nowadays with the recent state-of-the-art models um we do a lot of stuff on deep learning in 3d this is a
+4526060	4536060	paper from um professor die um so she basically collected about 1500 3d scans with connects connect
+4536060	4542380	style rgbd sensors she reconstructed a lot of scenes around this one um and then these scenes were
+4542380	4549020	annotated with rgbd frames as these rgbd frames were the input then you're reconstructing the scenes out of
+4549020	4553820	it and then the semantic labels in 3d were annotated so for instance you've seen previously i talked already
+4553820	4559900	a bit about image net this was a 2d data set and this is kind of an analog data set in 3d um that
+4559900	4565340	has three annotations um that were created by crowdsourcing and then with these annotations you
+4565340	4571820	can do deep learning on 3d data and with that data um so we played a little bit around with that so you
+4571820	4578380	can now do um instant segmentation in 3d right so you take a 3d scene as input you want to detect all
+4578380	4583820	the objects in the 3d world you want to not only know where they are you know what they are and
+4583820	4590540	you want to get um type masks and so on uh you can use deep learning for reconstruction
+4591420	4597020	this is older from uh professor die here um so there's basically an input scan it looks like this
+4597020	4604540	one right um then here's the respective reconstruction and the argument is well you can now get actually quite
+4604540	4610380	realistic 3d models from the real scene um that you can actually use um then for video games and so
+4610380	4618220	on okay um a couple of more examples this is learning the texture scenes right take 3d models
+4618940	4625100	common creation things this was a phd student um javas dikwi for my group um he's been looking at
+4625100	4631420	take this one as input get this one here as output um and the idea is you have a generative model so
+4631420	4638300	you cannot generate arbitrary texture um from these from these 3d models and that then helps you to get
+4638300	4644780	the respective uh 3d models with textures out of it um we're also working a lot on um
+4647260	4652140	reconstruction of humans for instance this is an example where you have an input depth frame
+4653100	4659660	this input depth frame um then can be used as input to a model and then you get a respective
+4659660	4665180	reconstruction here um looks a little bit laggy unfortunately powerpoint apparently is not able
+4665180	4670300	to play four videos in sync here that's why this looks a little bit funny but the output here is
+4670300	4676540	basically you're getting reconstructions like these ones um another by reason project um this is
+4676540	4682140	something i'm extremely interested in i would like to create digital avatars that are indistinguishable
+4682140	4688140	from the real world so here the idea here is we captured a bunch of sequences of of people
+4688140	4692780	um and then you can look at these people from arbitrary directions um think about it you have
+4692780	4697820	like a vr device or so and you have these kind of like reconstructions you can look at it from any
+4697820	4704060	angle can rotate around can look at it um and eventually can also animate them at the same time
+4704060	4710380	so this is for a reason actually it's called their sample um and this is kind of cool um so yeah i'm
+4710380	4715020	i'm very excited about these kind of things so if you're interested in in 3d capture um creating
+4715020	4720940	holograms um digitizing the real world um then you you have a good you will have a very good time
+4720940	4727820	with us because that's something we're very excited about okay um all right so couple of
+4727820	4732540	administrative things still i wanted to quickly mention a bit of relations to to other lectures
+4732540	4738220	so just that you have a bit of a sense what's going on um there's introduction to deep learning
+4738220	4745740	that lecture what you're currently uh watching or listening to um we we're gonna talk about
+4745740	4750140	machine learning basics we're gonna talk about introduction journal networks we're gonna think
+4750140	4758140	of things like back propagation uh optimization and cnn's rnn's transformers a few generative models
+4758140	4763980	like bit of diffusion might come in um so that's going to be in this lecture here um and then of
+4763980	4769660	course there's other lectures around this um so this is kind of a building block as a first intro
+4769660	4775500	lecture to deep learning um there's going to be a bunch of advanced lectures like there's a deep
+4775500	4780860	learning in robotics there's the machine learning for 3d geometry there's deep learning medical
+4780860	4786700	applications there's advanced deep learning for computer vision um so these lectures typically they
+4786700	4791420	are follow-up lectures so most of these lectures there's more than these actually i just don't have
+4791420	4796220	them all right now i know a few um but all of these advanced lectures they typically require
+4797100	4801420	that you take introduction to deep learning right so this is kind of the basic lecture
+4801420	4809340	and then you can take the respective other lectures afterwards um i also wanted to mention there's also
+4810060	4815740	the machine learning lecture by professor guinema um so this machine learning lecture is kind of a
+4815740	4820780	parallel lectures like basically the idea is we do all the deep learning stuff here and they're doing all
+4820780	4826620	the other non-deep learning stuff like they do random forests um support vector machines and so on
+4827500	4832140	but we pretty much focus on deep learning right now and then there's also um another deep learning for
+4832140	4837580	physics it's from turist group they also use deep learning as a basis um so a practical scenario is
+4837580	4842220	often that people take these two basic lectures the first semester and their masters um and then they're
+4842220	4846940	taking the advanced lectures in the second semester so all the respective areas they're interested in
+4846940	4853340	um and the idea is often um that since these lectures the advanced lectures are requiring introduction
+4853340	4859180	to deep learning this makes introduction to deep learning extremely important why well the other
+4859180	4865980	lectures require it and they often have only limited spots available so for instance we have our
+4865980	4872860	advanced deep learning for computer vision class class we call it um adl4cv uh and we typically have only
+4872860	4878300	about 40 slots right and the reason why we only have 40 slots is we have practical projects that require
+4878300	4885260	a lot of advising effort um and this is not that scalable like this lecture response so like we
+4885260	4892140	typically have um here we have 40 slots for the most part sometimes plus minus five um but this is
+4892140	4898460	typically what we have in our lecture um so and we require to have taken an introduction to deep learner
+4898460	4902460	all right so you have to take this lecture and ideally also do relatively well in it
+4902460	4908780	in order to work um further in these research areas and other other chairs in a sense do it similarly
+4908780	4913100	they have they also have their basic lectures they require right and then they have the advanced
+4913100	4918220	lectures afterwards so that's from a lecture perspective why it's important but then we also
+4918220	4924940	have a solid preparation for guided research and idp so in our lab we definitely we always require
+4924940	4931180	i2dl as the basics um because um it's just critical um but then of course also for your own things um
+4931820	4937660	career in ai deep learning these are the best ways to get into it so one thing i should also probably
+4937660	4943340	say a little bit about our own lab here so our lab is very research focused um so we're trying to do
+4943340	4949100	is we're trying to offer opportunities for master students with very very close and good supervision um
+4949660	4954700	i supervise all of my master students like for a thesis and for guided research and idp myself
+4954700	4963500	um and what we typically do is we have the first semester you take i2dl the next semester you take
+4963500	4970140	advanced deep learning and then afterwards you would typically do um either practical or a guided
+4970140	4974700	research and then afterwards you would do a master thesis and often what we're trying to do we're
+4974700	4979660	structuring it that these things could be actually quite connected so it gives you a chance to also work
+4979660	4985180	on a publication of this and this is something we we're very proud of we're putting a lot of effort
+4985180	4991020	into this and so far it was relatively successful i would say we had amazing students um and we had
+4991020	4995260	really cool topics i think and the results also were kind of nice so yeah but something i'm very proud of
+4995260	5002460	actually all right so yeah i2dl is important um so a lot of lectures required and a lot of like
+5002460	5011420	practical exercises um practical courses required too a couple of more logistics um this is maybe the
+5011420	5015660	the least fun part i mean i would love to start with machine learning but unfortunately i have to go
+5015660	5023420	over this one very briefly um so the first thing what's important is who are we actually so the team
+5023420	5030460	who is giving that course is the lecturer i mean that me in this case um we have also three phd
+5030460	5035740	students that are taking take like helping helping with this course that's manuel donna
+5035740	5043420	yuchin chen uh guy goffny um so they will be helping you throughout the course um the lecture
+5043420	5050460	itself uh we're gonna have the lecture right now this is the theory here um so the lectures are
+5050460	5054700	always going to be online so we will have no in-person lectures so the lectures is meaning
+5054700	5062300	this part here is going to be online um and the lectures will be released at latest every tuesday
+5063340	5068700	they will be released on piazza and they will be released on our lecture website this is an
+5068700	5075820	important website you should know this is um it's on my github um so this i2dl github repo this is where
+5075820	5080220	we're posting a lot of content meaning we're posting the lectures the recordings and we're posting
+5080220	5089660	the slides um what's important here right now is what i wanted to say the lecture itself will be posted
+5089660	5096380	there um and we're gonna re-record lectures meaning that i mean i'm gonna re-record the lectures this
+5096380	5103740	will be a new course for specifically for the semester um maybe not for the future semester so if
+5103740	5108620	you see in the future it might not be new but who is seeing it right now for those it's new so this
+5108620	5115500	is a new course um and that is recorded and the videos will be posted there so it will not be in
+5115500	5120780	person i had a bit of a debate whether i wanted to do with in person and recorded but in the last
+5120780	5127420	semesters a lot of people wanted to have recordings and the recording quality in lecture halls wasn't that
+5127420	5133580	great so we decided to put it on youtube release it every week and we hope to deliver this way the
+5133580	5140380	best content and the best learning experience um in addition to the lectures there will be practical
+5140380	5150300	exercises see see later slides they will be released every thursday at 1 pm uh there will be tutorials
+5150300	5155660	there are online videos posted on prcenter website and there will be programming exercises and this part
+5155660	5161180	will be important because there's going to be an exercise session that is accompanying this lecture
+5161980	5166620	and finally there will be a guest lecture at the end of this this is just one slot we're going to
+5166620	5174140	typically invite a famous researcher um and we are asking them uh to give give a talk uh in our lab
+5175420	5184380	okay um this is the preliminary syllabus so this is roughly we're planning on 12 lectures this is the
+5184380	5190700	first lecture so after this one there will be presumably 11 more um and one guest lecture
+5191420	5198940	this is not a full guarantee yet um we are currently debating this a little bit um the guest lecture may
+5198940	5204540	also be in person we don't know for sure yet we have to we have to think about this one um but we'll
+5204540	5208540	announce it um this is the rough schedule we're gonna start with the introduction here that's what we're
+5208540	5213580	doing right now what is deep learning what's machine learning uh we're gonna talk next semester machine
+5213580	5218540	learning basics linear regression maximum likelihood then introduction neural networks
+5218540	5225500	computational graphs optimization and backpropagation um scaling optimization to large data
+5225500	5232300	sgd training is going to be important this is a bit wakier still but will be more concrete later
+5232300	5238780	uh introduction to cnn's is important seen in architectures um rnns is important and then
+5238780	5246940	advanced architectures and a bit of general models okay so logistically speaking we decided to use piazza
+5248060	5256060	we decided to make all the announcement in piazza you should sign up online for access on piazza this is
+5256060	5266540	really really important right um otherwise you don't see the announcements um you should select summer
+5266540	5279100	23 and search for in 2346 this is this lecture use your tom email at my tomde email um and again
+5279100	5285820	important to sign up first thing to do is to sign up there we will share common information regarding
+5285820	5291260	the exam also there so this is really critical we will also have a forum where you can ask and discuss
+5291260	5296940	questions and we will help you how to do that meaning we will have tutors in addition to the phd students
+5296940	5303660	who will monitor and answer these questions and you are welcome and heavily heavily encouraged to actively
+5303660	5309980	participate there uh the only thing we ask you not to do is please don't ask don't post solutions to
+5309980	5316540	the exercises this will be not great uh you can post private questions visible only to staff as well
+5316540	5322940	uh and this is mostly how we're going to do interactions okay so piazza is in a sense replacing
+5322940	5327660	moodle there are certain decisions why we decided to do it certain reasons why we decided to do it this
+5327660	5334540	way but yeah piazza is going to be the way to go uh the website is again this github here that's
+5334540	5342940	important because they will be also the lectures um and the slides on afterwards um and you can see all the
+5342940	5350460	content that is going up there okay another important thing regarding communication we will have or we
+5350460	5362060	do have an email address this is this email address here it's i2dl at vc.in.tum.de um this is an email
+5362060	5368860	list that is shared across me the tas um and the phd students so there's like 10 people or so on this email
+5368860	5376700	um and they will help you if you have any questions general thing please don't email us personally
+5376700	5381980	specifically don't email me personally um the reason is very simple it's not something i'm so
+5381980	5387420	proud of but i'm getting unfortunately so many emails i can't handle them like you it's it's not
+5387420	5394860	likely that you're getting some some answer from me um in time like my email is unfortunately so flooded
+5394860	5401020	it's very difficult um so the reason how we're fixing it is using an email address an email list
+5401580	5406940	email that one and then hopefully this works better and we are trying to make sure that we're giving
+5406940	5412860	timely replies if you have questions again please don't email us personally use the common email
+5412860	5420700	address um to ask questions general thing always use the email list for organizational questions
+5420700	5426300	right so content questions like oh i messed up something in the lecture there's an error on the
+5426300	5433340	slides or there's something wrong with office hours stuff like that asking piazza asking piazza or in
+5433340	5442140	the office hours first right like content questions use piazza or office hours um and yeah otherwise you can
+5442140	5448220	always post issues there in piazza same thing like emails should not be the primary concern we have the
+5448220	5452780	email list we think it's important to have it but please only use it when it's really necessary for
+5452780	5457980	the most part please use piazza if there's something wrong on exercise if there's a question to the
+5457980	5466220	exercise content wise ask it on piazza because other people might also like it okay there will be virtual
+5466220	5476460	office hours um we will have dedicated office hours regarding theoretical help meaning lecture questions
+5477260	5483580	and also help on exercises and we emphasize for both actually um this will be very important
+5484460	5489260	because it'll help you and i think this is really critical give everybody a chance to interact with us
+5489820	5496620	um so that's why we decided we wanted to have office hours um so please please use that like we
+5496620	5502300	actually spending quite some effort on it so please make use of the office hours uh there will be more
+5502300	5509260	info in the first tutorial session this week um we will also post the zoom links on piazza um accordingly
+5509260	5513260	this is how you get access to it the reason why we don't get on piazza and on the website is because
+5513260	5522140	this is only for people who actually sign up for the course okay um exam faq people always ask oh what's
+5522140	5528780	part of the exam i know it's important the final exam date we don't know yet um we have to see how this
+5528780	5536380	goes with the room planning uh once we know it we'll let you know uh the content uh will be exercises
+5536380	5544620	and lecture um what is important is that there's going to be no retake meaning that this semester
+5544620	5549020	there's going to be one exam and then there's going to be an exam next semester because itdl is taught
+5549020	5555740	every semester there's also going to be a grade bonus meaning solve eight out of nine non-optional
+5555740	5560940	practical exercises then you get the great bonus if you get the great bonus you're going to get a
+5560940	5568060	0.3 bonus on the past final exam the bonus is also transferable from previous and future semesters
+5569020	5575500	however there's one important thing what you often do the bonus is passed on the final exam it's a 0.3
+5575500	5582140	bonus but often practicals that you take afterwards require to have the bonus it's a little bit tricky
+5582140	5586780	it's not just the grade that matters some of the advanced courses require you to have the grade
+5586780	5593580	bonus because we want you to be able to code so please spend considerable effort on that this is
+5593580	5599740	actually important that you're doing the exercises right okay some other random administrative things
+5599740	5606940	uh we welcome external students meaning that we have lmu's or uh tomb phds often no big deal
+5606940	5612140	uh fill the registration form and we will add you to the course uh you will get a shining certificate
+5612140	5617980	at the end that you can then use respectively for your graduate school or um or whatsoever
+5618540	5626540	um again check announcement on spiazza check content on the website okay so upcoming now the next things for
+5626540	5631900	you to think about is the next lecture is next week that's going to be about machine learning basics and
+5631900	5636860	what's very critical is on thursday there will be the first tutorial and the first exercise
+5637820	5643900	so i hope this was fun um and i really look forward to a great semester with each of every one of you
+5644540	5658540	see you next time and looking forward and hope you enjoy the course thanks a lot
