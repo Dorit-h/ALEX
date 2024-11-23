@@ -3,8 +3,8 @@ from io import StringIO
 import sys
 import streamlit as st
 st.set_page_config(page_title="Lecture Selector", layout="wide")
-# check if storage already exists
-if 'time_elapsed' not in st.session_state:
+
+if "time_elapsed" not in st.session_state:
     st.session_state.time_elapsed = datetime.timedelta(minutes=52)
 import random
 from openai import OpenAI
