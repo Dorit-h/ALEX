@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning at TUM, Single RGB Image → Scene Reconstruction, Only single-view training samples
+
+**Images**: A grayscale image of a city street with cars parked in front of buildings and trees.
+
+**Formulas**: There are no formulas in the image.

@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning at TUM; Our method generates temporally coherent volumetric data with a trained CNN generator.
+
+**Images**: The image is a 3D model of a house with a pink object in front of it, possibly a person or animal. The house is dark blue and has a triangular roof. The pink object is positioned in front of the house, partially obscuring it. The background of the image is black, suggesting that the scene is set against a dark or nighttime environment.
+
+**Formulas**: There are no visible formulas in the image.

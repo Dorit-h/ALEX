@@ -1,0 +1,15 @@
+The image is a slide from a presentation about deep learning at TUM, with the title "Deep Learning at TUM" in blue text at the top. The slide features two images side by side, each showing a man in a blue shirt and jeans, with his hand extended as if reaching out to something. The left image has a black box on the left side with white text that reads "FlowNet", followed by a list of names: "P. Fischer, A. Dosovitskiy, E. Ilg, P. Haußer, C. Hazirbas, V. Golkov, P. v.d. Smagt, D. Cremers, T. Brox". The right image has a similar black box on the left side with the same text and list of names, but with the addition of "Img2" in green text above the image.
+
+**Text Content**: Deep Learning at TUM
+
+**Images**: 
+* Left image: A man in a blue shirt and jeans, with his hand extended as if reaching out to something. He is sitting in a chair and appears to be in an office setting.
+* Right image: The same man as in the left image, but with a different background. He is still sitting in a chair and has his hand extended, but the background is slightly different.
+
+**Formulas**: None
+
+**Answer**: 
+Text Content: Deep Learning at TUM
+Images: Left image: A man in a blue shirt and jeans, with his hand extended as if reaching out to something. He is sitting in a chair and appears to be in an office setting.
+Right image: The same man as in the left image, but with a different background. He is still sitting in a chair and has his hand extended, but the background is slightly different.
+Formulas: None

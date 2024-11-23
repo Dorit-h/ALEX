@@ -1,0 +1,105 @@
+**Text Content**
+
+*   Deep Learning Market
+*   U.S. Deep Learning Market
+*   size, by solution, 2020 - 2030 (USD Billion)
+*   $6.2B
+*   $8.5B
+*   2020
+*   2021
+*   2022
+*   2023
+*   2024
+*   2025
+*   2026
+*   2027
+*   2028
+*   2029
+*   2030
+*   Hardware
+*   Software
+*   Services
+*   24.1%
+*   U.S. Market CAGR, 2022 - 2030
+*   market research report Deep Learning Market [...]
+*   " the deep learning market is expected to be worth USD 415 Billion by 2030.
+*   |2DL: Prof. Niessner
+*   36
+
+**Images**
+
+*   The bar graph shows the U.S. Deep Learning Market size, by solution, from 2020 to 2030 in USD Billion.
+*   The bar graph has three categories: hardware, software, and services.
+*   The x-axis represents the years from 2020 to 2030.
+*   The y-axis represents the market size in USD Billion.
+*   The data points are represented by bars of different colors, with hardware represented by dark purple, software represented by light blue, and services represented by sky blue.
+*   The graph shows that the market size has been increasing over the years, with a significant growth rate between 2025 and 2030.
+
+**Formulas**
+
+*   $6.2B
+*   $8.5B
+*   24.1%
+*   U.S. Market CAGR, 2022 - 2030
+
+**LaTeX Format**
+
+*   $\$6.2B$
+*   $\$8.5B$
+*   $24.1\%$
+*   U.S. Market CAGR, 2022 - 2030
+
+**Final Answer**
+
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**:
+
+*   Deep Learning Market
+*   U.S. Deep Learning Market
+*   size, by solution, 2020 - 2030 (USD Billion)
+*   $6.2B
+*   $8.5B
+*   2020
+*   2021
+*   2022
+*   2023
+*   2024
+*   2025
+*   2026
+*   2027
+*   2028
+*   2029
+*   2030
+*   Hardware
+*   Software
+*   Services
+*   24.1%
+*   U.S. Market CAGR, 2022 - 2030
+*   market research report Deep Learning Market [...]
+*   " the deep learning market is expected to be worth USD 415 Billion by 2030.
+*   |2DL: Prof. Niessner
+*   36
+
+**Images**:
+
+*   The bar graph shows the U.S. Deep Learning Market size, by solution, from 2020 to 2030 in USD Billion.
+*   The bar graph has three categories: hardware, software, and services.
+*   The x-axis represents the years from 2020 to 2030.
+*   The y-axis represents the market size in USD Billion.
+*   The data points are represented by bars of different colors, with hardware represented by dark purple, software represented by light blue, and services represented by sky blue.
+*   The graph shows that the market size has been increasing over the years, with a significant growth rate between 2025 and 2030.
+
+**Formulas**:
+
+*   $6.2B
+*   $8.5B
+*   24.1%
+*   U.S. Market CAGR, 2022 - 2030
+
+**LaTeX Format**:
+
+*   $\$6.2B$
+*   $\$8.5B$
+*   $24.1\%$
+*   U.S. Market CAGR, 2022 - 2030

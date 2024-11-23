@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning Recognition, ACM Turing Award 2019 (Nobel Prize of Computing) Yann LeCun, Geoffrey Hinton, and Yoshua Bengio
+
+**Images**: Three headshots of men in a row, each with a different background. The man on the left has short brown hair and is wearing a dark polo shirt. The man in the middle has short gray hair and is wearing a dark suit jacket over a white collared shirt. The man on the right has short gray hair and is wearing a light-colored blazer over a pink patterned shirt.
+
+**Formulas**: Not detected

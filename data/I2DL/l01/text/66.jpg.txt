@@ -1,0 +1,9 @@
+The image presents a slide from a presentation on deep learning in logistics, featuring a white background with orange and blue text. The main points are:
+
+* **Title**: "Introduction to Deep Learning" in large orange font, centered at the top of the slide.
+* **Subtitle**: "Logistics" in smaller blue font, positioned below the title.
+* **Logo**: A blue logo in the upper-right corner, consisting of the letters "TLM" in a stylized font.
+* **Footer**: A small gray text in the bottom-left corner, reading "I2DL: Prof. Niessner".
+* **Page Number**: A small number "71" in the bottom-right corner.
+
+**Summary**: The slide provides an introduction to deep learning in logistics, featuring a clear and concise title, subtitle, and logo. The footer and page number add context to the presentation.

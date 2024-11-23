@@ -1,0 +1,13 @@
+**Text Content**: Deep Learning at TUM
+
+**Images**:
+
+*   The image shows a room with furniture, including a chair, table, and door.
+*   The room is depicted in a 3D model format, with various objects highlighted in different colors.
+*   The 3D model appears to be generated using computer-aided design (CAD) software or a similar tool.
+*   The image also includes several smaller images of individual objects, such as the chair and table, which are likely used to create the 3D model.
+*   The background of the image is white, with a blue border around the main image.
+
+**Formulas**:
+
+None

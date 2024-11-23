@@ -1,0 +1,23 @@
+The image presents a slide from a presentation on deep learning at TUM, featuring a title in blue text at the top. The slide is divided into two sections: the left side displays an animation synthesis process, while the right side shows a resulting image.
+
+**Text Content:**
+
+*   The title "Deep Learning at TUM" is prominently displayed in blue text at the top of the slide.
+*   Below the title, a subtitle reads "Animation Synthesis" in white text.
+*   In the top-left corner, a screenshot of a news article is visible, featuring Donald Trump's image.
+*   Below the screenshot, two arrows point to different elements of the animation synthesis process:
+    *   A green and orange gradient represents the target UV-map.
+    *   A gray mask signifies the target background.
+*   An orange arrow connects these elements to a resulting image on the right side of the slide, which depicts Barack Obama.
+
+**Images:**
+
+*   The news article screenshot on the left side of the slide features Donald Trump's image.
+*   The resulting image on the right side of the slide shows Barack Obama's image.
+*   The orange arrow connecting the animation synthesis process to the resulting image is also visible.
+
+**Formulas:**
+
+*   No formulas are present in the image.
+
+In summary, the image illustrates an animation synthesis process using deep learning techniques, with a focus on generating a realistic image of Barack Obama from a news article featuring Donald Trump. The slide effectively conveys the concept of animation synthesis and its potential applications in image generation.

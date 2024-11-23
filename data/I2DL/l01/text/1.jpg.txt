@@ -1,0 +1,10 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**
+The image presents a slide from a lecture on artificial intelligence (AI), featuring the title "What is this Lecture about?" in blue text at the top. Below the title, a large green circle contains a smaller light blue circle within it, which is labeled "Machine Learning" in black text. Inside the light blue circle is a red circle with the words "Deep Learning" written inside it.
+
+**Images**
+There are no images present in the slide.
+
+**Formulas**
+There are no formulas present in the slide.

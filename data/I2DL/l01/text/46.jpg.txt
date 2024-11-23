@@ -1,0 +1,11 @@
+**Text Content**: "Deep Learning at TUM"; "I2DL: Prof. Niessner"; "|Caelles et al., CVPR'17| One-Shot Video Object Segmentation"; "48"
+
+**Images**:
+
+*   The image shows a person riding a bicycle in front of a wall with graffiti.
+    *   The person is wearing a white shirt and shorts, and has their hair pulled back.
+    *   The bicycle is green and has a basket attached to the handlebars.
+    *   The wall behind the person has a large orange and yellow graffiti design on it.
+    *   There are trees and grass in the background.
+
+**Formulas**: None

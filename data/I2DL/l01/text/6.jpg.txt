@@ -1,0 +1,11 @@
+**Text Content**: 
+What is Computer Vision? 
+First defined in the 60s in artificial intelligence groups 
+"Mimic the human visual system" 
+Center block of robotic intelligence
+
+**Images**: 
+There is a cartoonish robot with a square head, round blue eyes, and a rectangular body. It has two arms and two legs, and its right hand is raised in a wave. The robot is gray with blue accents and has a small, round screen on its chest.
+
+**Formulas**: 
+There are no formulas present in the image.

@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning Today; Large Language Models (LLMs), e.g., Chat-GPT; Tell me about deep learning and how I can teach it at TUM.
+
+**Images**: There is one image in the response, which is a white box containing text. The text describes Deep Learning as a subset of machine learning that involves training artificial neural networks to recognize patterns and make predictions or decisions based on input data. The term "deep" refers to the fact that these networks have many layers, which allows them to learn increasingly complex representations of the data as it moves through the network.
+
+**Formulas**: There are no formulas in the response.

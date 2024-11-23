@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning at TUM; I2DL: Prof. Niessner; |Božić et al., NeurIPS'21| : TransformerFusion; 58
+
+**Images**: There is no image present in the content.
+
+**Formulas**: There are no formulas present in the content.

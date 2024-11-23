@@ -1,0 +1,7 @@
+**Text Content**:; **Images**:;**Formulas**:; 
+
+The image is a slide from a presentation about lectures at TUM. The title of the slide is "Relation to other Lectures at TUM" in orange text, with the TUM logo in blue in the top-right corner. In the bottom-left corner, there is small gray text that reads "I2DL: Prof. Niessner". In the bottom-right corner, there is small gray text that reads "67".
+
+**Images**:; **Formulas**:; 
+
+There are no images or formulas present in this slide.

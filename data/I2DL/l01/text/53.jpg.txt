@@ -1,0 +1,3 @@
+**Text Content**: Deep Learning at TUM
+**Images**: A 4D head avatar image and a man's face
+**Formulas**: No formulas are present in the image.

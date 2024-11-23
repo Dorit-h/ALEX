@@ -1,0 +1,11 @@
+**Text Content**
+
+The image displays a line graph comparing the percentage of papers related to Deep Learning and Computer Vision, with a title that reads "Deep Learning and Computer Vision." The graph is titled "DEEP VS GAN" and features three lines: DEEP (blue), GAN (red), and LSTM (green). The x-axis represents the years from 2013 to 2018, while the y-axis shows the percentage of papers ranging from 0 to 25.
+
+**Images**
+
+The image is a line graph with a white background, featuring a title at the top and a legend in the upper-left corner. The graph includes a grid pattern with black lines and dots marking specific points on the graph. The x-axis and y-axis are labeled with numbers and labels, providing a clear visual representation of the data.
+
+**Formulas**
+
+There are no formulas present in the image.

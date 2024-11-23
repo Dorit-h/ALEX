@@ -24,6 +24,8 @@ import requests
 from transformers import MllamaForConditionalGeneration, AutoProcessor
 from llama_index.llms.openai_like import OpenAILike
 from openai import OpenAI
+from pdf2image import convert_from_path
+import shutil
 
 
 @st.cache_resource
@@ -165,3 +167,81 @@ def save_uploaded_file(uploaded_file):
         temp_file.write(uploaded_file.read())
     
     return temp_file_path
+
+def pdf_to_fotos(file_path):
+    output_dir = os.path.basename(file_path)
+    
+    # Create the output directory if it doesn't exist
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+    pages = convert_from_path(f'{file_path}', 500)
+    for count, page in enumerate(pages):
+        page.save(f'{output_dir}/{count}.jpg', 'JPEG')
+    return output_dir
+
+
+def image_description(file_path):
+    vlm_model = OpenAI(base_url="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/", api_key="volker123")
+   # image = Image.open("/Users/xufanlu/ALEX/rag/test.png")
+    with open(file_path, "rb") as image_file:
+        image_content = image_file.read()
+    print(f"line 308 {file_path}")
+
+    base64_image = get_b64_image_from_content(image_content)
+    messages = [
+            {
+            "role": "user",
+            "content": [
+                {
+                "type": "text",
+                "text": "Could you please: 1. Recognize and extract the text content directly. 2.Identify and describe any images separately. 3.Detect any formulas and provide them using LaTeX format. Give back answer in this format: **Text Content**:; **Images**:;**Formulas**:;",
+                },
+                {
+                "type": "image_url",
+                "image_url": {
+                    "url":  f"data:image/jpeg;base64,{base64_image}"
+                }, 
+                },
+            ],
+            }
+        ]
+    response = vlm_model.chat.completions.create(messages=messages, model="unsloth/Llama-3.2-11B-Vision-Instruct")
+    print(response.choices[0].message.content)
+    return response.choices[0].message.content
+
+
+def get_description_whole_pdf(folder_name):
+    for item in os.listdir(folder_name):
+        item_path = os.path.join(folder_name, item)
+        if os.path.isfile(item_path) and item.lower().endswith(".jpg"):
+            # Call image_description() for each file
+            description = image_description(item_path)
+
+            print(f"Description for {item}: {description}")
+            description_file_path = os.path.join(folder_name, f"{item}.txt")
+            with open(f'{description_file_path}', "w") as description_file:
+                description_file.write(description)
+            
+            print(f"Description for {item} saved to {description_file_path}")
+
+def move_files(folder_name ):
+    new_folder_name=f'{folder_name}_txt'
+    if not os.path.exists(new_folder_name):
+        os.makedirs(new_folder_name)
+
+    for item in os.listdir(folder_name):
+
+        item_path = os.path.join(folder_name, item)
+        if os.path.isfile(item_path) and item.lower().endswith(".txt"):
+            shutil.move(item_path, os.path.join(new_folder_name, item))
+            print(f"Moved {item} to {new_folder_name}")
+
+        
+
+def pre_processing_slides(file_path):
+    '''
+    file_path: the path for your local pdf file 
+    '''
+    outdir=pdf_to_fotos(file_path)
+    get_description_whole_pdf(outdir)
+    move_files(outdir)

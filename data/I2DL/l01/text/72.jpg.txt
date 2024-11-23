@@ -1,0 +1,20 @@
+The image presents a slide from a presentation, likely related to email management or organizational communication. The slide is titled "Email" and features a white background with black text and a blue and orange title.
+
+**Text Content**
+
+*   The slide provides email-related information, including:
+    *   An email list address: `i2dl@vc.in.tum.de`
+    *   A warning to avoid personal emails, as they will be ignored
+    *   An email list for organizational questions only, with content limited to Piazza or Office Hours, and the option to post questions or issues in a private thread on Piazza
+
+**Images**
+
+*   There are no images on the slide.
+
+**Formulas**
+
+*   There are no formulas on the slide.
+
+**Answer**
+
+**Text Content**: Email list: i2dl@vc.in.tum.de, Do NOT email us personally!, Email list for organizational questions only!, Content questions -> Piazza or Office Hours, Or post the question/issue in a private thread on Piazza; **Images**: ;**Formulas**:

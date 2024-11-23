@@ -1,0 +1,21 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**
+
+The text content of the image is:
+
+* Application Areas
+* Computer Vision
+* Medical Imaging
+* Robotics
+* Natural Language Processing (NLP)
+* Computer Graphics
+* + many more
+
+**Images**
+
+There are no images in the image.
+
+**Formulas**
+
+There are no formulas in the image.

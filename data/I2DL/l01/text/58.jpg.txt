@@ -1,0 +1,22 @@
+The image presents a slide from a presentation on deep learning, featuring a title, a graphic, and text.
+
+**Title:**
+The title, "Deep Learning at TUM," is displayed in blue text at the top of the slide.
+
+**Graphic:**
+Below the title, a black rectangle contains a white graphic resembling a 3D model of a room. The graphic features a floor plan with various rooms, furniture, and objects, including a desk, chair, and bed. The graphic appears to be a visual representation of a neural network architecture.
+
+**Text:**
+In the center of the slide, the text "Input Scan" is written in white font.
+
+**Footer:**
+At the bottom of the slide, two lines of text are displayed:
+
+* "I2DL: Prof. Niessner"
+* "IDai et al., CVPR'20] SG-NN"
+
+**Background:**
+The background of the slide is white, providing a clean and neutral backdrop for the title, graphic, and text.
+
+**Overall:**
+The image suggests that the presentation is focused on deep learning techniques, specifically input scans, and how they are applied in neural network architectures. The graphic and text provide a visual representation of the concept, making it easier to understand and visualize the idea.

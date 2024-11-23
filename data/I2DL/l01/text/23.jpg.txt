@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning Today;
+
+**Images**: A street scene with cars, buildings, and pedestrians, captured from the perspective of a self-driving car. The image displays a city street with a mix of buildings and trees, featuring several cars and pedestrians. The words "I2DL: Prof. Niessner" are written in the bottom-left corner, and the number "24" is located in the bottom-right corner.
+
+**Formulas**: There are no formulas present in the image.

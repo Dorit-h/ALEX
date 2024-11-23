@@ -1,0 +1,16 @@
+The image presents a slide from a presentation on deep learning at TUM, specifically focusing on the reconstruction of human heads using this technology. 
+
+*   **Title**: 
+    *   The title, "Deep Learning at TUM," is prominently displayed in large blue text at the top of the slide.
+    *   Below the title, in smaller black text, is the subtitle "Reconstruction of Human Heads."
+*   **Images**:
+    *   On either side of the slide are two headshots of individuals against a white background.
+    *   The person on the left has short brown hair and is wearing a dark-colored hoodie with a zipper.
+    *   The person on the right has curly black hair pulled back and is dressed in a dark-colored shirt.
+*   **Text**:
+    *   At the bottom of the slide, centered, is the text "(Kirschstein et al., 23) NerSemble."
+
+**Answer:** 
+**Text Content**: Deep Learning at TUM, Reconstruction of Human Heads
+**Images**: Two headshots of individuals against a white background.
+**Formulas**: None

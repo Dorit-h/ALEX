@@ -1,0 +1,10 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**: 
+The text content of the image is "See you next time". The text is written in orange and is centered on the page. 
+
+**Images**: 
+There are two images in the image. The first image is a blue logo in the top-right corner that says "TUM" in large letters. The second image is a smiley face emoji to the right of the text "See you next time".
+
+**Formulas**: 
+There are no formulas in the image.

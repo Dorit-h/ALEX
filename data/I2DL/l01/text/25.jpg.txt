@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning Today, AlphaGo, Emoticon suggestion, Machine translation
+
+**Images**: An image of a Go board with black and white stones, a hand holding a stone, and a speech bubble with emojis; A screenshot of a translation app showing a German sentence being translated into English
+
+**Formulas**: No mathematical formulas are present in this image.

@@ -1,0 +1,10 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**: 
+The image contains the following text: "Engineering", "Robotics", "Mathematics", "Computer science", "NLP Speech", "Optics Image processing", "Biology", "Psychology", "Neuroscience", "Algorithms Optimization", "Artificial Intelligence ML", "Computer Vision".
+
+**Images**: 
+The image features a cartoon robot with blue eyes and a waving hand, positioned in the center of the image. The robot is surrounded by eight circles, each containing a different field of study related to computer vision.
+
+**Formulas**: 
+There are no formulas present in the image.

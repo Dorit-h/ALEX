@@ -1,0 +1,13 @@
+**Text Content**: Deep Learning and Computer Vision
+
+**Images**:
+
+*   A line graph with the title "Deep Learning and Computer Vision" at the top.
+*   The x-axis is labeled with various terms: CVPR13, ICCV13, CVPR14, CVPR15, ICCV15, and CVPR16.
+*   The y-axis is labeled with numbers ranging from 0 to 25.
+*   A blue line connects the data points on the graph, with one data point for each term on the x-axis.
+*   The background of the image is white.
+
+**Formulas**:
+
+*   There are no formulas presented in the image.

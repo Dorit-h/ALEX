@@ -1,0 +1,11 @@
+The image presents a slide from a presentation about deep learning, featuring a title that reads "Website" in blue text at the top. Below the title, a bullet point states, "Links and slides will be shared on website." The slide's content is organized as follows:
+
+*   **Title**: Website
+*   **Bullet Point**: Links and slides will be shared on website.
+*   **Logo**: Visual Computing Group Prof. Matthias Nießner
+*   **Subtitle**: Introduction to Deep Learning (I2DL) (IN2346)
+*   **Image**: A diagram of a neural network with yellow and red nodes, accompanied by a blue dot on the right side.
+*   **URL**: https://niessner.github.io/I2DL/
+*   **Footer**: I2DL: Prof. Niessner
+
+The background of the slide is white, providing a clean and neutral backdrop for the content. Overall, the slide effectively communicates the topic and provides a clear call to action for accessing additional resources.

@@ -1,0 +1,21 @@
+The image presents a slide from a presentation on deep learning, featuring a title and two bullet points with sublists. The title, "Deep Learning Job Perspective," is prominently displayed in blue text at the top of the slide.
+
+**Text Content:**
+
+* The first bullet point, "Excellent Job Perspectives!", lists three key points:
+	+ Automation requires ML/DL -> growth!
+	+ Top-notch companies will gladly hire you!
+* The second bullet point, "Many industries now:", highlights the growing demand for deep learning professionals across various sectors:
+	+ IT-Companies
+	+ Cars, Logistics, Health Care, etc...
+	+ Manufacturing / Robotics, etc...
+
+**Images:**
+
+There are no images on this slide.
+
+**Formulas:**
+
+There are no formulas presented on this slide.
+
+In summary, the slide provides an overview of the growing demand for deep learning professionals in various industries, highlighting the excellent job perspectives and the need for automation in ML/DL.

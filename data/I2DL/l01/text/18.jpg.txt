@@ -1,0 +1,9 @@
+**Text Content**: What Made this Possible? Models know where to learn from; Models are trainable; Models are complex.
+
+**Images**: 
+
+*   The first image is a light blue circle with the words "Big Data" in black text inside it.
+*   The second image is an orange circle with the word "Hardware" in black text inside it.
+*   The third image is a purple circle with the word "Deep" in black text inside it.
+
+**Formulas**: No formulas present.
