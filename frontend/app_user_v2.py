@@ -132,28 +132,16 @@ for message in st.session_state.messages:
 if prompt := st.chat_input("Ask me anything."):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"):
         st.markdown(prompt)
 
     # Display assistant response in chat message container
     response = ""
     
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"):
         with st.spinner("Getting your answer..."):
             response = response_generator(prompt)
         st.markdown(response)
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
 
-
-
-
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("\n")
-st.sidebar.markdown("***")
-with st.sidebar:
-    if "time_elapsed" not in st.session_state:
-        time_keeper.setup_lecture(120, 5)
-    time_keeper.time_display()
