@@ -73,9 +73,11 @@ class Rag:
         
     def run(self, prompt: str, lecture:str, lecture_id: str):
         index = self.load_vectors(lecture=lecture, lecture_id=lecture_id)
-        transcript = self.load_transcript(st.session_state.time_elapsed, lecture=lecture, lecture_id=lecture_id)
+        curr_transcript = self.load_transcript(st.session_state.time_elapsed, lecture='I2DL', lecture_id='l01')
+        old_transcript = self.load_transcript(timedelta(minutes=300), lecture=lecture, lecture_id=lecture_id)
 
-        index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': lecture_id, 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in transcript])
+        index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': lecture_id, 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in curr_transcript])
+        index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': 'l01', 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in old_transcript])
         query_engine = VectorIndexRetriever(index=index, similarity_top_k=5, embed_model=get_embedding_model())
         chunks = query_engine.retrieve(prompt)
 
