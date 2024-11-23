@@ -3,11 +3,13 @@ from io import StringIO
 import sys
 import streamlit as st
 st.set_page_config(page_title="Lecture Selector", layout="wide")
+
+if "time_elapsed" not in st.session_state:
+    st.session_state.time_elapsed = datetime.timedelta(minutes=52)
 import random
 from openai import OpenAI
 import time_keeper
 from rag import Rag
-from streamlit_ace import st_ace
 
 
 # Streamed response emulator
@@ -99,7 +101,6 @@ if live_lecture:
 
     st.sidebar.markdown("***")
     with st.sidebar:
-        time_keeper.setup_lecture(120, 5)
         time_keeper.time_display()   
 
 ## Main
@@ -138,9 +139,6 @@ for message in st.session_state.messages:
 
 # Accept user input
 def execute_python_code(code, code_type):
-    print("CODE TYPE", code_type)
-    print("CODE", code)
-    print("executing code")
     codeOut = StringIO()
     codeErr = StringIO()
     sys.stdout = codeOut
@@ -149,10 +147,10 @@ def execute_python_code(code, code_type):
     sys.stdout = sys.__stdout__
     sys.stderr = sys.__stderr__
 
-    with st.container(border=True):
-        st.markdown(f"#### Code Output")
-        st.write(codeErr.getvalue())
-        st.write(codeOut.getvalue())
+    st.caption("Std. Error")
+    st.code(codeErr.getvalue())
+    st.caption("Std. Out")
+    st.code(codeOut.getvalue())
     codeOut.close()
     codeErr.close()
 
@@ -169,18 +167,24 @@ if prompt := st.chat_input("Nice to meet you. Ask me about your lecture."):
     with st.chat_message("assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"):
         with st.spinner("Getting your answer..."):
             response = response_generator(prompt)
-        st.markdown(response)
+        
         if "```" in response:
-            print("FOUND CODE")
+            st.markdown(response.split("```")[0])
             code_segment: str = response.split("```")[1]
             code = code_segment.split("\n", 1)[1]
             code_type = code_segment.split("\n")[0]
-            if code_type == "python":
-                execute_python_code(code, code_type)
-            else:
-                with st.container(border=True):
-                    st.markdown(f"#### Code Output (Experimentatl)")
-                    st.components.v1.html(code, height=800)
+            with st.expander("Show code"):
+                st.code(code)
+            with st.expander("Output", True):
+                st.markdown("#### Code Output")
+                if code_type == "python":
+                    execute_python_code(code, code_type)
+                else:
+                    with st.container(border=True):
+                        st.components.v1.html(code, height=600)
+            st.markdown(response.split("```")[2])
+        else:
+            st.markdown(response)
         
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
