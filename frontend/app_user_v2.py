@@ -86,8 +86,6 @@ with st.sidebar:
             "Select a lecture:", [f"Lecture {i}" for i in range(1, 13)]
         )
 
-
-
 ## Main
 
 # Title and Subtitle
@@ -97,6 +95,20 @@ st.subheader("Augmented Lecture Explainer")
 # Initialize chat history
 if "messages" not in st.session_state:
     st.session_state.messages = []
+
+# Accept user input
+if prompt := st.chat_input("Ask me anything."):
+    # Add user message to chat history
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    
+
+    # Display assistant response in chat message container
+    response = ""
+    
+    response_stream = response_generator(prompt)
+    response = ''.join(chunk for chunk in response_stream)
+    # Add assistant response to chat history
+    st.session_state.messages.append({"role": "assistant", "content": response})
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
@@ -110,20 +122,6 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 
-# Accept user input
-if prompt := st.chat_input("Ask me anything."):
-    # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"):
-        st.markdown(prompt)
-
-    # Display assistant response in chat message container
-    response = ""
-    with st.chat_message("assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"):
-        st.write(response_generator(prompt))
-
-    # Add assistant response to chat history
-    st.session_state.messages.append({"role": "assistant", "content": response})
 st.sidebar.markdown("\n")
 st.sidebar.markdown("\n")
 st.sidebar.markdown("\n")
