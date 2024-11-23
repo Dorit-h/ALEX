@@ -1,4 +1,5 @@
 from datetime import timedelta
+import json
 from openai import OpenAI
 import pandas as pd
 import streamlit as str
@@ -38,6 +39,12 @@ class Rag:
         transcript = transcript.groupby('start_minutes').agg({'text': ' '.join}).reset_index()
         return transcript.to_dict(orient='records')
     
+    def get_current_slide(self, timestamp: timedelta, lecture: str, lecture_id: str):
+        slides = json.load(open(f"data/{lecture}/{lecture_id}/timestamps.json"))
+        for slide, end_time in slides.items():
+            if timedelta(seconds=end_time) >= timestamp:
+                return slide
+            
 
     def load_vectors(self, lecture: str, lecture_id: str):
         PERSIST_DIR = "./storage"
@@ -61,18 +68,23 @@ class Rag:
         
     def run(self, prompt: str, lecture:str, lecture_id: str):
         index = self.load_vectors(lecture=lecture, lecture_id=lecture_id)
-        transcript = self.load_transcript(timedelta(minutes=120), lecture=lecture, lecture_id=lecture_id)
+        transcript = self.load_transcript(st.session_state.time_elapsed, lecture=lecture, lecture_id=lecture_id)
 
         index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': lecture_id, 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in transcript])
         query_engine = VectorIndexRetriever(index=index, similarity_top_k=5, embed_model=get_embedding_model())
         chunks = query_engine.retrieve(prompt)
+
+        current_slide = max(int(self.get_current_slide(st.session_state.time_elapsed, lecture=lecture, lecture_id=lecture_id))-1, 0)
+        with open(f"data/{lecture}/{lecture_id}/slides/text/{current_slide}.jpg.txt") as f:
+            slide_text = f.read()
+        
         retrieved_text = "\n".join([chunk.get_content(metadata_mode="ALL") for chunk in chunks])
         
-        return self.response_generator(user_input=prompt, retrieved_text = retrieved_text)
+        return self.response_generator(user_input=prompt, retrieved_text = retrieved_text, current_slide=current_slide, slide_text=slide_text)
 
 
-    def response_generator(self, user_input: str, retrieved_text: str):
-        messages = [ChatMessage(role=MessageRole.USER, content=f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. Always refer to the slide number and lecture minute. \n{retrieved_text}"),
+    def response_generator(self, user_input: str, retrieved_text: str, current_slide: int, slide_text: str):
+        messages = [ChatMessage(role=MessageRole.USER, content=f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. Always refer to the slide number and lecture minute. \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}:\n{slide_text}"),
         ChatMessage(role=MessageRole.USER, content=user_input)]
         return self.llm.chat(
             messages=messages,
