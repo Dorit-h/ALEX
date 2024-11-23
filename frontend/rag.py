@@ -86,7 +86,7 @@ class Rag:
 
 
     def response_generator(self, user_input: str, retrieved_text: str, current_slide: int, slide_text: str):
-        messages = [{"role": "system", "content": f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide. The lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}."}]
+        messages = [{"role": "system", "content": f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. When showing formulas you should use Latex. Additionally, if relevant please provide a d3.js visualization to explain the concept. When providing a d3.js visualization it is important that you always provide a full html page. If possible, make it interactive. When providing code, always only provide a single code output that is fully working. For python code only use the stdout. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide, the lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}."}]
         for m in st.session_state.messages:
             if m['role'] == "user":
                 messages.append({"role": "user", "content": m['content']})
