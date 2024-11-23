@@ -114,3 +114,7 @@ urllib3==2.2.3
 wrapt==1.17.0
 XlsxWriter==3.2.0
 yarl==1.18.0
+pdf2image
+python-poppler
+matplotlib
+ipython

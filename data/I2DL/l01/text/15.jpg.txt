@@ -1,0 +1,30 @@
+The image presents a comprehensive timeline of deep learning history, spanning from 1940 to 2010. The timeline is divided into distinct sections, each representing a significant development in the field of deep learning.
+
+**Text Content:**
+
+*   **Deep Learning History**: This is the title of the image, which sets the context for the timeline that follows.
+*   **1940-1950**: This section highlights the early beginnings of deep learning, with key figures such as S. McCulloch and W. Pitts contributing to the development of the field.
+*   **1950-1960**: This period saw the introduction of the first neural networks, including the perceptron and adaline.
+*   **1960-1970**: This section focuses on the XOR problem and its impact on the development of deep learning.
+*   **1970-1980**: This period is marked by the introduction of multi-layered perceptrons and backpropagation.
+*   **1980-1990**: This section highlights the emergence of SVMs and their application in deep learning.
+*   **1990-2000**: This period saw significant advancements in deep learning, including the introduction of deep neural networks and pretraining.
+*   **2000-2010**: This section concludes the timeline, highlighting the continued growth and development of deep learning.
+
+**Images:**
+
+*   **S. McCulloch - W. Pitts**: A photograph of S. McCulloch and W. Pitts, who contributed to the development of the perceptron.
+*   **F. Rosenblatt**: A photograph of F. Rosenblatt, who introduced the perceptron.
+*   **B. Widrow - M. Hoff**: A photograph of B. Widrow and M. Hoff, who developed the adaline algorithm.
+*   **M. Minsky - S. Papert**: A photograph of M. Minsky and S. Papert, who wrote the book "Perceptrons".
+*   **D. Rumelhart - G. Hinton - R. Williams**: A photograph of D. Rumelhart, G. Hinton, and R. Williams, who introduced backpropagation.
+*   **V. Vapnik - C. Cortes**: A photograph of V. Vapnik and C. Cortes, who developed SVMs.
+*   **G. Hinton - S. Ruslan**: A photograph of G. Hinton and S. Ruslan, who contributed to the development of deep neural networks.
+
+**Formulas:**
+
+*   **LaTeX Format:** No specific LaTeX formulas are provided in the image. However, the image does include mathematical equations and diagrams related to deep learning concepts, such as the perceptron and neural networks.
+
+**Summary:**
+
+The image provides a comprehensive timeline of deep learning history, highlighting key developments and contributors to the field. The timeline spans from 1940 to 2010 and includes photographs of notable figures, mathematical equations, and diagrams related to deep learning concepts. While no specific LaTeX formulas are provided, the image offers a valuable resource for understanding the evolution of deep learning.

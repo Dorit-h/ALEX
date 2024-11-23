@@ -1,0 +1,5 @@
+**Text Content**: Back to Linear Regression; What shape does our probability distribution have?; I2DL: Prof. Niessner;
+
+**Images**: An image of a slide from a presentation on linear regression, with the title "Back to Linear Regression" in blue text at the top and a mathematical equation below it. The equation is written in black text and reads: θML = arg max log pmodel(yi | xi, θ). 
+
+**Formulas**: $\theta_{ML} = \arg \max_{\theta} \sum_{i=1}^{n} \log p_{\text{model}}(y_i | \mathbf{x}_i, \boldsymbol{\theta})$

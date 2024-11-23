@@ -1,0 +1,5 @@
+**Text Content**: Introduction to Deep Learning, Machine Learning basics, Introduction to NN, Back-propagation, Optimization, RNN, CNN
+
+**Images**: There are no images in the provided text.
+
+**Formulas**: No formulas are present in the provided text.

@@ -1,0 +1,13 @@
+**Text Content**: Logistic Regression; Probability of a binary output; Prediction of the Sigmoid: continuous; True labels: 0 or 1; Model for coins
+
+**Images**: 
+
+*   There are no images in the provided text.
+
+**Formulas**:
+
+$\hat{\mathbf{y}} = p(\mathbf{y} = 1|\mathbf{X}, \boldsymbol{\theta}) = \prod_{i=1}^{n} p(y_i = 1|\mathbf{x}_i, \boldsymbol{\theta})$
+
+$\hat{\mathbf{y}} = \prod_{i=1}^{n} \hat{y}_i (1 - \hat{y}_i)^{1-y_i}$
+
+**Answer**: **Text Content**: Logistic Regression; Probability of a binary output; Prediction of the Sigmoid: continuous; True labels: 0 or 1; Model for coins; **Images**: ;**Formulas**: $\hat{\mathbf{y}} = p(\mathbf{y} = 1|\mathbf{X}, \boldsymbol{\theta}) = \prod_{i=1}^{n} p(y_i = 1|\mathbf{x}_i, \boldsymbol{\theta})$; $\hat{\mathbf{y}} = \prod_{i=1}^{n} \hat{y}_i (1 - \hat{y}_i)^{1-y_i}$; **Number**: 87; **Latex**: $\mathbf{y} = p(\mathbf{y} = 1|\mathbf{X}, \boldsymbol{\theta}) = \prod_{i=1}^{n} p(y_i = 1|\mathbf{x}_i, \boldsymbol{\theta})$; $\mathbf{y} = \prod_{i=1}^{n} \hat{y}_i (1 - \hat{y}_i)^{1-y_i}$

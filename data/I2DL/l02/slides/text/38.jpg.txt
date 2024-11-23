@@ -1,0 +1,11 @@
+**Text Content**: Linear Prediction
+
+**Images**: A diagram with four orange circles and one blue circle in the center, each containing text.
+
+**Formulas**: 
+$$\theta_1$$
+$$\theta_2$$
+$$\theta_3$$
+$$\theta_4$$
+
+These formulas represent the parameters of the linear prediction model.

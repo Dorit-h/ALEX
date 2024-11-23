@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning at TUM
+
+**Images**: The image shows a sequence of 3D models of a human figure, with different colors and shapes, representing different deep learning models. The first model is labeled "Depth Input (lateral view)" and shows a gray-scale figure with an orange square around its arm. The second model is labeled "IPNet [Bhatnagar et al. 2020]" and shows a purple figure with a green square around its arm. The third model is labeled "NPMs* [Palafox et al. 2021]" and shows a pink figure with a green square around its arm. The fourth model is labeled "SPAM (Ours)" and shows a green figure with a green square around its arm. The fifth model is labeled "Ground Truth" and shows a purple figure with a green square around its arm.
+
+**Formulas**: There are no formulas in the image.

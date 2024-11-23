@@ -1,0 +1,5 @@
+**Text Content**:; **Images**:;**Formulas**:;Nearest Neighbor
+
+1.  The text content is "Nearest Neighbor" and "k-NN classifier = cat" from the right side of the image.
+2.  The images show a dachshund puppy, a dog with a bone in its mouth, and a cat. The dog with a bone in its mouth is highlighted in a blue rectangle, while the cat is highlighted in an orange rectangle.
+3.  There are no formulas present in the image.

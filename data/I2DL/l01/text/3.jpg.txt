@@ -1,0 +1,5 @@
+**Text Content**: What is this Lecture about?, ML Methods, Linear/logistic regression, Support Vector Machines, Random Decision Trees, Forests, Jungles, ...
+
+**Images**: There is a Venn diagram with two overlapping circles. The larger circle is labeled "Artificial Intelligence" and the smaller circle is labeled "Machine Learning". The intersection of the two circles is empty.
+
+**Formulas**: There are no formulas present in the image.

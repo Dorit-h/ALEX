@@ -1,0 +1,18 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**: Image Classification Task
+
+**Images**:
+
+*   The first image is an orange cartoon cat with a smile.
+*   The second image is a cat's face peeking out from behind a cardboard box.
+*   The third image is a kitten with its mouth open, possibly meowing or yawning.
+*   The fourth image is a cat wearing glasses and a red tie.
+*   The fifth image is a black and tan dachshund puppy sitting on grass.
+*   The sixth image is a dog with a bone in its mouth.
+*   The seventh image is a puppy with a cupcake in its mouth.
+*   The eighth image is a group of kittens in different colors.
+*   The ninth image is a black cat with glowing eyes.
+*   The tenth image is a white cat sitting in the snow.
+
+**Formulas**: There are no formulas present in the image.

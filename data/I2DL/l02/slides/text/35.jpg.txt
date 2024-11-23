@@ -1,0 +1,15 @@
+**Text Content**: Linear Regression; Training; Testing; Predictor; Estimation; Learner; Model parameters
+
+**Images**: No images found
+
+**Formulas**:
+
+*   $\{x_{1:n}, y_{1:n}\}$ (Learner)
+*   $\hat{y}_{n+1}$
+*   $\theta$ (Model parameters)
+*   $x_{n+1}$
+*   $\theta$ (Testing)
+*   $x_{1:n}$ (Training)
+*   $y_{1:n}$ (Training)
+
+The image presents a concise overview of the linear regression process, focusing on training and testing phases. It outlines the key components involved, including the learner, predictor, and model parameters. The formulas provided offer a mathematical representation of the process, facilitating understanding and analysis. The absence of images ensures that the content remains text-based and easily digestible. Overall, the image effectively communicates the essential steps and concepts of linear regression, making it a valuable resource for those seeking to understand this statistical technique.

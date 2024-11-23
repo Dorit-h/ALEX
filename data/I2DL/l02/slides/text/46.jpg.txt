@@ -1,0 +1,5 @@
+**Text Content**: Linear Regression: Loss Function; Prediction: Temperature of the building
+
+**Images**: A scatter plot with a regression line and orange dots, a blue line representing the prediction, and a green vertical line indicating the temperature prediction.
+
+**Formulas**: There are no formulas provided in the image.

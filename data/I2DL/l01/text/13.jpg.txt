@@ -1,0 +1,9 @@
+**Text Content**: Image Classification
+
+**Images**:
+
+*   A cat is shown on the left side of the image.
+*   A magic box is depicted in the center of the image, with an arrow pointing to the right.
+*   A wizard is illustrated on the right side of the image, holding a wand and wearing a blue robe with yellow stars.
+
+**Formulas**: None.

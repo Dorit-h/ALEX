@@ -1,0 +1,8 @@
+**Text Content**: Back to Linear Regression; Assuming $y_i = \mathcal{N}(\mathbf{x}_i\boldsymbol{\theta}, \sigma^2) = \mathbf{x}_i\boldsymbol{\theta} + \mathcal{N}(0, \sigma^2)$;
+
+**Images**: There are no images.
+
+**Formulas**:
+$$p(y_i) = \frac{1}{\sqrt{(2\pi\sigma^2)}e^{-\frac{1}{2\sigma^2}(y_i-\mu)^2}}$$
+
+$$y_i \sim \mathcal{N}(\mu, \sigma^2)$$

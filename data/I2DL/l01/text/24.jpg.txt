@@ -1,0 +1,22 @@
+**Text Content**
+
+* **Title**: Deep Learning Today
+* **Subtitle**: Healthcare, cancer detection
+
+**Images**
+
+* Four images of cancer cells and tumors are shown, each with a different level of detail and colorization.
+* The top-left image shows a purple-colored tumor with a white background.
+* The top-right image shows a red-colored tumor with a blue background, with labels pointing to different regions of the tumor.
+* The bottom-left image shows a blue-colored tumor with a dark blue background, with a label pointing to a specific region.
+* The bottom-right image shows a blue-colored tumor with a dark blue background, with a label pointing to a specific region.
+
+**Formulas**
+
+* There are no formulas in the image.
+
+**Answer**
+
+* **Text Content**: Deep Learning Today; Healthcare, cancer detection
+* **Images**: Four images of cancer cells and tumors, each with a different level of detail and colorization.
+* **Formulas**: None

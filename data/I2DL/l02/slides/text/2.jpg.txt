@@ -1,0 +1,5 @@
+**Text Content**: A Simple Task: Image Classification;
+
+**Images**: There is no image in the content.
+
+**Formulas**: None.

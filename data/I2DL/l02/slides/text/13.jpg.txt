@@ -1,0 +1,1 @@
+**Text Content**: How does the NN classifier perform on training data? What classifier is more likely to perform best on test data? What are we actually learning?; **Images**: The Data, NN Classifier, 5NN Classifier; **Formulas**: There are no formulas in the image.

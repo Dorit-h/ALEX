@@ -1,0 +1,13 @@
+**Text Content**: Machine Learning; Supervised learning; Unsupervised learning
+
+**Images**: 
+
+* A plus sign (+) with an orange color.
+* A cat wearing a red tie.
+* A dog holding a bone.
+* A cat with a collar.
+* A dog with a collar.
+* A cat with a collar and a red tie.
+* A dog with a collar and a bone.
+
+**Formulas**: There are no formulas in the image.

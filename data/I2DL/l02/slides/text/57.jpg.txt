@@ -1,0 +1,6 @@
+**Text Content**: Maximum Likelihood Estimate, A method of estimating the parameters of a statistical model given observations, Observations from Pdata(y|x), Pmodel(y|x, θ)
+
+**Images**: There are no images in the document. 
+
+**Formulas**: 
+$\mathbf{P}_{model}(\mathbf{y}|\mathbf{x}, \theta)$, $\mathbf{P}_{data}(\mathbf{y}|\mathbf{x})$

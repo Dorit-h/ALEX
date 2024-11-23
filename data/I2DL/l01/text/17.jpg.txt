@@ -1,0 +1,24 @@
+**Step 1: Recognize and extract the text content directly.**
+
+The image contains two sections of text, each with a title and a description of the changes made to the neural network architecture.
+
+The first section has the title "What has Changed?" and describes the changes made to the MNIST digit recognition dataset. The second section has the title "2012 Krizhevsky et al." and describes the changes made to the ImageNet image recognition dataset.
+
+**Step 2: Identify and describe the images separately.**
+
+There are two images in the image, each showing a diagram of a neural network architecture. The first image shows the architecture of a convolutional neural network (CNN), which consists of multiple convolutional and pooling layers followed by fully connected layers. The second image shows the architecture of a residual neural network (ResNet), which consists of multiple residual blocks with shortcut connections.
+
+**Step 3: Detect any formulas and provide them using LaTeX format.**
+
+There are no formulas in the image.
+
+**Answer:**
+
+**Text Content:** What has Changed? MNIST digit recognition dataset 10^7 pixels used in training; 2012 Krizhevsky et al. ImageNet image recognition dataset 10^14 pixels used in training
+
+**Images:** 
+
+*   A diagram of a CNN architecture.
+*   A diagram of a ResNet architecture.
+
+**Formulas:** None

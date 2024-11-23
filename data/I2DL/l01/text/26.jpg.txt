@@ -1,0 +1,11 @@
+**Text Content**: Deep Learning Today
+
+**Images**:
+
+*   A screenshot of a video game with various characters and objects on the screen.
+*   A graph showing the performance of different machine learning models.
+*   A map with various locations marked.
+*   A graph showing the performance of different machine learning models.
+*   A graph showing the performance of different machine learning models.
+
+**Formulas**: There are no formulas presented in this image.

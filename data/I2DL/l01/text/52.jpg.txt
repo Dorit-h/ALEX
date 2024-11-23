@@ -1,0 +1,24 @@
+The image shows a presentation slide titled "Deep Learning at TUM" in blue text at the top. The slide has a black background with white and orange text, and it appears to be discussing deep learning techniques.
+
+**Text Content:**
+The text content of the slide is:
+
+* "Deep Learning at TUM" (title)
+* "Animation Synthesis" (subtitle)
+* "Source Actor" (label for a photo of Angela Merkel)
+* "a time to look ahead" (label for a smaller photo of Angela Merkel)
+* "Target UV-Map" (label for a 3D model of Angela Merkel's head)
+* "Target Background" (label for a 3D model of Angela Merkel's clothing)
+
+**Images:**
+There are three images on the slide:
+
+1. A photo of Angela Merkel with a gray background, labeled "Source Actor".
+2. A smaller photo of Angela Merkel wearing a green jacket, labeled "a time to look ahead".
+3. A 3D model of Angela Merkel's head and clothing, with a gray background.
+
+**Formulas:**
+There are no formulas present on the slide.
+
+**Answer:**
+**Text Content:**; **Images:**;**Formulas:**;

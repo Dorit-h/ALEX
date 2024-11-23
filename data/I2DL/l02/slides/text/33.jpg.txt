@@ -1,0 +1,5 @@
+**Text Content**: Linear Regression; Supervised learning; Find a linear model that explains a target given inputs;
+
+**Images**: A graph with an x-axis, y-axis, and a blue line. The x-axis ranges from -1 to 1, and the y-axis ranges from -1 to 1. There are 20 orange dots on the graph, scattered around the blue line.
+
+**Formulas**: No formulas are detected in the image.

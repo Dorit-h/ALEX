@@ -1,0 +1,20 @@
+**Text Content**: Logistic Regression: Loss Function; We want log(1 - y_i) large; so we want y_i to be small
+
+**Images**: 
+
+*   The image contains a gray rectangle with the text "I2DL: Prof. Niessner" in the bottom-left corner.
+*   In the bottom-right corner, there is a small number "92".
+
+**Formulas**: 
+
+*   $\mathcal{L}(\hat{y}_i, y_i) = - \left[ y_i \log \hat{y}_i + (1 - y_i) \log (1 - \hat{y}_i) \right]$
+*   $y_i = 1 \implies \mathcal{L}(\hat{y}_i, 1) = \log \hat{y}_i$
+*   $y_i = 0 \implies \mathcal{L}(\hat{y}_i, 0) = \log (1 - \hat{y}_i)$
+*   $\log (1 - \hat{y}_i)^2$ is minimized when $\hat{y}_i$ is as close to 0 as possible.
+
+**Additional Information**: 
+
+*   The image appears to be a slide from a presentation on logistic regression.
+*   The text suggests that the goal of logistic regression is to minimize the loss function, which is composed of two terms: one that penalizes the model for predicting a probability of 1 when the true label is 0, and another that penalizes the model for predicting a probability of 0 when the true label is 1.
+*   The formula for the loss function is derived from the cross-entropy loss function, which is commonly used in machine learning.
+*   The image also mentions that the goal is to make $\hat{y}_i$ as small as possible, which implies that the model should predict a low probability for the positive class when the true label is 0.

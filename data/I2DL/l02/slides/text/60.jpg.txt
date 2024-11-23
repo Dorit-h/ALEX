@@ -1,0 +1,12 @@
+**Text Content**: Maximum Likelihood Estimate; Logarithmic property log ab = log a + log b
+
+**Images**: The image contains two mathematical equations, each represented by an orange square with a black symbol inside. The top equation is labeled "n" and features the symbol "θML" with an argument of "arg max p model (y i |x i, θ)". The bottom equation is also labeled "n" and displays the symbol "Σ" with an argument of "log p model (y i |x i, θ)".
+
+**Formulas**: The image presents two formulas in LaTeX format:
+
+1. θML = arg max p model (y i |x i, θ)
+2. θML = arg max ∑ log p model (y i |x i, θ) i=1
+
+These formulas represent the maximum likelihood estimate (MLE) of a parameter θ, which is a common concept in statistical inference. The top formula calculates the MLE by taking the argument of the maximum value of the probability density function (pdf) of the model given the data and the parameter. The bottom formula calculates the MLE by taking the logarithm of the sum of the probabilities of the model given the data and the parameter.
+
+In summary, the image illustrates the concept of maximum likelihood estimation, providing two formulas that represent this statistical technique. The formulas are presented in a clear and concise manner, making it easy to understand the underlying mathematics.

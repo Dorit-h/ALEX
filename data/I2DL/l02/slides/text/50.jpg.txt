@@ -1,0 +1,12 @@
+**Text Content**:; **Images**:;**Formulas**:
+
+1.  Optimization: Linear Least Squares
+2.  Matrix notation
+
+**Formulas**:
+
+*   $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 = \frac{1}{n} \sum_{i=1}^{n} (\mathbf{x}_i \boldsymbol{\theta} - y_i)^2$
+
+*   $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = (\mathbf{X} \boldsymbol{\theta} - \mathbf{y})^T (\mathbf{X} \boldsymbol{\theta} - \mathbf{y})$
+
+**Images**:;**Formulas**:;

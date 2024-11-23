@@ -1,0 +1,25 @@
+**Text Content**: 
+Details in the exercise session!
+
+We have found an analytical solution to a convex problem
+
+Inputs: Outside temperature, number of people,
+
+True output: Temperature of the building
+
+**Images**: 
+There are no images in the text content.
+
+**Formulas**: 
+The formula is written in LaTeX format as follows:
+
+$$\frac{\partial J(\theta)}{\partial \theta} = 2 \mathbf{X}^T \mathbf{X} \theta - 2 \mathbf{X}^T \mathbf{y} = 0$$
+
+$$\theta = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$$
+
+**Answer**: 
+**Text Content**: Details in the exercise session!, We have found an analytical solution to a convex problem, Inputs: Outside temperature, number of people, True output: Temperature of the building
+
+**Images**: 
+
+**Formulas**: $\frac{\partial J(\theta)}{\partial \theta} = 2 \mathbf{X}^T \mathbf{X} \theta - 2 \mathbf{X}^T \mathbf{y} = 0$, $\theta = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$

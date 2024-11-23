@@ -1,0 +1,5 @@
+**Text Content**: Linear Regression; Maximum Likelihood Estimate (MLE) corresponds to the Least Squares Estimate (given the assumptions); Introduced the concepts of loss function and optimization to obtain the best model for regression
+
+**Images**: There are no images in the slide.
+
+**Formulas**: There are no formulas in the slide.

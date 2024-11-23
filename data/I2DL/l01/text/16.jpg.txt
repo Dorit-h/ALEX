@@ -1,0 +1,7 @@
+**Text Content**: The Empire strikes Back; Deep Learning Approaches; ILSVRC top-5 error on ImageNet; Human; ResNet; Ensemble; SENet
+
+**Images**: 
+
+*   A bar graph with the title "The Empire strikes Back" and a subtitle "Deep Learning Approaches". The graph shows the ILSVRC top-5 error on ImageNet for different years and approaches. The x-axis represents the year, and the y-axis represents the error rate. The graph includes bars for 2010, 2011, 2012, 2013, 2014, 2015, 2016, and 2017. The approaches listed on the graph are AlexNet, VGGNet, Human, ResNet, Ensemble, and SENet.
+
+**Formulas**: There are no formulas present in the image.

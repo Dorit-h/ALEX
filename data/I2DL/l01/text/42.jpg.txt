@@ -1,0 +1,13 @@
+**Text Content**: Deep Learning Memes
+
+**Images**:
+
+* A graphic with four heads, each representing a different type of headache:
+	+ Migraine: a red circle on the forehead
+	+ Hypertension: a red section on the side of the head
+	+ Stress: a red band around the forehead
+	+ Math Behind DL: a red silhouette of a head
+
+**Formulas**: None
+
+**Answer**: Text Content: Deep Learning Memes; Images: A graphic with four heads, each representing a different type of headache; Formulas: None

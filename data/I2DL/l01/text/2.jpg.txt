@@ -1,0 +1,7 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content:** What is this Lecture about? Artificial Intelligence, AI Methods - Broad definition!, "if" statements if (cold turn_up_heat()), Binary Search, Dijkstra, A*, Prime, Kurskal, Logic algorithms, etc.
+
+**Images:** The image contains a green circle with the text "Artificial Intelligence" inside it.
+
+**Formulas:** No formulas are present in the image.

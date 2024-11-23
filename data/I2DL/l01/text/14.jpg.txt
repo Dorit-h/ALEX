@@ -1,0 +1,15 @@
+The image presents a slide from a presentation, featuring the title "Why Deep Learning?" in orange text. The slide is attributed to Prof. Niessner and is part of the TUM (Technische Universität München) lecture series.
+
+**Text Content:**
+
+* Title: "Why Deep Learning?"
+* Attribution: "I2DL: Prof. Niessner"
+* Attribution (bottom right): "15"
+
+**Images:**
+
+* The logo of TUM (Technische Universität München) is displayed in blue text at the top right corner of the slide.
+
+**Formulas:**
+
+There are no formulas presented in this slide.

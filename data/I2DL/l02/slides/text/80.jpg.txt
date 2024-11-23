@@ -1,0 +1,25 @@
+**Text Content**: Logistic Regression: Loss Function;
+
+**Images**: There are no images in this text.
+
+**Formulas**: 
+
+$$
+L(\hat{y}_{i}, y_{i}) = -[y_{i} \log \hat{y}_{i} + (1-y_{i}) \log (1-\hat{y}_{i})]
+$$
+
+$$
+y_{i} = 1 \longrightarrow L(\hat{y}_{i},1) = \log \hat{y}_{i}
+$$
+
+$$
+\theta_{ML} = \arg\max_{\theta} \log p(y|X,\theta)
+$$
+
+The text content is a mathematical expression for the loss function of logistic regression, which is used to measure the difference between predicted probabilities and actual outcomes. The image is empty, indicating that there are no visual representations in this text. The formulas provided are:
+
+*   The loss function formula for logistic regression: L(ŷ_i, y_i) = -[y_i log ŷ_i + (1 - y_i) log (1 - ŷ_i)]
+*   The special case of the loss function when y_i = 1: L(ŷ_i, 1) = log ŷ_i
+*   The formula for maximum likelihood estimation: θ_{ML} = arg max_{θ} log p(y|X, θ)
+
+These formulas are presented in LaTeX format, which is a popular markup language for typesetting mathematical equations.

@@ -1,0 +1,5 @@
+**Text Content**: Many TUM Research Labs use DL; Visual Computing Lab (Prof. Niessner): - Research in computer vision, graphics, and machine learning; 3D AI Lab (Prof. Dai) - Research in 3D perception, 3D scene understanding; Computer Vision Group (Prof. Cremers) - Research in computer vision and pattern recognition; Data Mining and Analytics Lab (Prof. Günnemann) - Research methods for robust machine learning; Computer Aided Medical Procedures (Prof. Navab) - Research in machine learning for medical applications; And many more
+
+**Images**: 
+
+**Formulas**:

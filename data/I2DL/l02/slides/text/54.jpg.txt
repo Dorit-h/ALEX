@@ -1,0 +1,6 @@
+**Text Content**: Is this the best Estimate?; Least squares estimate; l2DL: Prof. Niessner
+
+**Images**: There are no images in the provided text.
+
+**Formulas**:
+\[J(\theta) = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2\]

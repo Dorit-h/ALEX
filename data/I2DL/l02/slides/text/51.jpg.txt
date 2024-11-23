@@ -1,0 +1,26 @@
+The image presents a mathematical formula for optimization, specifically linear least squares. The formula is displayed in a clear and concise manner, with each component labeled for easy understanding.
+
+**Text Content:**
+
+*   The title of the slide is "Optimization: Linear Least Squares" in blue text.
+*   Below the title, there are two mathematical formulas:
+    *   The first formula is: $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{y}_i - \boldsymbol{y}_i)^2 = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{x}_i \boldsymbol{\theta} - \boldsymbol{y}_i)^2$
+    *   The second formula is: $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})^T (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})$
+*   Below the formulas, there is a purple rectangle with the text "More on matrix notation in the next exercise session".
+*   In the bottom-left corner, there is small gray text that reads "I2DL: Prof. Niessner".
+*   In the bottom-right corner, there is small gray text that reads "59".
+
+**Images:**
+
+*   There are no images in this slide.
+
+**Formulas:**
+
+*   $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{y}_i - \boldsymbol{y}_i)^2 = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{x}_i \boldsymbol{\theta} - \boldsymbol{y}_i)^2$
+*   $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})^T (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})$
+
+**Answer:**
+
+*   **Text Content:** Optimization: Linear Least Squares, $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{y}_i - \boldsymbol{y}_i)^2 = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{x}_i \boldsymbol{\theta} - \boldsymbol{y}_i)^2$, $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})^T (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})$, More on matrix notation in the next exercise session, I2DL: Prof. Niessner, 59.
+*   **Images:** None.
+*   **Formulas:** $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{y}_i - \boldsymbol{y}_i)^2 = \frac{1}{n} \sum_{i=1}^{n} (\boldsymbol{x}_i \boldsymbol{\theta} - \boldsymbol{y}_i)^2$, $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})^T (\boldsymbol{X} \boldsymbol{\theta} - \boldsymbol{y})$.

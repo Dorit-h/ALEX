@@ -24,22 +24,27 @@ class Rag:
     def __init__(self):
         self.llm = OpenAI(base_url="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/", api_key="volker123")
     
-    def load_transcript(self, timestamp: timedelta):
-        transcript = pd.read_csv("data/Introduction to Deep Learning (I2DL 2023) - 2. ML Basics [ ezmp3.cc ].tsv", sep="\t")
+    def load_transcript(self, timestamp: timedelta, lecture: str, lecture_id: str):
+        transcript = pd.read_csv(f"data/{lecture}/{lecture_id}/transcripts/transcript.tsv", sep="\t")
         transcript['end'] = transcript['end'].map(lambda x: timedelta(milliseconds=x))
         transcript['start'] = transcript['start'].map(lambda x: timedelta(milliseconds=x))
         transcript = transcript[transcript['end'] <= timestamp]
-        return "\n".join(transcript['text'])
+        transcript['start_minutes'] = transcript['start'].map(lambda x: int(x.total_seconds() / 60))
+        transcript = transcript.groupby('start_minutes').agg({'text': ' '.join}).reset_index()
+        return transcript.to_dict(orient='records')
+    
 
-    def load_vectors(self):
+    def load_vectors(self, lecture: str, lecture_id: str):
         PERSIST_DIR = "./storage"
-        self.get_embedding_model()
+        embedding_model = self.get_embedding_model()
         if not os.path.exists(PERSIST_DIR):
             # load the documents and create the index
-            # documents = SimpleDirectoryReader("data").load_data()
-            # nodes = self.process_documents() # TODO
-            nodes = [TextNode(text="Hello this is a test node.")]
-            index = VectorStoreIndex(nodes, embed_model=self.get_embedding_model())
+            
+            documents = SimpleDirectoryReader(f"data/{lecture}/{lecture_id}/slides/text/").load_data()
+
+            index = VectorStoreIndex.from_documents(
+                documents=documents, embed_model=embedding_model
+            )
             # store it for later
             index.storage_context.persist(persist_dir=PERSIST_DIR)
             return index
@@ -49,14 +54,14 @@ class Rag:
             index = load_index_from_storage(storage_context)
             return index
         
-    def run(self, prompt: str):
-        index = self.load_vectors()
-        splitter = SentenceSplitter(chunk_size=300)
-        text_segments = splitter.split_text(self.load_transcript(timedelta(minutes=10)))
-        index.insert_nodes([TextNode(text=text) for text in text_segments])
+    def run(self, prompt: str, lecture:str, lecture_id: str):
+        index = self.load_vectors(lecture=lecture, lecture_id=lecture_id)
+        transcript = self.load_transcript(timedelta(minutes=60), lecture=lecture, lecture_id=lecture_id)
+
+        index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': lecture_id, 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in transcript])
         query_engine = index.as_retriever()
         chunks = query_engine.retrieve(prompt)
-        retrieved_text = "\n".join(["CHUNK 1" + chunk.text for chunk in chunks])
+        retrieved_text = "\n".join([chunk.get_content(metadata_mode="ALL") for chunk in chunks])
             
         return self.response_generator(user_input=prompt, retrieved_text = retrieved_text)
 
@@ -66,11 +71,12 @@ class Rag:
         return HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
     
     def response_generator(self, user_input: str, retrieved_text: str):
+        print(retrieved_text)
         return self.llm.chat.completions.create(
             messages=[
                 {
                     "role": "system",
-                    "content": f"""You are an assistant professor tasked with answering student questions based on the lecture information given below: 
+                    "content": f"""You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below: 
                     {retrieved_text}""",
                 },
                 {

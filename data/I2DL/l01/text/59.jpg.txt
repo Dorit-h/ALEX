@@ -1,0 +1,15 @@
+**Text Content**
+
+*   The text content is: "Deep Learning at TUM" and "Texturify" and "Generate Textures".
+
+**Images**
+
+*   There are four images in the image. 
+    *   The first image is a chair.
+    *   The second image is a car.
+    *   The third image is a car.
+    *   The fourth image is a chair.
+
+**Formulas**
+
+*   There are no formulas in the image.

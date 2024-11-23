@@ -1,0 +1,3 @@
+**Text Content**: Machine Learning; **Images**: A presentation slide with a title "Machine Learning" in blue text at the top. The slide features a bullet point with the equation Mθ(I) = {DOG, CAT} in black text, accompanied by arrows pointing to the words "Model", "Image", and "Class Label". Below this, there are three images labeled "CAT" and four images labeled "DOG", all depicting various animals. The background is white, with a small gray watermark in the bottom-left corner that reads "I2DL: Prof. Niessner". 
+
+**Formulas**: Mθ(I) = {DOG, CAT}

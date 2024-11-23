@@ -1,0 +1,10 @@
+**Text Content**: Machine Learning; How can we learn to perform image classification?;
+**Images**:
+
+*   A blue rectangle with the text "Image classification" inside it.
+*   A baby lying on its stomach, wearing a diaper.
+*   An orange rectangle with the text "Data" inside it.
+
+**Formulas**:
+
+*   There are no formulas in this image.

@@ -1,0 +1,11 @@
+**Text Content**: Machine Learning; Unsupervised learning; Supervised learning;
+
+**Images**:
+
+* The image is a slide from a presentation about machine learning, with the title "Machine Learning" in blue text at the top.
+* The left side of the slide has the heading "Unsupervised learning" in gray text, and the right side has the heading "Supervised learning" in gray text.
+* Below each heading are four images, each representing a different type of learning:
+	+ Unsupervised learning: a cat and a dog
+	+ Supervised learning: a cat and a dog
+
+**Formulas**: There are no formulas in this image.

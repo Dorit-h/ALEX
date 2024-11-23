@@ -1,0 +1,14 @@
+**Text Content**: Machine Learning; Given i images with train labels; Model Params; Model; Image; Class Label; θ* = argmin θ Σi D(Mθ(Ii) - Yi); "Distance" function; {DOG, CAT}; Mθ(I) = {DOG, CAT};
+
+**Images**:  
+•   The image shows a cat wearing a tie.
+•   The image shows a dog lying on the grass.
+•   The image shows a cat wearing glasses.
+•   The image shows a dog biting a bone.
+•   The image shows a cat wearing a tie.
+•   The image shows a dog lying on the grass.
+
+**Formulas**: 
+$$
+\theta^* = \argmin_\theta \sum_i D\left(M_\theta(I_i) - Y_i\right)
+$$

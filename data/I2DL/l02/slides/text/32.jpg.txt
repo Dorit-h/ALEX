@@ -1,0 +1,5 @@
+**Text Content**: Linear Regression;
+
+**Images**: There is a logo in the upper right corner of the image, which appears to be the initials "TLM" in blue. In the lower left corner, there is a line of small gray text that reads "I2DL: Prof. Niessner". In the lower right corner, there is a small number "40".
+
+**Formulas**: There are no formulas present in the image.

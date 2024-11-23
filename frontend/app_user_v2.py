@@ -9,7 +9,7 @@ st.set_page_config(page_title="Lecture Selector", layout="wide")
 def response_generator(user_input: str):
 
     rag = Rag()
-    return rag.run(user_input)
+    return rag.run(user_input, lecture="I2DL", lecture_id="l01")
     
 
 

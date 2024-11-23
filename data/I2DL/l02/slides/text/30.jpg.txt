@@ -1,0 +1,8 @@
+**Text Content**: Machine Learning, Unsupervised learning, Supervised learning, Reinforcement learning, Agents, Environment, reward
+
+**Images**:
+
+* A cartoon detective with a magnifying glass and hat
+* A teacher pointing to a blackboard with two students sitting in front of it
+
+**Formulas**: None

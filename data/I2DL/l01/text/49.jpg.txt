@@ -1,0 +1,30 @@
+The image presents a slide from a presentation on deep learning, specifically focusing on the topic of "Deep Learning at TUM." The title is prominently displayed in blue text at the top of the slide.
+
+**Text Content:**
+
+* The title "Deep Learning at TUM" is written in blue text.
+* Below the title, there is a large black rectangle with white text that reads "KITTI 00."
+* Underneath this, there are four smaller rectangles containing images and text:
+	+ The first rectangle shows a new frame with the text "new frame" in white.
+	+ The second rectangle displays a left disparity image with the text "left disparity" in white.
+	+ The third rectangle features a right disparity image with the text "right disparity" in white.
+	+ The fourth rectangle presents a keyframe with projected active points, accompanied by the text "keyframe with projected active points" in white.
+
+**Images:**
+
+* The first image is a grayscale photograph of a street scene.
+* The second image is a colorized representation of the left disparity.
+* The third image is a colorized representation of the right disparity.
+* The fourth image is a colorized representation of the keyframe with projected active points.
+
+**Formulas:**
+
+There are no visible formulas in the image.
+
+**Answer:**
+
+**Text Content:** Deep Learning at TUM; KITTI 00; new frame; left disparity; right disparity; keyframe with projected active points
+
+**Images:** Street scene (grayscale); Left disparity; Right disparity; Keyframe with projected active points
+
+**Formulas:** None

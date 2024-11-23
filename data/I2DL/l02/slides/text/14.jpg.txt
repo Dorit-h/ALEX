@@ -1,0 +1,10 @@
+**Text Content**: Nearest Neighbor, Hyperparameters, No. of Neighbors, These parameters are problem dependent., How do we choose these hyperparameters?
+
+**Images**: There are no images in the presentation.
+
+**Formulas**: 
+$L1 distance : |x - c|$
+$L2 distance : ||x - c||_2$
+No. of Neighbors: k
+
+Answer: **Text Content**: Nearest Neighbor, Hyperparameters, No. of Neighbors, These parameters are problem dependent., How do we choose these hyperparameters?; **Images**:;**Formulas**: $L1 distance : |x - c|$ $L2 distance : ||x - c||_2$ No. of Neighbors: k

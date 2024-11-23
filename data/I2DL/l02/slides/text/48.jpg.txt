@@ -1,0 +1,5 @@
+**Text Content**: Optimization: Linear Least Squares; Linear least squares: an approach to fit a linear model to the data; Convex problem, there exists a closed-form solution that is unique.
+
+**Images**: There are no images in the document.
+
+**Formulas**: $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2$

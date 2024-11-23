@@ -1,0 +1,5 @@
+**Text Content**: How to Obtain the Model? Loss function: measures how good my estimation is (how good my model is) and tells the optimization method how to make it better. Optimization: changes the model in order to improve the loss function (i.e., to improve my estimation). 
+
+**Images**: There are no images in this text.
+
+**Formulas**: There are no formulas in this text.

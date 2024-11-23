@@ -1,0 +1,11 @@
+**Text Content**: The text content is a slide from a presentation about virtual office hours. It includes the following points:
+
+* We will have dedicated office hours regarding:
+	+ Theoretical help (e.g., specific lecture questions)
+	+ Help on exercises
+* More info in the first tutorial session
+* Zoom links will be posted on Piazza
+
+**Images**: There are no images in this slide.
+
+**Formulas**: There are no formulas in this slide.

@@ -1,0 +1,17 @@
+**Text Content**:
+
+* Deep Learning at TUM
+* ScanNet Stats:
+	+ Kinect-style RGB-D sensors
+	+ 1513 scans of 3D environments
+	+ 2.5 Mio RGB-D frames
+	+ Dense 3D, crowd-source MTurk labels
+	+ Annotations projected to 2D frames
+
+**Images**:
+
+* Six images arranged in two rows of three, each showing a different room from a top-down perspective. The rooms are furnished with various objects such as chairs, tables, and shelves. Each room has a distinct color scheme and layout.
+
+**Formulas**:
+
+No formulas are present in the image.

@@ -1,0 +1,23 @@
+**Text Content**:; **Images**:;**Formulas**:; 
+
+**Text Content**:;
+
+Deep Learning at TUM
+
+Multiple object tracking with graph neural networks
+
+|Brasó and Leal-Taixé, CVPR 2020| Learning a Neural Solver for Multiple Object Tracking.
+
+**Images**:;
+
+The image shows a diagram of multiple object tracking with graph neural networks. The diagram consists of several components, including input, graph construction and feature encoding, neural message passing, edge classification, and output.
+
+*   **Input**: This component represents the input data, which can be images or videos containing objects to be tracked.
+*   **Graph Construction and Feature Encoding**: This component constructs a graph from the input data and encodes features from the graph into a vector representation.
+*   **Neural Message Passing**: This component passes messages between nodes in the graph to update the feature representations.
+*   **Edge Classification**: This component classifies the edges of the graph to determine the relationships between objects.
+*   **Output**: This component outputs the tracked objects and their trajectories.
+
+**Formulas**:
+
+There are no formulas in the image.

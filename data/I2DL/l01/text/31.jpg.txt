@@ -1,0 +1,9 @@
+**Text Content**: Deep Learning Today; StableDiffusion Image Outpainting; |2DL: Prof. Niessner
+
+**Images**:
+
+• A screenshot of a computer program with a grid pattern in the background and a small image of a girl with a pearl earring in the center. The program has various tools and settings for editing the image.
+
+**Formulas**:
+
+No formulas are present in the image.

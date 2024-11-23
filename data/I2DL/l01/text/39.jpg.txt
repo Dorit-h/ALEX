@@ -1,0 +1,12 @@
+**Text Content**: Deep Learning Memes
+
+**Images**:
+
+* A robot from the movie Terminator, representing what society thinks about deep learning.
+* A blue brain on a computer chip, symbolizing what friends think about deep learning.
+* A man in a suit, standing in front of a wall covered in money, representing what other computer scientists think about deep learning.
+* A dog sitting at a desk with a computer, symbolizing what mathematicians think about deep learning.
+* A man with glasses and a white shirt, representing what the speaker thinks about deep learning.
+* A logo that says "from theano import *", indicating the source of the memes.
+
+**Formulas**: No formulas are present in the image.

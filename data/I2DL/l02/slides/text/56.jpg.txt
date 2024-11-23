@@ -1,0 +1,21 @@
+The image presents a slide from a presentation on maximum likelihood estimation, featuring a white background with blue and black text.
+
+**Title**: "Maximum Likelihood Estimate"
+
+**Content**:
+
+* The title is centered at the top of the slide in large blue text.
+* Below the title, two lines of text are displayed:
+	+ "True underlying distribution" (in black)
+	+ "Parametric family of distributions Controlled by parameter(s)" (in black)
+* A blue arrow points upwards from the first line of text to a mathematical expression: "$p_{data}(\boldsymbol{y} \mid \boldsymbol{X})$"
+* A second arrow, orange in color, points downwards from the second line of text to another mathematical expression: "$p_{model}(\boldsymbol{y} \mid \boldsymbol{X}, \boldsymbol{\theta})$"
+
+**Formulas**:
+
+* $p_{data}(\boldsymbol{y} \mid \boldsymbol{X}) = \frac{1}{Z} \exp \left( \sum_{i=1}^n \log p(y_i | x_i; \boldsymbol{\theta}) \right)$
+* $p_{model}(\boldsymbol{y} \mid \boldsymbol{X}, \boldsymbol{\theta}) = \frac{1}{Z} \exp \left( \sum_{i=1}^n \log p(y_i | x_i; \boldsymbol{\theta}) \right)$
+
+**Background**: White
+
+**Footer**: The bottom-left corner displays the text "I2DL: Prof. Niessner" in small gray font, while the bottom-right corner shows the number "65" in small gray font.

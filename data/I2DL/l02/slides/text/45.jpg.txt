@@ -1,0 +1,15 @@
+**Text Content**: Linear Regression: Loss Function
+
+**Images**:
+
+*   A scatter plot with an upward trend line
+*   The x-axis is labeled as "x" and ranges from approximately -1 to 1.
+*   The y-axis is labeled as "y" and ranges from approximately -1 to 1.
+*   There are 20 data points represented by orange dots.
+*   A blue trend line runs through the data points, indicating a positive correlation between the variables.
+*   The trend line is labeled as "Prediction: Temperature of the building".
+*   There are green arrows pointing to the data points, indicating the direction of the prediction.
+
+**Formulas**:
+
+*   Not applicable

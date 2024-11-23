@@ -1,0 +1,5 @@
+**Text Content**: Back to Linear Regression; What shape does our probability distribution have?
+
+**Images**: There are no images present in the file.
+
+**Formulas**: p(y_i|x_i,\theta)

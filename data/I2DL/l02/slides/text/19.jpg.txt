@@ -1,0 +1,8 @@
+**Text Content**: Basic Recipe for Machine Learning, Split your data, Find model params θ, Other splits are also possible (e.g., 80%/10%/10%), I2DL: Prof. Niessner
+
+**Images**: 
+
+*   A horizontal bar graph with three sections: 60% (blue), 20% (red), and 20% (purple)
+*   The graph is labeled "train", "validation", and "test" respectively
+
+**Formulas**: None

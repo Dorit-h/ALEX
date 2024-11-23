@@ -1,0 +1,5 @@
+**Text Content**: Deep Learning Today; Object Detection
+
+**Images**: A dog wearing a hat, with a red rectangle around the dog and a green rectangle around the hat.
+
+**Formulas**: Not provided.

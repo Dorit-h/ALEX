@@ -1,0 +1,7 @@
+**Text Content**: Machine Learning; Unsupervised learning; No label or target class; Find out properties of the structure of the data; Clustering (k-means, PCA, etc.)
+
+**Images**: 
+CAT; DOG; CAT; DOG; CAT; DOG
+
+**Formulas**: 
+No formulas present in the image.

@@ -1,0 +1,8 @@
+The image presents a slide from a presentation on Logistic Regression: Loss Function. The title, "Logistic Regression: Loss Function," is prominently displayed at the top in blue text.
+
+Below the title, two bullet points are listed:
+
+*   **Probability of a binary output**: This section features a mathematical formula for the probability of a binary output, denoted as p(y|X, θ), where y represents the binary output, X denotes the input data, and θ signifies the model parameters.
+*   **Maximum Likelihood Estimate**: This section provides the formula for the maximum likelihood estimate of the model parameters, represented as θML. The formula involves the logarithm of the probability of the binary output, p(y|X, θ), and is expressed in terms of the input data and model parameters.
+
+In summary, the image effectively conveys the key concepts of logistic regression, including the probability of a binary output and the maximum likelihood estimate of the model parameters. The use of clear headings and concise formulas makes it easy to follow and understand the material.

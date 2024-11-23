@@ -1,0 +1,17 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+1. Text Content:
+
+The text content is:
+
+* "Why Machine Learning so Cool"
+* "We can learn from experience -> Intelligence, certain ability to infer the future!"
+* "Even linear models are often pretty good for complex phenomena: e.g., weather: - Linear combination of day-time, day-year etc. is often pretty good"
+
+2. Images:
+
+There are no images in the given text.
+
+3. Formulas:
+
+There are no formulas in the given text.
