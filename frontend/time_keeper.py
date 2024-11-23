@@ -10,7 +10,7 @@ def setup_lecture(duration_minutes, interval_seconds):
     st.session_state.end_time = st.session_state.start_time + datetime.timedelta(minutes=duration_minutes)
     st.session_state.interval_seconds = interval_seconds
     st.session_state.current_time = st.session_state.start_time
-    st.session_state.time_elapsed = datetime.timedelta(minutes=30)
+    st.session_state.time_elapsed = datetime.timedelta(minutes=52)
     st.session_state.time_remaining = st.session_state.end_time - st.session_state.current_time
 
 def update():
