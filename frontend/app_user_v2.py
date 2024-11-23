@@ -95,9 +95,7 @@ if prompt := st.chat_input("Ask me anything."):
     # Display assistant response in chat message container
     response = ""
     with st.chat_message("assistant", avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"):
-        for chunk in response_generator(prompt):
-            response += chunk
-            st.markdown(response)
+        st.write(response_generator(prompt))
 
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
