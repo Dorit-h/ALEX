@@ -1,3 +1,4 @@
+import datetime
 import streamlit as st
 st.set_page_config(page_title="Lecture Selector", layout="wide")
 import random
@@ -131,4 +132,4 @@ st.sidebar.markdown("\n")
 st.sidebar.markdown("***")
 with st.sidebar:
     time_keeper.setup_lecture(120, 5)
-    time_keeper.time_display()   
+    time_keeper.time_display()
