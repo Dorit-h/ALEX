@@ -1,0 +1,1455 @@
+start	end	text
+960	6880	Welcome everybody to Introduction to Deep Learning. This is the second lecture and in this
+6880	13520	lecture we're going to start with the machine learning basics. If we are remembering very
+13520	19200	briefly from the previous lecture we gave a very high level overview of what this lecture content
+19200	28720	is going to be and to be very precise I wanted to give a differentiation between AI, ML and DL,
+28720	32080	artificial intelligence, machine learning and deep learning and what the differences are.
+32880	39520	And this is exactly where we would like to continue today and specifically what we have
+39520	45200	discussed was that artificial intelligence was pretty much anything we can write up in a program
+45200	50800	even if statement you could in some way consider artificial intelligence and machine learning is
+50800	57680	then the next well more sophisticated step where we have kind of a model that is being optimized
+57680	58640	and is learning based on AI and DL. So let's get started.
+58720	62880	So we have a model that is based on some training data in order to perform a certain task and then
+62880	67680	finally we're going to talk about deep learning where we're going to have a neural network as
+67680	72640	our model that is then well supposedly more powerful than alternative machine learning
+72640	80320	methods. Okay and this is exactly where we would like to continue today and before we step into
+80320	85040	these three categories again I would now have the orthogonal thing when we're talking about tasks.
+85040	88640	So what I've just talked about was methods right what are learning methods, what are
+88720	92960	artificial intelligence methods, algorithms and now we're going to talk about some tasks.
+92960	97280	So mainly we want to apply these kind of methods that we have in these categories here.
+97280	102160	We want to apply them for instance to computer vision and we would like to start with a very very
+102160	108080	simple task here and a simple task could be image classification right. This is the task we're going
+108080	115680	to deal with for quite a bit because it's very canonical and it's very practical for
+115680	118480	computer vision applications. So what is it about?
+118720	123680	It's relatively straightforward. So the task here is essentially give them a set of input images.
+124800	130240	What we would like to do is we would like to assign a class label for each of these images
+130240	136160	right. So each of these cats here we would like to assign an orange box and each of the dogs here
+136160	140880	we would like to assign a blue box. And ideally the way we would like to do this is we have been
+140880	146240	feeding this respective image that we want to look at and that we don't know the label yet.
+146240	148400	We would like to make a prediction based
+148720	153840	on a certain model that we're having for instance right. And this is the whole point of image
+153840	161920	classification right. And the idea behind that is basically that we now in a sense having a mapping
+161920	169520	from the input which is for instance a set of pixels to some form of output label right. So we
+169520	178480	have to find a mapping from a bunch of pixels of this image to which output label is going to be.
+179440	186160	And well you could you could imagine why this is becoming relatively complicated because the
+186160	191520	diversity in natural images is actually quite complicated. To be a little bit more precise here
+192640	197840	we see already that we have quite a high diversity here. But even these images that you see here just
+197840	203600	for two simple classes for dogs and cats here you see that they're also relatively straightforward.
+203600	208720	Meaning that in each of these images there's a unique label that can be associated to them.
+208720	213360	Meaning that there's no mixture of like dogs and cats in the same image. So this is already
+213360	218560	a much more simplified task than if you're considering like real world applications.
+219360	224480	But even that simple task of image classification where it's a little bit easier. Even that one is
+224480	230240	already pretty complicated and worth a look that we will devote quite a bit of time during this
+230240	236640	lecture. But why is that even so complicated? And it's actually very straightforward if you're
+236640	238560	looking at these images. So for instance if you take a very simple single project image here for instance, so this is one
+238560	243680	instance if you're taking these kind of images here you see very briefly that we have a lot of
+243680	249440	occlusions meaning that the problem that we're dealing with practically speaking here is that
+249440	254180	the real world around us is actually in three dimensions but what the image is actually
+254180	258480	portraying and visualizing is just based on two dimensions meaning we have kind of like
+258480	265240	like the the camera that took this image took the 3d world and made it 2d and in this projection
+265240	270700	the this is not a bijective mapping anymore right so we're losing some information from the 3d world
+270700	277460	and we're going to 2d and because of that we can have many many 2d images for the same 3d objects
+277460	283880	underneath right and this is a big problem meaning that the resulting well output here has things
+283880	288160	like occlusions right so not all the dog here is always visible depending on from which camera
+288160	293840	angle the image was taken and each of these images you can also see they have some stuff in it so
+293840	295220	this image has a little box in it for example and this is a little box in it for example
+295220	295240	so this image has a little box in it for example and this image has a little box in it for example
+295240	301160	instance um and and so on so right so these occlusions make it very difficult adding more
+301160	307640	complexity to the respective um yeah diversity of images we can also see that the backgrounds
+307640	311800	can be vastly different right and this makes a big difference we can have very extreme cases
+311800	315720	like these two here right so we can see here there's a white background with the white deck and
+315720	320520	uh white dog in the foreground um and they have here a black cat during the night with
+320520	325220	a black background right so this is kind of an extreme example why image classification
+325220	331780	could become very tricky and why especially for computers it's very difficult to make distinctions
+331780	336940	or to assign correct class labels in these specific cases here um and if you're just
+336940	342100	continuing this what i've just talked about for instance you're going to you know just go in
+342100	347800	google image search and you're trying to find for look for a bunch of cat images you see kind of a
+347800	355200	large diversity um in terms of images um so you see very different poses how is the cat
+355200	360660	looking what is the current pose like this is one this this kitten is kind of like in this up pose
+360660	367020	here right um this cat here sitting down um this cat is like to the side so the cat itself can have
+367020	372260	a different pose but also the camera what i just mentioned is because again we go from this 3d world
+372260	377980	to the 2d image can also have a different pose right the camera pose here our camera parameters
+377980	383580	can vastly change the camera in itself can also change by the way right so we can go ahead um and
+383580	385200	have and connect the camera to the camera itself so we can go ahead and have and connect the camera
+385200	390000	we can have different lenses we can have different focal lengths like simple autofocus or so might
+390000	395680	actually change quite a bit how the image is going to look like um illumination can change um that's
+395680	401460	very obvious right and illumination can be quite complicated right day night we have just seen
+401460	405960	um but we can also have like vastly different environments basically where we see
+405960	411080	um respectively different outputs and then of course we have different appearances with very
+411080	415120	very extreme cases where like have a cat is kind of wrapped um like a
+415200	421200	burrito and in that case of course it's very difficult to do a proper representation so if
+421200	427200	you're summarizing most of these things um and a lot of people who have taken for instance computer
+427200	431340	graphics courses they know basically the problem that we're dealing with here right so we're
+431340	436740	basically dealing with the 3d world um we have a bunch of in graphics you would say scene parameters
+436740	441300	right you have poses where the camera is located you're going to have light sources being
+441300	444900	distributed in a scene you're going to apply some shading like
+445200	450380	how do the respective materials reflect and so on so all the things that you feed in the graphics
+450380	454440	pipeline they're going to tell you at the end of the day how an image is going to look like and as
+454440	458400	i said this is not a bi-checked mapping meaning that there's many many images that actually
+458400	465000	explain the same 3d underlying project uh object and even what makes matters worse even the 3d
+465000	471660	shapes within one class are even diverse too so we have different 3d shapes and each 3d shape
+471660	475000	can have different images associated to it and that problem
+475200	480900	basically means that well this becomes a pretty difficult problem because for a bunch of like cats
+480900	487380	we actually can have quite a large diversity of images and this makes image classification such a
+487380	493380	challenging but also interesting problem that we would like to look at one of the key things that
+493380	497820	we would also like to talk about in this lecture is what is the actual representation and this is
+497820	503820	a really really big question um when i'm talking about classification um the representation for the
+503820	504840	most part we're going to use
+505200	514500	um as input is going to be a set of pixels it's a 2d array right we have rgb d values maybe probably
+514500	520560	not d but most of the time we have rgb depth is not always given um sometimes it's just grayscale
+520560	526320	sometimes rgb so these are typically our input representations that we're giving for instance
+527520	532620	um when we're looking at a jpeg or a png file but then what we would like to do is we would like to
+532620	535140	create higher level representations
+535200	538740	and this is the thing we're going to talk a little about and we're going to talk about feature
+538740	543720	extraction we would like to talk about representations that basically abstract all
+543720	548400	these things away what i've just talked about right a good representation would be that all
+548400	553500	of these different things here shouldn't matter for a good representation so this raw representation
+553500	559560	of input pixels we would ideally like to map to some high level representation where it's much
+559560	564900	easier to do classification um and this is something that we're going to use little networks
+565200	569940	um but unfortunately there's still a few things we have to learn first we have to look at a few
+569940	575940	things before we actually start with complicated feature learning um instead what we would like to
+575940	581280	do is we would like to start a little bit simpler um in fact we would like to start very very soon
+581280	588060	so the simplest possible way or the simplest let's say algorithm what we could deal with
+588840	595080	um is a very simple classifier and the way what we could do here is
+595200	601620	we could do simply nearest neighbor lookups so what does that mean well let's assume we're
+601620	608040	having a bunch of images let's also assume um for these images we're going to have labels so
+608040	612540	we know their respective classes right so for instance we have these images here uh for these
+612540	617400	images we're having one two three four five six cat images we're going to label them with an
+617400	622920	orange box this makes it clear that this is an orange box um that refers to cat uh we're going
+622920	624840	to have two dogs here they have blue boxes
+625200	631920	which is referring to a dog and now what we would like to do is we would consider these ones as our
+631920	639060	reference images um reference images is is maybe not the right term the reason why I'm using it is
+639060	643080	later we're going to call them training images but at the moment there's no training at the moment
+643080	647820	all we would like to do is we would like to take these reference images here um and what we would
+647820	653280	like to do is we would like to take a new image here and for this new image we would like to
+653280	653700	understand
+654540	655140	to
+655200	666540	the closest hence the nearest neighbor so which of these other images is our nearest neighbor well
+666540	671460	so how do we do that well it comes a little bit back to the question what we've addressed before
+671460	677340	what is the right representation so in any kind of representation we would love to compute a distance
+677340	683100	in other words what we would love to do is we would take this image and compare it against every
+683100	684540	other image here right
+684540	688440	right so let's just say we can do that let's just say we have this magic function right now
+688440	696300	in how to make that comparison so we take this image compare it computer value this image that
+696300	703020	image compare the value and so on and then what we're going to do is we're just going to go ahead
+703020	709920	and sort all these images in our reference data set by these distances we just computed
+710700	713880	um and we might end up getting something like this right so here we have our reference image
+713880	720120	sorry here we have our query image and here we have all these reference images and now we're going
+720120	725400	to have um a distance function to each of these ones we're going to get a distance value and we
+725400	730740	sort this by distance so these things here this dog image is supposedly to be the closest and
+730740	736380	these cat image here they're supposed to be the furthest distant away from this query image that
+736380	742800	we have here right and the idea behind this nearest neighbor classifier is after we have computed the
+742800	743220	distances
+743220	749940	and after we have sorted them by the distance we simply assign the class level to the closest one
+749940	755460	so in other words well okay this one is presumably the closest one uh and in this case our nearest
+755460	762180	neighbor classifier would simply say well this is a dog right um and that's it now
+763140	767880	um you might imagine of course there's a couple of drawbacks you might imagine it could be a large
+767880	773160	data set there's a lot of compute involved but it could also be pretty noisy it might be accidentally
+773220	780060	that there's like one image of a cat that looks surprisingly similar um and we would like to be
+780060	785460	a little bit more robust so instead of saying oh I'm going to try to be the closest to this one dog
+785460	790860	here or to this closest image I'm going to say I'm going to just take some sort of a median in
+790860	795300	a sense right I'm going to go ahead and say I'm going to take the multiple nearest neighbors and
+795300	801660	then simply do a majority vote which once is the majority in the k nearest neighbors so for instance
+801660	803100	if we're saying we're setting this
+803220	809340	k like this nearest neighbor classifier to a three-way nearest neighbor classifier so k nearest
+809340	817560	neighbors where we said k to three um and we take the three closest images here one two three uh and
+817560	822060	in this case we would say it's a cat actually right because now we have two images here that
+822060	829140	are referring to a cat and um one image that refers to dog so our majority vote here told us
+829140	832560	this is a cat of course this is wrong right in this case our
+833220	838320	main nearest neighbor classifier was not that great uh but could you can imagine how this
+838320	844860	basically changes right so you could imagine if we had a larger set of case we would get a little
+844860	851760	bit more robust to the respective data right okay um what's kind of interesting is you can actually
+851760	857880	go ahead and take this classifier um and plot it in 2D so in other words what we would love to do
+858780	863040	uh we would simply take our data these are our reference images presumably
+863220	868020	somehow um and now what we want to do is we want to assign like you want to kind of extrapolate we
+868020	871920	want to make sure that the entirety of this 2D area here is going to be filled with associated
+871920	878040	labels so no matter where you are in this 2D space you want to figure out what the respective nearest
+878040	882060	neighbors are so if I'm here I'm taking the nearest point for instance this one then I
+882060	887040	will assign a red here so this this point everything here is basically closest to this
+887040	892620	one right everything here in this area is close to this red point and so on so this is just literally
+893220	900240	the areas based on which reference image was the closest um and this is pretty straightforward all
+900240	906180	you're doing is you're trying to find um the nearest neighbor point from where you are and
+906180	910320	then you assign the respective class to where you are at the moment right and this of course
+910320	915480	this changes now if you're going from a one nearest neighbor classifier to only taking the
+915480	921360	nearest one to a five-way nearest neighbor classifier so from a five-way nearest neighbor
+923220	933360	we are trying to figure out um which one like whether it's a little bit more robust so in this
+933360	937860	case for instance there's a green point here right you see this so don't confuse my laser pointer
+937860	942840	with point um because I have a red laser pointer but there's a green point here uh and here we
+942840	947880	assign this one this area here was the closest to this green point and here since we're saying
+947880	953160	we have five and nearest neighbor classifier um that means this this green point you get
+953220	960360	ignored right so this outlier gets um gets ignored for the time being um and if you have
+960360	964740	one outlier in our metric here that means our nearest neighbor classified gets slightly worse
+965400	970020	not worse but it's um like here we're getting slightly better because we have five and be
+970020	976020	ignoring it and supposed to be an outlet okay so let's have a bit of a discussion what the
+976020	982440	implications are between one nearest neighbor five nearest neighbor and so on so let's have a couple
+982440	983160	of um
+983220	987420	um interesting questions so the first interesting question is well I called this previously the
+987420	992280	reference data set in practice that's going to be our training data right uh in the end of the day
+992280	996960	we want to train something on it um so if you're performing the nearest neighbor classifier on the
+996960	1001580	training data how would this perform on the training data right so this is kind of a trick
+1001580	1008480	question because if we're trying to find the closest image and the current image that we're
+1008480	1013160	querying is actually in the training data we would assume that the
+1013220	1020960	query image finds the perfect reference image which finds itself right in the training in this
+1020960	1027920	case you will assume that a nearest neighbor classifier would perform perfectly right it
+1027920	1032540	would always find the right image and it would because it finds the right image it would also
+1032540	1037040	assign the right class assuming of course our label is correct here we would make the correct
+1037040	1043100	classification if you're taking a five and a nearest neighbor classifier that's always the case
+1043220	1048260	right so these green points here these green points would not perform perfectly because they
+1048260	1052880	would still be assigned to a red color meaning that they would get the wrong label and even
+1052880	1057380	though they are performed on the training set they would not be perfect anymore so you can already see
+1057380	1063020	that the nearest neighbor classifier and the 5nn classifier they they have slightly different
+1063020	1066740	behavior and this is something we're going to later on pick up a little bit we'll be talking
+1066740	1071960	about robustness in the context of neural networks like for instance how much do we want to regularize
+1071960	1073160	how much we want to smooth the
+1073220	1078680	labels and stuff like that this will become very relevant um the second question you want to ask
+1078680	1086780	here is which classifier is likely to perform best on the test data well it depends right so
+1086780	1092780	the one argument for having a larger K here is we are a little bit better with respect to outliers
+1092780	1097760	and with respect to outliers means we actually have a better coverage of the training samples
+1097760	1103160	and assuming our distribution is matching better between the training these reference
+1103160	1107840	images that we had and the respective query image so in this case we would probably assume
+1107840	1113960	that the the 5nn classifier would perform slightly better but there's a caveat I'm
+1113960	1120620	going to give you an extreme example so if we are for instance setting our K equal to
+1120620	1128360	the total number of images in the training set right um what that would mean is we always going
+1128360	1133100	to take every image into account and just do a majority vote of all the images in our training
+1133160	1139460	set and if that's the case we're just going to always predict the same label right so that's not
+1139460	1145520	going to be very accurate in fact well it's going to just predict the majority class um and it's not
+1145520	1149300	a great example so in this case like if you're choosing for instance this K too large that might
+1149300	1154940	also be as loud downside so this is something also we have to consider and later on when we're doing
+1154940	1162860	neural network optimization uh we can also follow the similar pitfalls here where we would accidentally
+1163160	1167240	predict the majority class so this is always a good a good sanity check whenever we're doing
+1167240	1172520	classifier training we want to do better than the majority class it's not just the average right if
+1172520	1178220	you have more samples from one class we would have to figure out to be better than this one class please
+1178220	1185600	to do anything um the next interesting question like what are we actually learning here right
+1185600	1191120	remember we've talked about AI versus machine learning versus deep learning so if you want
+1191120	1193100	to categorize our nearest neighbor classifier
+1193160	1200780	um well so far if you're thinking carefully we haven't really done a lot of learning here right
+1200780	1207320	there's no like parameters that are trained based on some training data and in fact we
+1207920	1212900	we more or less hard-coded our training sets okay we do have a training set right
+1213800	1218600	um but we didn't train any network here right um or we didn't train any model in this case
+1218600	1222740	and in practice we just hard-coded our samples and we tried to assign it
+1223340	1229460	um and hard-coded in our decision criteria right so which one is closer and based on that we made
+1229460	1235640	a decision so there's no actual learning in a sense going on right um however there's a few
+1235640	1240860	things we can actually play around with um and these things are some hyper parameters
+1242300	1246440	um and higher parameters is a term if you haven't heard it um that's a term that we're going to
+1246440	1251660	mention a lot these are basically parameters that are not part of our model in this case we don't
+1251660	1253040	have a model so there's no other
+1253660	1261020	parameters and these are parameters that are choices for the algorithm itself okay so for
+1261020	1265400	instance in this case hyper parameters is something like which distance function we're going to choose
+1265400	1270260	so the simplest distance function we could choose for our nearest neighbor classifier could be an
+1270260	1275120	L1 distance right so we're just going to take um the pixel values we're going to compare them
+1275120	1279260	one by one and we're going to just compute an L1 distance between the r2p values and that's
+1279260	1280100	going to give us the distance
+1280100	1281380	uh we can also do the same thing with an L2P
+1281380	1282980	we can also do the same thing with an L2P
+1283160	1291000	distance we can choose and decide depending on how we feel like and what we feel works better
+1292200	1296280	and to get different distance function and based on the distance function you
+1296280	1302360	hopefully can also change the outcome and the behavior of our respective classifier
+1303880	1308200	we can also change the number of neighbors right so this k as we have noticed is quite
+1308200	1315800	um quite important um and and this is kind of the the typically higher parameters we would get
+1315800	1322680	in a nearest neighbor classifier now these parameters they are very problem dependent right
+1323240	1328680	so we don't know right depends on what kind of classifier we have what data set we have
+1329400	1333720	we would like to change these ones and now you can already see well now there's
+1333720	1336840	a bit of a concept of learning coming into play right
+1337400	1338120	and by learning
+1338200	1342680	coming into play means well now we would like to look at our data set in this case our training
+1342680	1349880	data set or our reference data set what i called it before um and would like to learn or adjust
+1349880	1355880	these parameters to a certain level um so the big question is how do we actually choose these
+1355880	1361480	hyper parameters right um and now machine learning comes into play right now we want to move from
+1361480	1368120	a nearest neighbor classifier to using machine learning methods in order to learn these classes
+1368200	1374680	okay now what we do here is we would like to perform image classification right so in this
+1374680	1379800	case we have our task we've just defined that one and when we're doing machine learning here we
+1379800	1386760	would like to take a bunch of data experiences we would like to take these ones and we would
+1386760	1392600	like to learn from these ones to learn a model and i'm trying to formalize this a little bit so don't
+1392600	1397560	be too nitpicky here in the formulation um this formulation will not be consistent with the rest of
+1398200	1402040	the model but the high level concept is always going to be the same for every machine learning
+1403400	1407640	for every machine learning problem and again this is a classifier right now but the high level
+1407640	1414040	concept of you having a a certain model you want to find parameters for that model and for the
+1414040	1419320	input you want to make a certain prediction so i want to make clear what i mean by this okay so
+1419320	1425480	here's our model so this is our model m here this model m here has a bunch of parameters
+1426840	1428120	it takes an images input
+1428200	1432680	and it makes a class label prediction right like i'm not going to go into detail like
+1432680	1436520	how the class labels are being encoded right now or how the images are encoded
+1436520	1441880	i wanted to go a step back right make this very high level just get the high level concept of
+1441880	1446760	machine learning and if you know machine learning already i'm sure this is really a good repetition
+1446760	1452040	because this is really a concept that is always going to be shared across many families of
+1452040	1457720	machine learning methods right okay um so yeah so what we have is we have the model m right we have
+1458200	1464440	parameters theta we have an input image i and we have two output labels class labels dog or cat
+1465480	1471640	note i'm not having any hybrid parameters here this theta these are the model parameters this
+1471640	1475240	is very different from the hybrid parameters and we'll later see exactly what that means
+1475240	1479400	but practically as i said the model parameters they're being optimized on the training set
+1479400	1483000	and the hybrid parameters this is a sign choice on the algorithm itself
+1483000	1487800	how we do for instance optimization of these parameters or how big our model is going to be
+1488200	1494120	so we have a lot of hybrid parameters but now what we would love to do is we would like to figure out
+1494120	1500840	if you're taking a bunch of images um we would like to make sure that our model in some sense
+1502280	1509640	follows these predictions what these images have been annotated so in other words if i have a lot
+1509640	1517320	of images um and these images here for this image is the dog if i'm feeding this image i here um this
+1517320	1518040	dog image
+1518200	1523080	here when i feed this image in i would like to make it a dog prediction on the other hand if
+1523080	1528040	i feed this cat image in i would like to make it a cat prediction and now the whole point of machine
+1528040	1532520	learning is that we're starting with a data set like this one and now what we're doing is we're
+1532520	1538040	taking a part of these images um and i've already mentioned it a couple of times because i'm so
+1538040	1543960	used to it um so these images this part of these images we're going to call the train set so we're
+1543960	1548120	going to take given these eye images with training labels so these are the images we're going to start
+1548200	1556280	some training and we would like to do is we would like to make sure that our model makes these
+1556280	1563880	predictions that is in the trendset and then what we're hoping is assuming we have we have figured
+1563880	1569720	out our model based on these images that our model also makes correct predictions on previously
+1569720	1573880	unseen images so if i'm training on these ones i hope that the model makes also good
+1573880	1578040	predictions on these ones ideally perfect predictions right so
+1578200	1582680	this is our training uh train set here and this is something we're going to call the validation set
+1584360	1587960	and the way this is going to go is when i say training
+1588680	1593960	for the most part and again don't go too much into my notation here i just wanted to make this
+1593960	1599640	very very dead simple um what we're going to do is we're going to find these parameters data
+1600280	1607640	and in this case what we do here is we optimizing for a theta such that um
+1608200	1612920	we're going to have a data set here that's going to make the prediction of the model
+1612920	1617800	and what this prediction looks like so if we sum over our training images
+1618360	1621560	our model here if we're summing over all of our training images
+1622440	1629400	minimize the distance between the labels and what the model predicts so model predictions
+1629400	1632680	and ground truth labels these are the ground truth labels cat dog and dog
+1633400	1638120	these ones should match right so if i feel an image i i want to make the label prediction of this image i
+1638200	1642440	function. There's a lot of different ways how to define these distance functions. We're going to
+1642440	1648040	talk about a couple of these ones today and presumably going to talk about a couple of more
+1648040	1654120	in the next lectures as well. Another question is how are these labels even defined? Are these
+1654120	1658360	literally numbers like 0 and 1? There could be also a couple of different ways how to define
+1658360	1663320	those numbers. And then how is the image I define? I mean pixels is the obvious one but could be also
+1663320	1669720	all the things. But the high level concept between machine learning is always going to be the same.
+1669720	1676600	It's always very similar. So what you're doing is you're having some form of a training set.
+1676600	1683720	You're taking these labels here in the ground truth labels and you're trying to make sure the
+1683720	1688120	model predicts whatever the ground truth labels are. This is what you want to do. And then what
+1688120	1692920	I just mentioned a couple of times, I mentioned this concept of training. Well this is also when
+1692920	1693300	I'm making a model, I'm going to be making a model that's going to be able to predict the
+1693300	1693320	ground truth labels. So what I'm going to be doing is I'm going to be making a model that's going to
+1693320	1693360	be able to predict the ground truth labels. So what I'm going to be doing is I'm going to be
+1693360	1699680	mentioning training. For the most part what I mean is I mean run your favorite optimization
+1701600	1708720	to find the optimal parameters theta prime such that this model best fits this training set,
+1708720	1713800	right? This is what we want to do. We would like to make sure that our model fits the training set,
+1713800	1718080	explains the labels in the training set. And once we've trained that model, meaning we have tried
+1718080	1722900	to find an optimal solution based on the training set such this model approximates the distance
+1722900	1728600	distribution of these labels here, we hope that our model eventually generalizes. And
+1728600	1733600	generalization means now if I feed in unseen images that we also make reasonable predictions.
+1735800	1740600	Now I mentioned a lot of terms here. I mentioned the concept of training set. I mentioned the
+1740600	1746400	concept of training versus optimization. I mentioned hyperparameters and model parameters.
+1747600	1752500	And I mentioned this concept of generalization. When we like going from a training set where we're
+1752500	1757400	using these ones as constraints and the optimization to train our model versus
+1757400	1763600	predicting and generalizing to unseen observations or to unseen samples, you know, right?
+1763600	1769000	Okay. So if you're trying to go and make this even more abstract, the basic concept of machine
+1769000	1777200	learning follows is mainly data driven. So most, well, pretty much all machine learning methods
+1777200	1782280	come to mind. They all in some way data driven. So when I'm going to talk about machine learning,
+1782500	1789400	I always mean there's some data and based on this data, you're going to train a model. And based on
+1789400	1793900	this model, you're going to make predictions on things that you haven't seen before. Okay. So what
+1793900	1801700	we do first is whenever we develop an algorithm and what we do have in computer vision is for
+1801700	1806500	instance, an image data set, right? Like ImageNet is a great example. That's widely used. So what
+1806500	1811200	we do is we're splitting our data. We're having a train data set. We're having a validation data set
+1811200	1811900	and a test data set.
+1812500	1818700	And what we do here is we say, for instance, we have a split like 60, 20, 20%, right? So this is
+1818700	1825100	100% of our data. We're splitting it up in order to develop our algorithm. And what we would love
+1825100	1830700	to do here is we would like to take our training set. Basically all in the past, what I've told
+1830700	1835700	you in the previous slides is mostly start with the training set. And what we want to do is we
+1835700	1842000	want to find model parameters theta based on the training. What does it mean finding model parameters?
+1842500	1847200	Well, model parameters means we're running an optimization. The training samples are given us
+1847200	1852300	constraints for this optimization. And we're basically running this, this optimization, right?
+1852300	1856700	So based on our distance function, we're trying to find optimal theta prime parameters that give
+1856700	1863000	us good answers. Now, if you're going further, now we have our validation set. You might ask,
+1863000	1867500	well, why on earth do we need a validation and a test set? Can I just train these model parameters
+1867500	1871800	and go make some predictions on having some accuracy or so on my classifier? And I'm going to
+1871800	1872100	be done.
+1872500	1878200	You could do that. However, the problem is assuming you're running your training set,
+1878200	1883600	you're having a bunch of model parameters theta, you want to evaluate how well your model is doing.
+1883600	1888400	So now I'm going to go ahead and going to evaluate my model, how well it's doing. And I'm realizing,
+1888400	1892300	yeah, okay, it's not that great. I would like to change a few things. So for instance,
+1892300	1897100	if I go back quickly, I would like to change this distance function d. I would like to change
+1897100	1902200	the different one. If you did this, this would mean you're changing a hyperparameter here.
+1902500	1908100	And you're training again, and then you're getting a different result, right? So you might say,
+1908100	1911600	well, okay, I'm getting different results when I change some of these hyperparameters.
+1911600	1917500	That's kind of logical. But now you have to re-evaluate again, right? And in this case,
+1917500	1921600	when you're re-evaluating again, you're going to get different results.
+1921600	1926300	So the important thing right now is basically when you are finding hyperparameters,
+1926300	1931800	you want to use the validation set, meaning that you can do this multiple times and you can go ahead and
+1931800	1938200	train, evaluate, change a bunch of parameters, train again, evaluate again, and so on.
+1938200	1943300	So you can do this pretty much as much as you want. And in practice, you would do this as much as you want,
+1943300	1948800	because this is quite important, because you're going to realize some of your models might have certain weaknesses.
+1948800	1954900	Some of your loss functions might not be ideal. Some of your regularizers, we'll talk about this also later,
+1954900	1958200	what that means. Some of your optimization parameters might have been not ideal.
+1958200	1961400	And you might have to change certain things. And if you did this,
+1961800	1966700	that would mean you're looking actually at the results.
+1966700	1971900	So in other words, as soon as you're doing that, you're not looking at the real data anymore,
+1971900	1974900	because as soon as you're considering the validation samples,
+1974900	1981800	you're actually taking those ones as part of your model development, as your model training process.
+1981800	1989800	And because of that, we now need a separate test set that is actually different from the validation set.
+1989800	1991600	And the key critical part here,
+1991800	1996800	is once we found our right hyperparameters, once we're happy with our model choices,
+1996800	2001600	once we're happy with how the model trains and how it evaluates on the validation set,
+2001600	2005600	only then we can go ahead and test on the test set.
+2005600	2008600	And this is really important.
+2008600	2012400	And a lot of people get it wrong, even in the research community.
+2012400	2016600	The important thing is that you only test once.
+2016600	2021600	So as soon as you go ahead and test multiple times, in a sense, you're cheating.
+2021800	2027400	Why are you cheating? Because now you're taking test information from samples where you would like to understand
+2027400	2032800	how well your model channelizes to, you're using that information how to train your model.
+2032800	2034600	And this is really critical.
+2034600	2038400	And I can give you a couple of examples how this could actually work in practice.
+2038400	2042900	So in the research community, typically what happens, there's data sets available.
+2042900	2048400	Computer vision, right? And these data sets, they're going to give you certain results.
+2048400	2050800	So now the problem is, of course,
+2050800	2055000	if you want to objectively evaluate, you want to make sure that,
+2055000	2058600	you know, you have a test set that people don't use over and over again.
+2058600	2063700	Because if people always use their test sets and they're trying so many times while developing the algorithm
+2063700	2068600	and trying all the time on the test set, eventually they're just doing whatever's in the test set, right?
+2068600	2071200	And they will find parameters that give the best test performance.
+2071200	2073900	But they're cheating. They shouldn't have used the test set for that purpose.
+2073900	2079200	In fact, they should have used the validation set and then try to see how well it channelizes to unseen samples
+2079200	2080700	they did not consider doing in their method.
+2080800	2086700	And in practice, what people do then in computer vision often is they have benchmarks.
+2086700	2089300	And benchmark often means that people give out,
+2089300	2094300	for instance, test images and then people have to run the algorithms on the test images
+2094300	2098900	and then they upload their results to an evaluation server.
+2098900	2103100	But the catch is the test image labels are not given to the respective users.
+2103100	2104900	So they don't know what they're doing, basically.
+2104900	2108500	So they're only going to get once a result back from the test image.
+2108500	2110800	Now, you could imagine that people are trying
+2110800	2115700	to get around this. People try to make multiple accounts on these benchmark servers and stuff like this.
+2115700	2120200	But now you can guess, well, this is suddenly a point of cheating
+2120200	2125900	where you're basically not reflecting the channelization to real data anymore.
+2125900	2128300	So this is a very, very important concept.
+2128300	2133500	OK, so bottom line here is use training to optimize the model parameters,
+2133500	2138300	use the validation to find the hyperparameters, iterate as many times as you want.
+2138300	2139900	And until you're happy with that,
+2139900	2144400	then you test at the very end of the day, you test on the test.
+2144400	2147400	Now, if you're going back to our task,
+2147400	2150200	how can we learn now to perform image classification?
+2150200	2152800	Well, we have two things right now. We have a task.
+2152800	2155800	We have image classification. We have experience.
+2155800	2158100	That's our training and validation data.
+2158100	2163200	And now what we do is we have some performance measure that is giving us some accuracy.
+2163200	2166400	And this is typically what we evaluate at the end of the day of the test set.
+2166400	2169700	And then we have a metric that tells us how well does
+2169700	2172500	our method actually work in practice.
+2172500	2177500	Great. So this is the very high level concept of machine learning.
+2177500	2180600	And now if you're asking, well,
+2180600	2182900	why are there so many different machine learning methods?
+2182900	2186100	Well, the question is always how does this model look like
+2186100	2189300	and how do we optimize it and fit it to the respective training data?
+2189300	2191500	How do we make it channelized very well?
+2191500	2193500	And the reason why we're having this lecture
+2193500	2199200	and the reason why it enjoys a lot of popularity right now is that the networks,
+2199200	2202200	neural networks, they perform very well as these models.
+2202200	2207600	And we can show later on that they have great channelization for many, many, many tasks.
+2207600	2213000	OK, so before we get actually into simple machine learning models,
+2213000	2217900	I would like to have a few things that I would like to clarify.
+2217900	2225400	So what I've just described as machine learning for the most part was supervised machine learning.
+2225400	2229000	However, I would also like to acknowledge and I would like to say, well,
+2229000	2232100	there's also unsupervised machine learning.
+2232100	2236600	And I would like to make it a quick differentiation between those
+2236600	2240800	because a lot of people, of course, have heard about these two terminologies
+2240800	2243300	and it's very important to distinguish between those.
+2243300	2245900	So when we're talking about supervised learning,
+2245900	2252000	we always mean we have some labels given, target classes, some regression targets and so on.
+2252000	2254600	And what we'd like to do is we have a training set here.
+2254600	2258900	We have these labels, for instance, here, and we would like to train a model based
+2259000	2262300	on the data such that ideally it matches the distribution
+2262300	2266100	and then channelizes to an unseen set of samples at the end of the day.
+2266100	2269600	Now, here's the challenge.
+2269600	2273800	For the most part of this course, we're going to deal with supervised learning.
+2273800	2277700	There's going to be a few exceptions where we deal with unsupervised learning.
+2277700	2281600	For the most part, I would say 90 plus percent of this course,
+2281600	2283500	we're going to deal with supervised learning.
+2283500	2287700	And when I'm going to talk about machine learning, in the context of this course,
+2287700	2288600	for the most part,
+2288600	2290600	I'm going to refer to supervised learning.
+2290600	2292100	But this is, of course, not true.
+2292100	2293500	There's unsupervised learning.
+2293500	2297700	There's also things like self-supervised learning and so on.
+2297700	2299800	I want to give you a few examples here.
+2299800	2303500	So unsupervised learning is basically when you don't have class labels,
+2303500	2307600	when you don't have any labels, basically.
+2307600	2310900	And the idea of unsupervised learning is, for the most part,
+2310900	2314700	some form of clustering of the structure, right?
+2314700	2318400	So you try to figure out, essentially, so let's say you have the data
+2318400	2323600	and you're trying to divide your samples into clusters
+2323600	2326700	and then you assign a class label to each cluster.
+2326700	2329700	So this class label doesn't necessarily have a semantic meaning,
+2329700	2332900	but it just assigns a class label to it.
+2332900	2338700	And based on the class label, you can then finally, well,
+2338700	2341600	make some use of it in one way or another.
+2341600	2343800	And in that case, what we would do is to say,
+2343800	2347200	okay, here we have, for instance, our example of our cats and dogs again.
+2347200	2348200	Let's say we can cluster them.
+2348400	2351200	Let's say we can cluster those ones into two classes.
+2351200	2355200	Unsupervised learning here would say, well, okay, you have these two classes,
+2355200	2357700	you assign labels, but technically speaking,
+2357700	2361100	you don't know any semantic labels yet unless somebody goes manually
+2361100	2365100	and assigns cluster labels what we've gotten out of it.
+2365100	2369400	There's also a lot of unsupervised learning in the context of deep learning.
+2369400	2371800	It does exist, and we will talk a little bit about it.
+2371800	2377700	But for the most part, the focus of this class will not necessarily,
+2377700	2381000	of course, will not necessarily be on unsupervised learning.
+2381000	2386500	There's also a very fun discussion of what is the more natural thing,
+2386500	2390200	like unsupervised learning versus supervised learning.
+2390200	2395800	It's very philosophical, and researchers in the last decades have gone back and forth.
+2395800	2400100	There's a fun argument, a very philosophical one, is have humans,
+2400100	2403200	do we learn supervised or do we learn unsupervised?
+2403200	2406800	And the fun argument is, well, at the beginning when there was no life on Earth,
+2406800	2407600	eventually,
+2407600	2411500	like humanity, life in general, had to start learning somehow, right?
+2411500	2416500	And then basically the argument is everything can be learned in the unsupervised fashion.
+2416500	2419500	And then the cognitive argument is that is, well, if you have some,
+2419500	2423900	if you don't listen to a language, for instance, as a child,
+2423900	2426000	you're not being able to speak very well.
+2426000	2428500	And you can only do this very well when somebody corrects you,
+2428500	2429900	when somebody tells you certain things.
+2429900	2431600	And a lot of the things your parents do with you
+2431600	2434800	when a kid is actually quite supervised.
+2434800	2436200	And I found this very interesting.
+2436200	2437100	So I'm obviously,
+2437100	2443500	I know I don't understand the biology behind how your brain works here.
+2443500	2445200	But I think it's kind of interesting,
+2445200	2448800	the debate versus like how much supervision do we actually need for learning?
+2448800	2450600	It's a very fun, fun question to ask
+2450600	2453800	when we're talking about modern machine learning techniques,
+2453800	2455800	specifically in the context of representation learning.
+2455800	2459300	A lot of people say, well, you have a large number of labels.
+2459300	2461200	Is there a large number of training samples on the internet,
+2461200	2462600	for instance, where you don't have labels,
+2462600	2466900	but can you still use the data and then combine it later on with some fine tuning?
+2467100	2469200	Where you do actually have labels.
+2469200	2472000	So this is kind of interesting, a lot of cool stuff.
+2472000	2476200	But again, caveat here for the introduction to deep learning here,
+2476200	2478900	we are mostly talking about supervised learning.
+2478900	2481600	I also wanted to mention that there's reinforcement learning.
+2481600	2484900	That's, I guess, kind of in between here.
+2484900	2488700	Reinforcement learning has kind of this interesting concept of agents and environment, right?
+2488700	2493600	So agents interact with an environment and based on their performance,
+2493600	2495700	they're going to get some reward.
+2495700	2496900	And depending on how this reward goes,
+2497100	2500700	your agent is going to adapt and hopefully learn something, right?
+2500700	2504800	So, for instance, in games, board games or even video games,
+2504800	2507900	for instance, reinforcement learning is very popular.
+2507900	2510000	Robotics reinforcement learning is very popular,
+2510000	2513600	where you basically have only a final reward.
+2513600	2516300	And based on that final reward, your model can learn something
+2516300	2519200	and can, for instance, learn certain policies,
+2519200	2523000	like, I don't know, playing chess or learning how to play a video game,
+2523000	2527000	which is kind of cool that you can do this in a kind of,
+2527000	2530900	well, unsupervised fashion.
+2530900	2532800	But I would say this is still a little bit in between
+2532800	2534900	because you still need to define how the reward works.
+2534900	2536700	You still need to define basically when you're winning,
+2536700	2538800	when you're losing, possibly how much you're winning,
+2538800	2539500	how much you're losing.
+2539500	2541500	So it's kind of an interesting question,
+2541500	2544600	how to associate reinforcement learning.
+2544600	2548400	Okay, but let's go back to supervised learning.
+2548400	2554300	I mentioned this is what we would love to talk about for the most part here.
+2554300	2557000	And now,
+2557000	2559800	if we're going back a few slides mentally,
+2559800	2563500	we remember that the whole point of supervised learning was we have our training set
+2563500	2567400	and we would like to figure out a model that we fit to this training set, right?
+2567400	2569700	So again, we have our model M, for instance.
+2569700	2575500	We would like to find parameters theta such that our model approximates
+2575500	2578500	or mimics the distribution of this training set.
+2578500	2582500	Now, the big question is what model do we actually use?
+2582500	2586900	Well, let's start with a simple linear model, for instance, right?
+2587000	2593300	And that's the easiest way of a model we could think about.
+2593300	2597400	So this is a linear decision boundary that we would like to figure out.
+2597400	2602300	So the idea here is we would like to fit a hyperplane
+2602300	2606800	that splits our samples in part here for a classifier.
+2606800	2608500	For regression, it's a little bit different.
+2608500	2611200	We can do a little bit other stuff.
+2611200	2613600	But if you had a classifier, we would like to have a hyperplane.
+2613600	2616400	We would like to split these two things apart.
+2616400	2617700	And this is what we're going to do right now.
+2617700	2619800	So all we're going to do in the next few slides
+2619800	2624300	is we're trying to find parameters for this hyperplane
+2624300	2630300	that figures out how to approximate our training set to the best of our abilities.
+2630300	2635200	And you can already see why I'm saying approximate.
+2635200	2637600	I'm saying this for a very specific reason,
+2637600	2642300	because you can clearly see the common here of a linear model here
+2642300	2646100	is that it cannot possibly
+2646100	2647700	fit all data samples, right?
+2647700	2651400	So if you had one of these triangles, if you had one of them here,
+2651400	2654800	there would be no hyperplane possible anymore to fit in here,
+2654800	2657200	such that it perfectly explains the training set.
+2657200	2658700	And that would be a problem.
+2658700	2661600	So why am I starting with it?
+2661600	2664000	And that's basically the pro. The pro is, well,
+2664000	2667700	it's really simple to understand how basic machine learning works.
+2667700	2670900	And it's probably the simplest model we can begin with.
+2670900	2673400	But it also has certain advantages in practice.
+2673400	2675400	It's actually relatively easy to deploy.
+2676100	2677700	It doesn't take that much, can, right?
+2677700	2680400	It doesn't have so many degrees of freedom.
+2680400	2683900	And it's actually a very nice way to get into it.
+2683900	2685800	So let's start with it.
+2685800	2689200	So now instead of starting with a classifier,
+2689200	2692800	I would like to change the problem statement a little bit.
+2692800	2695700	In this case, we want to start with regression.
+2695700	2698900	And instead of the classifier,
+2698900	2700900	the difference here is when I talk about regression,
+2700900	2704100	it's simply you, instead of predicting a discrete label,
+2704100	2706000	we're now predicting a continuous floating point.
+2706000	2707700	So if we want to do this,
+2707700	2711200	we would like to use this as our output for instance.
+2711200	2714000	And the idea of supervised learning now is, well,
+2714000	2717500	we would like to find a linear model that explains a target Y
+2717500	2719000	given the inputs X.
+2719000	2720500	Well, okay.
+2720500	2721800	So what do we have here?
+2721800	2726400	Well, we're going to start with our training data.
+2726400	2729400	These points here, they are now our training data.
+2729400	2730700	So these red points, right?
+2730700	2732100	They have, they have an X value.
+2732100	2733700	They have a Y value.
+2733700	2735700	So the X values are the inputs.
+2736000	2737740	so
+2737740	2743400	That's what we'd like to approximate. We would like to make sure that this distribution that is given right now for these given inputs
+2743400	2746520	We would like to make sure that if we give importance to this input feature here
+2748060	2749500	Because I shouldn't call it a feature here
+2749500	2754320	I should call it first like a value here for this value here. We like to make the Y value here as a prediction and
+2755060	2759440	The way what linear regression is doing. It's essentially fitting this this little line here
+2760120	2761340	right
+2761340	2762500	and
+2762500	2768820	This fitting this line and I'm mentioning this all the time fitting means which is literally formulating an optimization function here
+2769580	2772560	Is we are optimizing the parameters of this line?
+2772580	2778540	This will become a higher plane obviously later when we go to higher dimensions, but for 2D this is just a simple line
+2779420	2780820	Okay
+2780820	2787420	So what's training mean? Well training means we have a bunch of data points given so data points are these these yellow or orange points
+2787420	2788440	right
+2788440	2790300	These orange points
+2790300	2792300	They are pairs. They have an input
+2792840	2797120	And a target so they have X is the respective like feature. This is the input
+2798600	2803660	This is the measurement could be an image and Y is the respective target label right so
+2804380	2805760	input image
+2805760	2807480	measurement whatsoever and
+2807480	2812740	Y is our respective labels like cat-dog and the classification case or in the regression case
+2812740	2819620	We'll see later a few other examples. It could be could be discrete, right? It could be also continuous. By the way, if you're going to click it back here
+2820380	2821580	um
+2821580	2825440	At the moment, between regression and classification, there's practically no difference.
+2825600	2827620	We'll later see what the differences are.
+2828120	2832380	But the reason for the simplicity right now, let's just assume these labels are continuous.
+2833000	2837040	So if they're classified, we just say, oh, these labels are between 0 and 1, right?
+2837380	2841280	And you're going to make sure that everything between 0.5, then it's label 1.
+2841500	2844100	Everything under 0.5 is going to be label 0, right?
+2844320	2846900	But it could be continuous label 2, right?
+2847680	2848060	Okay.
+2848820	2850200	So we have input measures.
+2850200	2851100	We have labels.
+2851580	2860160	And what we would like to do is we would like to learn the model parameters theta to make the correct estimation.
+2860840	2862080	And what does correct estimation mean?
+2862240	2876100	Well, we would like to make sure that y hat is, if I feed in a new x n plus 1 here, we get a correct estimation y hat.
+2877060	2879120	And you can see what's very important here.
+2879120	2880500	So this notation is important.
+2880660	2881560	We're going to use this a bit.
+2881820	2883500	So x is always the input.
+2884060	2885160	Y is always the target.
+2885420	2886680	So this is our ground truth target.
+2888360	2892260	Y hat is always going to be our predicted estimation.
+2893080	2895760	This is what the model predicts.
+2896220	2902500	X n plus 1, you see n plus 1 here is one index more than what we have in the training set.
+2902600	2904160	This is a test sample here.
+2904840	2906820	So we're feeding this in here in our model.
+2908060	2909760	Theta is our model parameters.
+2910020	2911560	And based on theta, we have.
+2911680	2914400	We're having a predictor that makes this prediction here, right?
+2915940	2919040	And the whole point is that we want to find these parameters theta.
+2920260	2922860	Again, to clarify, this can be the parameters of a neural network.
+2922900	2925400	This concept here does not change right now.
+2925740	2931260	Like the only point right now is going to be whether this theta is part of a linear or nonlinear larger model.
+2932340	2935020	But for the sake of simplicity, we're not quite at neural networks yet.
+2935280	2936740	We're going to make this a little bit easier.
+2936740	2939660	This theta here is now simply a linear model.
+2940300	2941560	And linear model means.
+2941860	2943180	It's linear.
+2943460	2944100	That's the definition.
+2944900	2946480	So what we do here right now is.
+2947520	2950500	We're taking the input here.
+2950980	2952200	So X here is the input.
+2952580	2953880	And we're multiplying with theta.
+2954540	2956880	So imagine this little example that we had here.
+2957020	2957860	I'm going to go quickly back.
+2958180	2961560	In this case, if X is just a single floating point value.
+2961920	2963100	And it's just one scalar.
+2963640	2965540	Then this here.
+2966700	2967800	This D here.
+2968320	2969660	This is the input dimension.
+2969920	2970520	Would be one.
+2970640	2971300	So we just have.
+2971300	2973920	A single theta multiplied with X.
+2974620	2975120	That's it.
+2975120	2976020	And you're predicting Y.
+2976020	2982640	And then you're finding whatever our respective output is going to be approximated best.
+2983360	2986420	Now, in practice, this is a little bit more complicated.
+2986520	2987860	This is the features.
+2987900	2989120	This is why I mentioned this already.
+2989120	2990560	X is not just a single scalar.
+2990980	2992620	X could actually be a vector, right?
+2992620	2994400	There could be many, many, many inputs.
+2995060	2997100	An image is a very large feature, for instance, right?
+2997100	2999980	An image could be like a megapixel, a million pixels, right?
+2999980	3000680	Could be a lot of.
+3000680	3001220	Could be a lot of pixels.
+3001220	3001820	Could be a lot of inputs.
+3003440	3005360	So, and D here is our dimension.
+3005840	3006980	So, oh, I'm not here yet.
+3006980	3007340	Sorry.
+3007400	3008120	These are the weights.
+3008120	3010580	Then these are the model parameters, the theta here.
+3011540	3014160	And D is our input dimension, right?
+3015040	3018920	And again, think about the example, what I just mentioned before.
+3020720	3024900	In this example, if I only have a single dimension, here's input.
+3024960	3026220	I just have an X here.
+3027020	3028580	And I want to fit a plane to it.
+3030440	3030980	Oh, in one day.
+3030980	3031160	Actually.
+3031220	3032420	I want to just fit in this line.
+3033220	3036200	Now I'm cheating a little bit here.
+3036200	3038360	This is technically a little bit wrong for my formulation.
+3039140	3041500	If you go into the 1D case, you will quickly notice this.
+3041540	3043040	You also need a bias here.
+3043580	3046700	So you need, um, you need a theta zero.
+3047220	3049160	Um, why do you need that?
+3049180	3052760	Well, technically you don't need it, but I think it makes the fitting a little bit easier.
+3053340	3059300	So technically you need, um, where the, uh, line here intersects with the Y axis, right?
+3059780	3061200	Um, and this one is important.
+3061380	3063860	Because otherwise you cannot define arbitrary lines.
+3063860	3071240	Otherwise they would only go, uh, through zero, zero, and you would just literally define the slope here, right?
+3071240	3078980	But we have the slope and we have, um, uh, we have basically where, uh, the line intersects with the Y axis here.
+3079720	3080220	Okay.
+3080420	3082040	And, but then the rest is the same, right?
+3082040	3084900	So we have here the bias plus the formula we just had, right?
+3084900	3089220	We just say we multiply X, I, J with theta chain, right?
+3089340	3091220	Input feature dimension plus with the kernel.
+3091220	3100100	And then we just multiply it out, and this is essentially what we're getting from our sum here, right?
+3100960	3101320	Okay.
+3102280	3105400	Um, I think let's have an example, right?
+3105480	3107100	This is actually relatively easy.
+3107240	3110060	So this shouldn't be something new to you from a mathematical perspective.
+3110260	3113520	So all we're trying to have is we have a certain set of constraints.
+3113520	3116880	Our constraints are given by our data points, these orange points here.
+3118180	3120920	Um, and what we would like to do is.
+3121220	3132580	We would like to make sure that the thetas are optimized such that these points here are approximated in the best possible way, best possible way is also something we'll define in a second, because depending on our loss function.
+3133380	3133880	Okay.
+3133940	3135140	Let's make a linear prediction.
+3136220	3138560	Let's predict the temperature of a room.
+3138620	3147740	Let's assume we want to make sure, um, I'm going to give you a bunch of information and I would like to ask you, what is the temperature of a building?
+3148700	3150500	Well, what information could I give you?
+3150800	3151200	And this is.
+3151260	3152720	The features that I'm giving you right now.
+3153260	3156200	So I'm going to give you four different type of features here.
+3156380	3158120	I'm going to tell you how warm it is outside.
+3159500	3161180	I'm going to tell you the level of humidity.
+3161780	3167360	I'm going to tell you the number of people in the building, and I'm going to tell you the sun exposure to the building, right?
+3168080	3168500	Okay.
+3168740	3180020	And now what I would like to do is I would like to, I would like to ask you based on these inputs that you have, what is the most likely temperature of the inside of the building?
+3180040	3181220	So give me a model.
+3181520	3188120	The dust that, um, and in order to do that, what I'm, what I'm, what I'm giving you also is I'm going to give you a bunch of supervision.
+3188120	3195980	So I'm going to give you a bunch of ground truth pairs for training, where I pair these four dimensional input features here with our respective prediction.
+3196220	3196460	Right.
+3197040	3197460	Okay.
+3197640	3198460	And that's what we're going to do.
+3198740	3204200	Um, so this is a trick question now, how many parameters do we need to fit that?
+3204660	3210840	Well, we're taking this formula that we had before each of these features is associated from data, right?
+3210840	3219520	So all we're doing right now is just rebating how each of these features contribute to the input or to, to the output temperature of the building.
+3220480	3220840	Right.
+3221420	3223740	Um, and we have a bias, of course, so we have one more.
+3224480	3229360	Um, so we have this, um, and now what we can do is we can write this down as a matrix form, right?
+3230280	3237700	Uh, so now what we do is we just hit, um, here, we're going to have the respective prediction of our model here.
+3237700	3239380	We're going to have the respective thetas.
+3240840	3246780	Um, and here we're going to have the respective, um, input features that we have.
+3246900	3249780	So this D here in our case, this one was four, right?
+3250480	3252300	Um, so this one went from one to four.
+3253200	3270560	Um, and this N here is how many measures we have, like the number of rows in this equation tells us how many samples we have and the number of, sorry, the number of columns tells us, um, how many features we have and the number of rows.
+3270840	3273900	Um, tells us how many samples we have, right?
+3274460	3274900	Okay.
+3275220	3280140	And the idea is that if we, now we can pull this, this bias actually in here, right?
+3280160	3282720	So we just having, we're just combining this matrix here.
+3282720	3285400	So we're just adding, um, another column with ones here.
+3285420	3289680	So we end with theta zero here now, uh, and we can just simply write this as a matrix form.
+3289680	3293160	So now what we know is Y hat is equal to X times theta.
+3294220	3296080	And now it's important what we have here.
+3296280	3300160	Y is a vector, X is a matrix and theta is also a vector.
+3300840	3305620	Theta is in fact our unknown vector, which is the most important thing we'd want to figure out this one right now.
+3306320	3309100	Um, well, that's what we'd like to figure out.
+3309940	3310340	Okay.
+3311140	3315360	Um, so this is a linear equation system, right?
+3315360	3320400	Um, what you would know from, from, um, analysis and algebra.
+3321200	3330820	Um, so linear algebra tells you that depending on how many unknowns you have, you need a certain number of equations.
+3330840	3331340	Right?
+3331340	3339940	So what might happen here is your equations might, so your system here might be overdetermined, undetermined, or fully determined, right?
+3339940	3349020	So if the thetas and the number of samples are the same, this is going to be a, uh, this here is going to be a square matrix, right?
+3349020	3359820	Um, sorry, this here is also, this here is going to be a square matrix too, of course then, um, and then we can, can have a unique solution where we have the best fit possible.
+3359820	3360320	If we have two.
+3360320	3360820	Okay.
+3361320	3362340	More of them.
+3363340	3366980	Well, then we have to find a different way, or if you have a few of them, we also have to find a different way.
+3367440	3370560	And little spoiler, what I'm practically going to do is we're going to do a least squares fit.
+3371520	3372300	Um, okay.
+3372660	3374020	So let's make this more concrete again.
+3374040	3382860	I want to, I want to make sure that everybody gets this, because this is very fundamental for what we're going to do with the neural networks, because neural networks are not so far away from this, what we're doing here right now.
+3383520	3385900	So in fact, this here, we have the predictions of our model.
+3386220	3388160	So the y hat one to y hat n.
+3388920	3390820	Uh, we're going to have the model parameters.
+3391380	3394740	Which we have here, theta zero to theta d.
+3395640	3396780	This is the dimension here.
+3397600	3402460	Um, we also know, um, the input feature dimensionality, right?
+3402480	3408000	Obviously what feature dimensionality plus one needs to match with the number of, um, parameters in our model.
+3408020	3411940	Otherwise this like a row times calling multiplication doesn't work anymore.
+3412600	3420320	Um, and yeah, and then what we need to know now is, well, we have these input features one.
+3420840	3428100	Sample here has D features or D dimensional feature, and you could call the whole thing one feature as well.
+3428120	3429420	And it's a feature vector then.
+3430060	3433160	Um, and then we have our model respectively.
+3433840	3434340	Okay.
+3434660	3437040	So let's make it more concrete in our example.
+3437460	3440160	So our example was our temperature in the building.
+3440640	3441780	So what do we have here?
+3442200	3445060	We have the, the T this one was the bias at the beginning.
+3445780	3447540	Um, we have the outside temperature.
+3447580	3450820	We have humidity, number of people and sun exposure.
+3450860	3452920	That's seven percent, right?
+3453540	3460280	Um, so now what we want to do is we want to figure out how can we train our model?
+3460300	3465880	Well, our model right now has 1, 2, 3, 4, 5 parameters.
+3465880	3470300	So for these parameters are directly associated with the respective input features.
+3471400	3473520	And one of them is the bias.
+3474600	3479160	So if, for instance, one of these.
+3480840	3485560	entries here zero that means this info feature will be ignored right if there's a zero then this
+3485560	3490120	feature will not contribute to the output predictions um if this one has a very high
+3490120	3495720	value then this feature will contribute a lot and what's also interesting is assuming for instance
+3495720	3500040	the sun exposure here is in percent assuming i didn't write the percentage in integers and i
+3500040	3505640	would divide it by 100 well ideally our model would figure out um that you just have to divide
+3505640	3509480	the model parameters here also by 100 right so otherwise you would actually change the result
+3509480	3513400	so in principle the scaling and stuff like this should factor out because if you multiply this
+3513400	3519640	one you should just divide this one respectively right and so on okay but it is very straightforward
+3519640	3526040	right so we have here our uh our our our made up samples that we have so we have two samples here
+3526040	3531400	that we are making up uh these are our made up things um if you're having two samples we
+3532200	3537400	uh know already that we are under constraint right so we have two predictions for these two samples
+3539080	3539400	um
+3539480	3544120	but we have our model so if we have the model already what can we do here for this model we
+3544120	3549000	can make certain predictions so if we have these input features and these input features our model
+3549000	3553480	will make certain predictions here right so if you're running this through the model this one
+3553480	3560360	would mean oh this one uh is great this is warm and this one would mean oh no it's cold
+3560360	3563720	i didn't do the multiplication here but i assume this is a larger number and this one
+3563720	3569400	i assume is a smaller number okay um but now the big question is so this is a
+3569480	3570440	so this is a larger number okay so this is a larger number okay so let's assume we have these model
+3570440	3574200	let's assume we have these model parameters here but now the question in the learning process is
+3574200	3578680	how do we actually obtain these model parameters and i mentioned it a couple of times this leads to
+3580440	3585000	linearly squares optimization so we have to figure out how can we find these parameters
+3585000	3590200	how can we solve these equation systems okay how do we do it well we have the data points x here
+3591000	3595160	uh these data points x they give you give us our model parameters
+3595160	3599480	so they're being fed into the model parameters based on these ones we're making an estimation
+3600120	3605320	um we have here our ground truth we're defining a loss function here and based on that loss
+3605320	3611880	function we're updating the model parameters again right and then we optimize right um and that's
+3611880	3618040	what we're going to do data points is input model parameters estimation loss function how wrong are
+3618040	3623640	we and then we optimize okay so what are the two important things here we have introduced two two
+3623640	3629400	important concepts here so the concept here is we have the loss function that measures the loss of
+3629480	3637160	how good is my estimate and tell the optimization how to make it better right so how good's my model
+3637880	3642600	and how do i make it better like what is how to make it better mean well the idea for the loss
+3642600	3647400	function is it should get smaller and the model gets better right if the loss function is high or
+3647400	3652520	if the loss is high um then we know our model is not that great and we have to change something so
+3652520	3658200	if i change something my loss goes down but i'm like yeah i've been great and the optimization it
+3658200	3663000	changed the model in order to improve the loss function right so i want to improve the estimations
+3663000	3669400	based on my training samples that i have available and again this concept here is the same across all
+3669400	3674280	of machine learning very much okay maybe there's certain things that do slightly differently but
+3674280	3679240	this high level concept is we have a loss function we want to minimize it we want to optimize it and
+3679240	3684680	based on the optimization we want to change the model in order to improve the loss function right
+3684680	3688040	so how do we do with this in the context of the linear regression well again i'm
+3688040	3693160	reiterating here we have to solve our linear uh least square system so we have this prediction
+3693160	3699320	of the temperature in the building um and this optimization process pretty much goes like that
+3699320	3702520	right so what i'm going to do is i'm going to going to have this line here i'm going to check
+3702520	3709000	my distance i'm going to see huh all right this gives me a certain value uh now i have another
+3709000	3714280	value that is up there and if the value is up there and tells me oh no there's a high loss here
+3714280	3714680	i have to
+3714680	3720920	to change my line right so i have to update i have to update this line such that the overall
+3720920	3726120	average loss actually goes down this is what this loss function is going to do right and i'm trying
+3726120	3730520	to use an average and treating all samples equally right now we'll later talk about what we do with
+3730520	3735720	these outliers because that's obviously a bad case but this is what we would like to address okay
+3736840	3743240	um well what we do okay so we mentioned we have to solve our famous linear least squares problem
+3743960	3744280	right
+3744280	3750600	so what we do is we just take an l2 loss um we compare our predictions with the respective
+3750600	3758440	ground truth samples um and we're trying to minimize that that that function right so
+3758440	3763720	that's all we're going to do so also what you'll see a lot of people will call this function very
+3763720	3769080	differently some people call it objective objective function energy cost function and so on
+3769080	3773720	all the same stuff right just depending who you're gonna ask if it's a math guy a machine learning guy
+3773720	3774200	and so on
+3775080	3778840	okay so how do we do that well we have to optimize for that
+3779800	3785720	um and now we have to minimize that function so minimization here means minimize
+3786760	3791960	this function here in order to fit the linear model to the respective data points that's what
+3791960	3796680	we care about right now right okay this is actually a convex problem
+3797560	3803000	meaning that there is actually a closed form solution solution that is unique um and of course
+3803640	3810600	linear algebra tells you exactly how to do that um and if you're doing this the way this is done
+3810600	3814280	is we're doing this over all the training samples so we have n training samples here
+3814280	3820600	so we're taking the average so we'll be dividing by n here um and the important
+3820600	3828520	thing right now here is that this y hat we have to express actually with our respective model
+3828520	3832520	all right so our respective model like you might be surprised so why on earth what is he talking
+3832520	3839240	about like there's a theta here um but there's no theta here anymore okay um so this y hat is
+3839240	3845800	nothing else but xi times theta uh this is the estimation from the linear model this is the
+3845800	3851320	linear model what it's doing uh and note that this is extremely matrix notation here right already
+3851320	3856280	right so this one here is going over the training samples but this one here is one feature vector
+3856280	3862440	times our vector of weights and this is a a vector this is a dot product here right
+3862440	3868320	and this dot product because there's another sum here we can now go ahead and write write the whole
+3868320	3874840	thing as a matrix notation right so we can write this square thing as the matrix notation um in
+3874840	3881840	this case we know this one is now a matrix this is n training samples each has an input vector of
+3881840	3886280	of d and this x here is written as a matrix basically all right so these
+3886280	3892060	are our training samples here and here um and of course i'm assuming you know also this function
+3892060	3898300	this is nothing else but the normal equation it's the same thing um and we also know that this y here
+3898300	3903120	is our n label that we care about right so these ones we want to approximate this is a matrix this
+3903120	3909560	is a vector this is also a vector right um we will talk a little bit about the matrix notation in the
+3909560	3915300	exercise session um we understand a lot of people taking this lecture um well let's put it this way
+3915300	3919600	the linear algebra course might have been a few semesters ago and we're happy to give a bit of a
+3919600	3924980	refresher course here so you want to keep this course relatively easy to follow so we are actually
+3924980	3930100	giving you um a bit of an intro on the matrix notation so if you were a bit struggling here
+3930100	3937980	i would recommend maybe pause the video here and actually go and and check our our tutorial on the
+3937980	3942700	matrix notation first um however at the same time for the rest of the sake of the video i'm assuming
+3942700	3944400	that you know or at least have a basic
+3944400	3945280	knowledge of the matrix notation so i'm assuming that you know or at least have a basic knowledge
+3945280	3951340	of matrix notations okay all right so what does it mean well this is obviously a convex function
+3951340	3956720	um this is the normal equation right um we know that from linear algebra um and we know that
+3956720	3961380	there's an optimum and we know how to find the optimum and the way how we do find that optimum
+3961380	3966900	is very straightforward um actually we have learned this already in high school in high
+3966900	3970860	school we know if we have a quadratic function like this one this is a quadratic function it's
+3970860	3975080	the normal equation um then we know that the gradient um
+3975280	3979700	when the gradient is zero here we know that we have found a minimum or a maximum depending on
+3979700	3984800	what shape the function is right but we have an extrema when the gradient is going to be zero
+3984800	3993020	so how do we optimize that well um it's also relatively straightforward we just compute the
+3993020	3998120	gradient of this matrix form right and if you're taking the gradient with respect to the thetas
+3998120	4004060	that's what we care about these are our parameters we would like to solve for we end up with two times
+4005280	4011540	x times theta minus two times x transpose times y and this should be equal to zero right this is
+4011540	4017000	all constrained here so we're saying please find me the gradient with a finding point with the
+4017000	4023080	gradient zero that's what we're setting here and the way we're finding that is it's xt times x
+4023080	4030240	inverse times xty right and again you will notice this very rightfully this is this is the normal
+4030240	4035260	equation right like if you if you bring this one here to the other side then you have xt times
+4035280	4042780	x times theta is equal to xt times y which is our residual this is nothing else but a linear system
+4042780	4049200	to solve right um there's a lot of a lot of things um i would love to give maybe a bit of
+4049200	4055460	more intro on the algebra um this is the thing that i i unfortunately still experience even at
+4055460	4059680	the phd level that people often struggling is how to solve systems like these ones right
+4059680	4065260	um this is something that is very important like how do you even remember a matrix like this right
+4065280	4069180	so in practice once you would never invert a matrix like this you would always use a linear
+4069180	4075420	solver library especially when the matrix becomes large um there will be details in the exercise
+4075420	4080300	session so again please look into this when you have any struggling with that i know there's a
+4080300	4084680	bit of redundancy that's why i moved a little bit of stuff out here um to the exercise sessions and
+4084680	4089900	i hope that you can catch up with the things you might have forgotten about linear algebra
+4089900	4095020	okay um but assuming we can do that right we have found an
+4095280	4101940	easy solution to a complex problem um what do we do here again well the inputs here are
+4101940	4108840	our features like outside temperature number of people humidity um and on and this here on the
+4108840	4114180	right hand side is our true output it's the temperature of the building and this is a least
+4114180	4123460	squares estimate right um so there's this is not necessarily the best estimate but this is the
+4123460	4125260	simplest estimate this is why we started
+4125280	4131760	with this one um and there's a couple of different estimators here we're going to go through
+4131760	4137600	um and each estimator has different properties right so for instance one thing what we have seen
+4137600	4144640	here if you're taking a square term here you will see that if we're having one outlier in this least
+4144640	4148820	squared estimate we will unfortunately have a bit of a problem because if we have one outlier
+4148820	4154540	then unfortunately um yeah we might not be very robust to these outliers so for instance if you're
+4154540	4155260	taking an l1
+4155280	4161360	loss here instead of an l2 loss um then we might be a little bit more robust to outliers
+4161360	4166960	unfortunately optimization becomes a little bit more tricky right so again also i hope that most
+4166960	4171440	people know that i'm still going to repeat it a couple of times right if you're having an l2 loss
+4171440	4175680	here it's a least squares estimate the optimum will always be the mean and if you have one
+4175680	4181200	outlier the mean will shift quite a bit if you have an l1 loss for instance here the optimum
+4181200	4185120	here will be the median and then if you have one outlier that will not affect the result that much
+4185280	4192400	okay all right so let's talk a little bit more so this is basically an estimate we have done
+4192400	4199420	based on an least square estimate now what i would like to do is i would like to talk about this
+4199420	4205420	from a probabilistic standpoint and and this is a thing called maximum likelihood so it's very much
+4205420	4212100	related um and we want to show why it's related um to our linear regression that we have just seen
+4212800	4215080	so maximum likelihood is also a concept
+4215280	4221600	you might have heard in your stochastic lectures already um but the core idea here is very specific
+4221600	4227040	to machine learning meaning that what we would love to do is we would like to love to look at
+4227040	4234720	some data um and this data has a certain distribution right so it might be a sequence of
+4234720	4241280	numbers it might be a bunch of images it might be language right there's a true distribution right
+4242000	4244000	um so given samples
+4244640	4245280	this is basically
+4245280	4251440	our true distribution here this is our data what we have right so we have here our uh what is our
+4251440	4255680	respective value conditioned on the respective input right that's what we care about this is
+4255680	4262720	what's in our data that's our true distribution that we would care about um and then what we have
+4262720	4268400	is we have our model now our model we would like to mimic our data to some degree and i'm going
+4268400	4274640	to talk about what this means by mimic it um so let's assume our model here is a parametric family
+4274640	4282080	of distributions right so how is it parameterized well this is these these data parameters that's
+4282080	4286320	what we've been talking about all the time right now right so these data parameters they are model
+4286320	4293120	parameters what we would like to do is that these theta parameters make sure that our model right
+4293120	4303120	now here um approximates basically our respective distribution and what a maximum likelihood
+4303120	4304480	estimate is now saying is that
+4305440	4311600	it's a method of estimating the parameters of a statistical model given the distributions
+4312800	4319040	uh sorry given the observations so what we have we have here our model we were just defined what
+4319040	4324640	we care about is the theta these are our model parameters um and now we have a bunch of
+4324640	4332880	observations from our data right and what we would like to do now is we would like to find the parameters
+4334880	4341040	that maximize the likelihood of making the observations given the parameters right so in
+4341040	4345680	other words we want to make sure the model predicts what our observations say right that's
+4345680	4351920	basically what it says so we would like to make sure that we're finding these parameters and in
+4351920	4357600	a mathematical sense what that means is we would like to make sure we maximize the likelihood
+4357600	4364000	that's why it's called maximize likelihood that the model matches whatever the true observations
+4364000	4364480	are going to say
+4364800	4370640	and since we're assuming right now this is a stochastic process this is why it's an estimate
+4370640	4377040	and it's a likelihood estimate okay um now there's a couple of assumptions what we're making here
+4377040	4380400	um and there's basically two two main assumptions
+4381520	4388160	um so what we're assuming is that the maximum likelihood estimate assumes that the training
+4388160	4393840	samples are independent and they're generated all by the same probability distribution we'll later
+4393840	4394640	talk about which distribution is independent and they're generated all by the same probability
+4394640	4399080	distribution it is but they're independent and they're from the same distribution and that's
+4399080	4402480	important this is our assumptions what we're making with our maximum likelihood estimate
+4402480	4408840	and assuming we say these are independent and this is very important now because assuming they're
+4408840	4415800	independent for the sampling strategy this means all we have to do is we check our model we make
+4415800	4421600	a prediction here basically every time that means we can simply multiply all of these predictions
+4421600	4427080	from our model in other words none of the predictions have anything to do with each other
+4427080	4431820	from a probabilistic standpoint right that's why we're assuming the samples that we're drawing from
+4431820	4436540	our model right now they're independent and they're generated by the same probability distribution
+4436540	4444480	okay so this is what we're assuming and now what we would like to do is we would like to go from
+4444480	4451500	this abstract notion of please maximize the likelihood that my model matches
+4451500	4451580	my model and that's what we're assuming and now what we would like to do is we would like to go
+4451580	4452120	from this abstract notion of please maximize the likelihood that my model matches my observations
+4452120	4459360	i would like to derive a loss function i would like to figure out how can we go from this
+4459360	4465760	function here or from from this kind of abstract maximum likelihood estimate how can we go to a
+4465760	4473460	loss function that we can then actually optimize in order to find the optimal parameters such that
+4473460	4479500	our model is actually having the right status in order to match the observations with the highest
+4479500	4481220	probability okay
+4481580	4489800	so how do we do this well we want to simplify this term a little bit here and the big problem
+4489800	4494100	what we're going to have here well let's call it a problem for now but we will find a solution
+4494100	4500520	obviously um is this product this product makes this art max here kind of nasty to optimize when
+4500520	4504680	if you're thinking about how you would optimize that it's not that straightforward but there's a
+4504680	4510020	simple simple thing what we can do um so what we're going to do right now is we're going to go ahead
+4510020	4511420	and just drawing the
+4511580	4517780	logarithm so well looks strange right so what we're doing is we are basically going ahead and
+4517780	4525100	saying here we have a product and here we have a sum but we have a sum of logarithms and this is
+4525100	4532800	the nice thing about the the logarithmic property um if we're having a log a times b it's the same
+4532800	4541500	as log a plus log b and you might say well okay that's fair so if you drew the logarithm
+4541580	4548320	here um then you could do that but now you introduce just randomly logarithm in order
+4548320	4554980	then to make this product here a sum but the trick here is that this is the logarithm is a
+4554980	4562840	monotonic function so if we took the logarithm versus not the logarithm like the the monotony
+4562840	4567560	is not violated because we we still have the highest probability of making the right prediction
+4567560	4570300	or like to make the right prediction of the respective observations
+4571580	4576680	this is a monotonic function we can very easily just draw the logarithm here and then rewrite this
+4576680	4581520	product here as a sum right it's nothing complicated it's just applying this logarithmic
+4581520	4585980	property and the reason why we can draw the logarithm is because this is a monotonic function
+4585980	4592800	and the reason why we want to do that is this simplifies the whole problem quite a bit
+4592800	4596600	like mathematically speaking if you're now going back to our linear regression
+4596600	4601500	um and now what we can do is we can write this
+4601580	4611200	as a sum instead of a um instead of a product um now we can actually look at what distributions
+4611200	4617000	um or what probability distributions can our model have and this is our second assumption
+4617000	4621540	what we're now making right now is we're saying well all of our models that we're doing
+4621540	4628100	um following or all of our observations what we're what we're what we're looking at
+4628100	4631420	they all fall follow a gaussian a gaussian distribution
+4631580	4635180	so what shape does our probability distribution have well we're assuming it's gaussian
+4635740	4644060	so assuming this is a normal distribution here um we having certain observations these are our y i's
+4644060	4650140	right we're having our input features times our model parameters and we're having um the variance
+4650140	4654940	here the standard deviation squared um and now what we can do is we can simply uh pull out the
+4654940	4659340	mean here right so like here we have zero as our mean and we'll be pulling the mean out
+4660140	4661580	and we're assuming this is our gaussian
+4661580	4667740	so it's one over the square root of two pi um times sigma squared times e
+4669260	4677020	to the power of minus one over two sigma squared times y i minus mu squared and we're assuming that
+4677020	4684940	our y i's are drawn from this specific distribution right um and what we care about right now is we
+4684940	4690380	would like to figure out what this term is here in the top what is the respective probability well
+4691580	4694700	that's the thing where we can now go ahead and take this assumption
+4695340	4701820	uh so what we've done here before right we have our our likelihood um and now what we can do is
+4701820	4707180	we can simply go ahead and take this gaussian distribution and for this mu we're just feeding
+4707180	4713260	in our xi theta right so all they're doing right now is we're simply assuming that our
+4715260	4721260	our predictions our probabilities here they're gonna follow this gaussian distribution right so
+4721260	4727340	all we're doing right now is we're just putting in our xi times theta we're putting this one into
+4727340	4732700	our probabilities right now now right so you might say well okay this makes the term pretty
+4732700	4737580	complicated but there's a little bit of an advantage where we just had because if we go
+4737580	4743740	into our actual optimization problem we now know we don't have actual probabilities here we have
+4743740	4750940	lot probabilities right so what we're trying to do here is we're saying our max over the sum of the
+4751260	4756220	log probabilities from our model so now what we want to do is we want to put this one here back
+4756220	4762060	into here and we're taking the logarithm of this whole gaussian here and this is a nice property
+4762060	4767820	about the logarithm that this simplifies the whole problem quite a bit so the first thing what's going
+4767820	4773820	to happen is so all i'm doing here right now is i'm putting this one into here this is my first
+4775020	4778780	row here the first thing you're going to see is well okay we're taking the logarithm here
+4779740	4781180	of this gaussian so
+4781260	4785500	there's an e function right so the logarithm and the e function cancel out that's why the
+4785500	4790940	logarithm is a pretty good choice here why we did this actually in the first place and then
+4790940	4797100	the next thing what we can do is after so well first after we did that we will see here we
+4797100	4805820	ending up with one constant here at the front so this one is two pi times sigma squared but
+4805820	4811020	there's no x and no theta in here so there's no input and no model parameter in here the only
+4811260	4816540	parameters are here um and then what we can do is we can just rewrite this whole thing as a matrix
+4816540	4820540	and then this term already becomes a lot simpler right so now we have this constant here at the
+4820540	4829820	beginning uh that's just a constant and now here we're having uh one over two sigma squared times
+4830620	4836300	this uh well you guessed it it's a it's the same formula what we had before right it's
+4836300	4841100	only the regression formula basically um okay and that's all we have right here
+4841260	4847820	now right um so now what we want to do is if we want to have this log likelihood and we want to
+4847820	4854060	have our r max here we're ending up with this formula how can we find the estimate of theta
+4854060	4860300	well we've done this already we're setting we're looking for a linear least squares problem here
+4860300	4864620	where we're setting the gradient to zero then we're ending up with our linear least squares
+4864620	4869980	formulation and we try and solve that and then we're having our estimate for our maximum
+4871260	4875340	likelihood estimate right so this is kind of a very important thing in machine learning that we
+4875340	4882460	can kind of use this logarithm trick um in order to go from our maximum likelihood estimate um back
+4882460	4886620	to our linear regression and using the same trick to solve it which is just the linear solve at the
+4886620	4893020	end of the day okay um there will be some details here in the exercise session specifically regarding
+4893020	4899180	the math i hope you could still follow it if it's a problem pause the video and go back and have a
+4899180	4901100	look at the exercises first before you continue on the next one
+4901260	4907500	so let's continue from here um but as a summary what we have been doing here um the maximum
+4907500	4913980	likelihood estimator corresponds to the least squares estimate we've just derived that um
+4913980	4917260	however of course we have to assume these assumptions right we had the assumptions that
+4917260	4923260	our samples are drawn independent um and that they actually follow a quotient distribution
+4923260	4925580	these were the two things and they're all the same distribution of course
+4926300	4931100	um but what's important right now what we have done is we actually made quite a bit
+4931260	4938540	of progress because now we have had an intro of linear regression and we had an intro of maximum
+4938540	4945020	likelihood now we also have the concept of a loss function uh we have talked a little bit about
+4945020	4951740	optimization to obtain the best model for regression um and we can do simple predictions
+4951740	4958380	right now like the temperature in a room um but what we haven't talked too much about right now is
+4958380	4960460	we haven't talked about our original task
+4961260	4968300	our original task is this image classification task um and now the question is can we actually
+4968300	4974140	do the same trick here also for classification right um so i wanted to reiterate the problem
+4974140	4979180	statement here um i know some of the things here are redundant and i mentioned it already a little
+4979180	4984940	bit between the slides so the regression versus the classification the difference here is very
+4984940	4990540	obvious the the the difference is the regression predicts a continuous output like the temperature
+4991260	4996380	of the room like you have a floating point value right whereas the classification predicts a
+4996380	5003820	discrete value like a label um we can have a binary classifier like output is either zero one
+5003820	5007420	or we can have a multi-class classification which is a set of n classes
+5009580	5014540	right we're going to have a look at binary classification right now this is the the thing
+5014540	5019740	that is well the next easy thing to look at um we're not going to talk too much about multi-class
+5019740	5020860	classification today
+5021260	5027340	in the next lecture um but this one is i think we want to now go from linear regression to the
+5027340	5033100	analog of well i guess linear classification would be the main thing but it's it's not quite as simple
+5033100	5039260	anymore and we want to talk about why it's not as simple anymore the whole method that we're going
+5039260	5044140	to try to introduce here is called logistic regression and there's a reason why quote unquote
+5044140	5050460	linear regression doesn't work that well for classification instead we have to do something
+5050460	5051180	slightly different
+5051260	5056780	this is what logistic regression is doing um so if we are starting with our linear classifier
+5057740	5063660	what we would love to do is we would love to predict a probability we would like to make sure
+5063660	5071340	which probability is it is it this class or is it that class now i mentioned this before a simple
+5071340	5078460	way to approach this is we could just say well we do a linear regression and if my value is above
+5078460	5081100	0.5 then it's class one
+5081260	5087340	if it's below 0.5 then it's class 0. now the problem with that is there's nothing in our
+5087340	5093900	linear regression that guarantees us that this value will between 0 and 1 and this is what we're
+5093900	5099420	going to do right now we're going to simply go ahead and do a linear regression which is this
+5099420	5107260	one here this linear regression here is doing nothing else x 0 times theta 0 x 1 times theta 1
+5107260	5110860	x 2 times theta 2 sums it all up same thing as before
+5111260	5116540	right so we have each feature vectors multiplied with one scalar technically we have we have a
+5117180	5121260	we have a bias here at some point too it's a little inconsistent please forgive me about
+5121260	5125180	that i but i wanted to make it a little bit easier from a from a writing perspective
+5126540	5128860	and this is a score function right now
+5130460	5138860	and we want to we want to just simply feed this output here into a sigmoid and this sigmoid of x
+5141260	5149580	is 1 over 1 plus e to the power of minus x and the property of this function this function looks
+5149580	5158380	like this so the point is that this function is between 0 and 1. it's never going to be 0
+5158380	5164780	it's asymptotically approaching 0 and it's asymptotically approaching 1 right and the
+5164780	5171180	idea of that is basically that we are squashing the output here between 0 and 1 such that we can
+5171180	5177020	interpret it as a probability right and this is kind of convenient when it comes to classification
+5177740	5184140	for instance if we're having a very high outlier here like if this linear classifier would predict
+5184140	5190060	a very high outlier here it would simply squash it to 1. if it has a very low outlier it would
+5190060	5195020	simply squash it to 0 and that is for classification a very desired property as we shall see
+5196140	5201100	okay so what does it mean well um here for instance we
+5201180	5206540	have the pro the way you would write this is what's the probability of my output being one
+5207820	5213820	um for given input x given my model parameters data right that's what we couldn't scare about
+5213820	5221340	like what's the probability that this is the one here um and a small spoiler alert here this is
+5221340	5228380	basically a one-layer neural network right it's not a deep network um but it's a one-layer neural
+5228380	5231100	network um and this is the reason why this is a one-layer neural network um and this is the reason why
+5231180	5235180	we first started with linear regression and now we're going to logistic regression where we have
+5235180	5242540	the sigma in it as well um i don't want to talk too much about neural networks yet but i obviously
+5243260	5246380	wanted to give the hint that later when we go into neural networks and you
+5246940	5253740	miss something go back to this slide here and check out um how the logistic regression works okay
+5255660	5261100	right so this is logistic regression so how does it work in practice well now what we're
+5261180	5268380	going to do is we would like to have the output to be a probability and what we'd like to do is
+5268380	5272220	we would like to connect this to our maximum likelihood estimate what we had done before
+5273180	5283020	so the probability of our output here um is now defined as follows right so what we're doing is
+5283020	5289100	um following our logistic uh our maximum likelihood estimator what we had done before um
+5290300	5291100	what is the question
+5291180	5294860	what is the probability that all the labels are going to be predicted one
+5295500	5298460	like what we care about is everything is going to be predicted one
+5300140	5307100	here we have the product of all of our independent prediction here we have our model parameters here
+5307100	5312540	we have our inputs and here we have the output labels equal to one and now what we do here is
+5313580	5319740	we know that this model here that we have is defined as follows we know that our model
+5320460	5325260	is the prediction of a sigmoid so this here is nothing else as a prediction of a sigmoid
+5325820	5329980	so y hat i which is the respective prediction of this one thing here
+5332140	5336140	is actually the sigmoid of this linear model here of x i theta
+5336140	5340860	again be careful i'm simplifying this a little bit there's also a bias in it in practice right
+5340860	5347660	so you want to want to also go to this one um and but now what we can do is we can actually go ahead
+5348220	5349660	and reformulate this
+5350140	5353500	similar as we have done it before and we can use a bernoulli trial
+5354220	5361900	so the idea here is that this this prediction here um this phi to the power of z
+5362940	5369340	times one minus phi to the power of one minus z this is nothing else but a model for coins right
+5369900	5374220	so give me this input right what's the respective prediction here
+5374860	5378700	z could be either zero or one this is the respective output in this case it was one but it
+5378700	5379660	could be zero as well
+5380540	5385260	and now what we know is we can just take this formula here for our model of the coin predictions
+5385820	5390620	because this like again this is nothing else but rolling a coin over and over and over again
+5391580	5396460	and defeating this one into the model of the coins all right so now what we're doing again
+5396460	5401260	go back here oops we're taking this formula here and we're just putting this one into here
+5402380	5408620	um so now y hat is nothing else but the product of the predictions of the sigmoid
+5409740	5416940	all right this one here this y hat i is the sigmoid um this is the respective label of
+5416940	5420220	our coin predictions again this is this is the model what we have used here
+5421580	5429580	um and this is the negative part of it right so this is one minus again what the output prediction
+5429580	5437260	is going to be to the power of one minus the other label and this one here this y i and one minus y i
+5437260	5438940	is respectively the true
+5439740	5443580	label could be zero for the first class or it could be one for the second class
+5444940	5449580	okay um so now we're doing the same thing what we have done for our maximum likelihood estimate
+5450380	5458780	uh we would like to simplify this uh formulation of probabilities uh this is all probability of
+5458780	5463580	our binary output and what we would like to do is we would like to reformulate it such that
+5463580	5468220	we are obtaining a loss function so again to clarify you might ask why on earth are we doing
+5468220	5468980	this why on earth are we doing this well the whole point is here is if simply if you can find it so you
+5468980	5469340	are doing it so again to clarify you might ask why on earth are we doing this well the whole point
+5469340	5469720	is here is that you have the 10 bigidad invalidity eliminate all needed degrees Zent Запfehl,
+5469720	5476420	we want to go ahead and get from a probability of a binary output we want to go ahead to our
+5476420	5480540	loss function and this is what we're doing right now right so now we have this one we're taking
+5480540	5491680	our maximum likelihood estimate and as we remember my maximum likely estimate is arc max of log p
+5491680	5499600	y from x and theta and what we would like to do is we would like to make sure we get the maximum
+5499600	5504740	likelihood estimate here right so we would like to maximize these probabilities okay so now here
+5504740	5510720	we have our log of p here's our p now we're putting this one into here and that's what's
+5510720	5516200	going to happen here so here's again our p now we're putting it into this log formulation
+5516200	5521280	we can do the same trick what we have done before we have this product here of our
+5521280	5528940	independent predictions now we have the sum of our log predictions and then we're simplifying
+5528940	5529580	this whole thing a little bit and we're going to do the same thing here and then we're going to
+5529580	5529600	do the same thing again and then we're simplifying this whole thing a little bit and then we're going
+5529600	5534300	little bit because the log function and exponential function can be simplified right so we can move
+5534300	5544540	this y and 1 minus y i we can move this respectively forward um and um yeah and then this is what we're
+5544540	5550860	getting here right so we have here y i which is our label times the log of our y hat i this is
+5550860	5561340	our sigmoid prediction uh plus 1 minus y i again it's our label uh times log 1 minus y hat i okay
+5561480	5569660	there's one little thing um what kind of is relevant right so here's a minus where does
+5569660	5575400	this minus come from well the point is here this probability here comes from the log likelihood
+5575400	5580720	from the maximum likelihood estimator um here we would like to maximize the
+5580720	5580840	function and we would like to maximize the function here so we would like to maximize
+5580840	5580860	the function and we would like to maximize the function and this would be the maximum
+5580860	5584620	whereas here we would like to minimize the loss function, right?
+5584620	5589380	We go in here from our prediction of our probabilities,
+5589640	5591580	we go in here back to our loss function, right?
+5591700	5596120	So we want to derive a loss that maximizes the probabilities,
+5596400	5598160	but the loss itself we want to minimize,
+5598440	5599880	and this is why we needed this minus here.
+5600800	5600920	Okay.
+5602740	5603180	Right.
+5603420	5607220	And now what we're doing is this is basically our loss function right now.
+5607220	5613020	So our loss function here is now dependent on the true labels
+5613020	5614800	and the sigma predictions.
+5615580	5621600	So we have minus open brackets yi times log y hat i
+5621600	5628100	plus 1 minus yi times log 1 minus y hat i.
+5628660	5630340	Now, what do we know here?
+5630700	5634300	Well, what we want to do here is basically we want to see
+5634300	5636440	what happens if our label is 1.
+5636440	5637200	Like, why does this happen?
+5637240	5638460	Does it actually work what we're doing here?
+5638540	5640680	So if our ground truth label is 1,
+5641160	5644220	that means this term here will be 0, right?
+5644300	5645620	So this term cancels out,
+5645920	5652380	and our loss will simply be the loss of y hat i in 1 is simply log yi.
+5654520	5655880	Sorry, there's the minus missing.
+5656000	5657200	This minus must be here as well.
+5659040	5660500	And then what we can do again,
+5661660	5666680	we can go ahead and say, well, we can prove that this is true, right?
+5666680	5666760	Right.
+5666760	5666820	Right.
+5666820	5666880	Right.
+5666880	5666900	Right.
+5666900	5666920	Right.
+5666920	5667180	Right.
+5667200	5670760	So what we want to do is we want to maximize the argmax of thetas
+5670760	5675060	such that this is the maximum likelihood estimator, right?
+5675340	5680740	Or to say differently, we want log y hat to be large
+5680740	5684100	since the logarithm is a monotonically increasing function.
+5684800	5689060	And because of that, we also want to be y hat i to be large, right?
+5689240	5692080	So if this one is large, then this one is, sorry,
+5692220	5694560	if this one is large, then this one is large and vice versa.
+5696400	5696920	And this is the maximum likelihood estimator.
+5696920	5705340	The thing that's important here is actually that one is actually the largest value of our model's estimate that it can take.
+5706100	5706500	Why?
+5707860	5709200	Well, we have a sigmoid function.
+5709420	5711060	That's the whole point of it, right?
+5712760	5715960	And if we're doing it the other way around, we're setting this one to zero,
+5716620	5719120	then this one cancels out because this one will be zero.
+5719340	5720360	Only this one will remain.
+5720640	5723660	And then our loss function will be this one here.
+5724080	5725440	I apologize for this mistake.
+5725440	5726660	There must be a minus here, right?
+5726660	5728780	This minus here should be here as well, respectively.
+5730400	5730840	Okay.
+5731520	5733300	Now, if you're putting these two things together,
+5734400	5735860	this is our loss function.
+5736120	5738500	We know that it can be summarized like that
+5738500	5743860	because we just done the differentiation between the minus and,
+5744680	5749220	sorry, the zero label case and the one label case.
+5749640	5752900	And this is something what's called the binary cross entropy loss.
+5752900	5755200	It's called the BCE loss, right?
+5755200	5759780	And this is something that we will see very, very many times in this lecture.
+5759780	5768520	We will also use the same loss in neural network land and later also expand it to the multi-class loss,
+5768520	5770020	which is called softmax.
+5770020	5772020	So you will see this also a couple of times.
+5772560	5775800	Now, how do we actually define our cost function?
+5775800	5778700	Well, now we have to go ahead and sum all of this stuff up here.
+5779540	5784320	And in practice, what this means is we take this loss function, we just sum it up.
+5784320	5784740	Okay.
+5784740	5792260	Everywhere over all the samples, we have n samples and then there's a little one over in here.
+5793140	5797300	Technically speaking, if we would be really precise,
+5797300	5802300	we would also have had this one over in here in this loss function here as well,
+5802300	5804820	because that's part of the maximum likelihood estimate, right?
+5804820	5812740	So each sample is part of a distribution and this distribution is multiplied with the respective probability
+5812740	5814740	appearing as part of the entire distribution.
+5814740	5816740	So this is the entirety of the samples.
+5816740	5820740	But I simplified this a little bit because I wanted to make my notation easier.
+5820740	5826740	So just take it as we just averaging here over the individual loss values from each of the samples.
+5826740	5828740	Okay.
+5828740	5830740	What we do, well, we're minimizing our cost function.
+5830740	5832740	We minimizing that one.
+5832740	5834740	This is our minimization.
+5834740	5842740	And again, as a brief reminder, y hat i is sigmoid of x i times theta, linear part, nonlinear part.
+5842740	5844740	Okay.
+5844740	5848740	Now we're going to see already we have to optimize that, right?
+5848740	5852740	So now we have to also, again, optimize for our theta.
+5852740	5856740	And we will already see that this theta here is part of a sigmoid right now,
+5856740	5862740	which unfortunately makes this whole problem a little bit more intense to optimize.
+5862740	5866740	So there's no closed-form solution anymore.
+5866740	5868740	So we need to use an iterative method how to solve it.
+5868740	5872740	And this iterative method is gradient descent.
+5872740	5874740	Gradient descent, again,
+5874740	5876740	we will talk about this a little bit in the exercises.
+5876740	5878740	If you don't know it,
+5878740	5880740	you should really look it up.
+5880740	5882740	This is really critical.
+5882740	5884740	A lot of this stuff will be based on gradient descent, what we're doing here.
+5884740	5886740	And this is going to be very, very, very critical.
+5888740	5890740	There will be
+5890740	5892740	a little bit of more in the lecture as well.
+5892740	5894740	We're going to talk about different solvers.
+5894740	5896740	The one thing
+5896740	5898740	what I wanted to mention here at this point, though,
+5898740	5900740	is that gradient descent
+5900740	5902740	is actually
+5902740	5904740	or gradient-based optimization
+5904740	5906740	to begin with,
+5906740	5908740	is really key
+5908740	5910740	to a lot of the machine learning methods.
+5910740	5912740	There's also a philosophical question is
+5912740	5914740	does machine learning
+5914740	5916740	or this learning-based
+5916740	5918740	life, in a sense,
+5918740	5920740	or human life,
+5920740	5922740	do we learn based on gradients?
+5922740	5924740	I don't want to make the connection all the time,
+5924740	5926740	but I think this was kind of a remarkable question
+5926740	5928740	of how do
+5928740	5930740	physical neurons actually optimize?
+5930740	5932740	Because the assumption was
+5932740	5934740	they are similar in a sense.
+5934740	5936740	This is not so clear yet.
+5936740	5938740	But what we can tell is that all neural networks
+5938740	5940740	are gradient-based, and so far
+5940740	5942740	specific gradient-based
+5942740	5944740	optimizations
+5944740	5946740	have shown really remarkable progress.
+5946740	5948740	And that's what we're going to build on.
+5948740	5950740	And I think that is
+5950740	5952740	pretty cool and pretty exciting.
+5952740	5954740	So, if we're summarizing today's
+5954740	5956740	lecture, I think
+5956740	5958740	the reason, I mean, I'm really excited
+5958740	5960740	about all of this, because I think
+5960740	5962740	obviously machine learning is really cool.
+5962740	5964740	The idea is kind of we learn
+5964740	5966740	from experience, right? So we're giving it more data,
+5966740	5968740	and we don't have to deal with like
+5968740	5970740	hand-drafting a lot of stuff anymore.
+5970740	5972740	But we're learning from experiences
+5972740	5974740	and can then kind of make
+5974740	5976740	well, somewhat intelligent
+5976740	5978740	predictions.
+5978740	5980740	And to infer
+5980740	5982740	something about the future. And I think this is really
+5982740	5984740	useful for a lot of different tasks.
+5984740	5986740	It could be very simple tasks,
+5986740	5988740	and to be
+5988740	5990740	pretty frank, a lot of the problems
+5990740	5992740	you can actually solve with linear regression.
+5992740	5994740	Like, linear regression is a
+5994740	5996740	really powerful tool that you
+5996740	5998740	can apply for many, many problem
+5998740	6000740	statements, and they are probably
+6000740	6002740	pretty good. So if a linear regressor
+6002740	6004740	well, a linear regressor
+6004740	6006740	should always be a good baseline, you should try first.
+6006740	6008740	So,
+6008740	6010740	in linear models, for instance
+6010740	6012740	in complex phenomena, like weather
+6012740	6014740	or so, can actually be quite good.
+6014740	6016740	And
+6016740	6018740	there are certain reasons why that is the case.
+6018740	6020740	We're going to talk about this a little bit.
+6020740	6022740	Neural networks are always the best choice,
+6022740	6024740	but nowadays with a couple
+6024740	6026740	of iterations now,
+6026740	6028740	yeah, we have seen
+6028740	6030740	the neural networks, we can tweak them quite well as well.
+6030740	6032740	And that's really exciting,
+6032740	6034740	but I hope as a summary
+6034740	6036740	maybe of this lecture, like really take away
+6036740	6038740	what machine learning has,
+6038740	6040740	take away that machine learning is always
+6040740	6042740	the very same concept. Namely,
+6042740	6044740	you're going to go ahead,
+6044740	6046740	you take a training data set,
+6046740	6048740	from this training data set, you're going to fit a model
+6048740	6050740	to it, you're trying to approximate the
+6050740	6052740	distribution of a training set, and you
+6052740	6054740	hope it's going to generalize to some answer.
+6054740	6056740	It's always the same thing.
+6056740	6058740	Now, of course, the devil here is in the detail.
+6058740	6060740	Like, what's your model? What's your optimizer?
+6060740	6062740	What's your data?
+6062740	6064740	How do you optimize it well?
+6064740	6066740	How do you regularize it?
+6066740	6068740	There's going to be a lot of details we have to talk about
+6068740	6070740	how to make this work well. And people have struggled with this
+6070740	6072740	over the last five or
+6072740	6074740	well, four decades basically
+6074740	6076740	to get it to work to a reasonable level.
+6076740	6078740	And I'm sure there's also going to be new stuff coming up.
+6078740	6080740	But the backbone of all of this
+6080740	6082740	is math and statistics.
+6082740	6084740	And that makes it pretty exciting,
+6084740	6086740	because it's on one hand quite theoretical,
+6086740	6088740	but it's also very applied.
+6088740	6090740	And you can actually show super, super
+6090740	6092740	cool results here.
+6092740	6094740	Okay, with that, I'm going to end this lecture.
+6094740	6096740	In the next exercise session,
+6096740	6098740	we're going to talk about the math recap part two.
+6098740	6100740	I mentioned this already here
+6100740	6102740	a couple of times as part of this lecture.
+6102740	6104740	If anything is unclear,
+6104740	6106740	please ask in the Piazza forum
+6106740	6108740	or, I mean,
+6108740	6110740	both ideally,
+6110740	6112740	definitely watch the math recaps
+6112740	6114740	and attend the math recaps.
+6114740	6116740	In the next lecture,
+6116740	6118740	we're going to talk about
+6118740	6120740	the first neural networks,
+6120740	6122740	we're going to talk about computational graphs,
+6122740	6124740	and we're going to expand on what we have learned today.
+6124740	6126740	A few references for further reading.
+6128740	6130740	Generally speaking,
+6130740	6132740	maybe I'll start at the bottom here.
+6132740	6134740	General machine learning.
+6134740	6136740	This lecture is not necessarily
+6136740	6138740	the focus of machine learning to begin with.
+6138740	6140740	But I wanted to still explain
+6140740	6142740	the main concepts.
+6142740	6144740	We're leaving a lot of other machine learning methods
+6144740	6146740	out there.
+6146740	6148740	I'm not going to talk too much about
+6148740	6150740	things like support vector machines
+6150740	6152740	or random decision forests.
+6152740	6154740	They're also very important.
+6154740	6156740	But that's not the main focus right now.
+6156740	6158740	They're different models.
+6158740	6160740	They have their own strengths.
+6160740	6162740	One recommendation is
+6162740	6164740	if you're interested in machine learning,
+6164740	6166740	look at this book by Chris Bishop.
+6166740	6168740	That's a very, very powerful book
+6168740	6170740	generally speaking to learn
+6170740	6172740	certain math concepts.
+6172740	6174740	In this lecture,
+6174740	6176740	in the book, they explain much better.
+6176740	6178740	The other thing,
+6178740	6180740	I wanted to talk a little bit about this one,
+6180740	6182740	but I cut it out of the lecture itself,
+6182740	6184740	was how to split training
+6184740	6186740	validation and test sets
+6186740	6188740	and how to make use of that.
+6188740	6190740	There's a concept called cross-validation.
+6190740	6192740	I would recommend having a look at this one too
+6192740	6194740	because that helps you to find better hyperparameters.
+6194740	6196740	It might not be
+6196740	6198740	directly relevant
+6198740	6200740	right away for the linear models,
+6200740	6202740	but when you start
+6202740	6204740	training your personal networks,
+6204740	6206740	these things are actually quite useful
+6206740	6208740	to know because they're actually going to help you
+6208740	6210740	to get better results on your maths.
+6210740	6212740	All right.
+6212740	6214740	With that, we're going to be finished today.
+6214740	6216740	Thanks a lot for attending
+6216740	6218740	and I hope to see you for the next lecture.
+6218740	6220740	Thanks everybody for joining.
