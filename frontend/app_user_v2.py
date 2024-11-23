@@ -8,7 +8,7 @@ from rag import Rag
 def response_generator(user_input: str):
 
     rag = Rag()
-    return rag.run(user_input)
+    return rag.run(user_input, lecture="I2DL", lecture_id="l01")
     
 time_keeper.setup_lecture(120, 5)
 time_keeper.time_display()
