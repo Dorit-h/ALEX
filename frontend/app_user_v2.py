@@ -3,22 +3,24 @@ import random
 import time
 from openai import OpenAI
 import time_keeper
-
+from rag import Rag
 
 # Streamed response emulator
 def response_generator(user_input: str):
     vlm_model = OpenAI(base_url="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/", api_key="volker123")
 
-    return vlm_model.chat.completions.create(
-        messages=[
-            {
-                "role": "user",
-                "content": user_input,
-            }
-        ],
-        model="unsloth/Llama-3.2-11B-Vision-Instruct",
-        stream=True
-    )
+    # return vlm_model.chat.completions.create(
+    #     messages=[
+    #         {
+    #             "role": "user",
+    #             "content": user_input,
+    #         }
+    #     ],
+    #     model="unsloth/Llama-3.2-11B-Vision-Instruct",
+    #     stream=True
+    # )
+    rag = Rag()
+    return rag.run(user_input)
     
 time_keeper.setup_lecture(120, 5)
 time_keeper.time_display()
