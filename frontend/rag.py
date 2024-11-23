@@ -71,7 +71,7 @@ class Rag:
         return HuggingFaceEmbedding(model_name="BAAI/bge-small-en-v1.5")
     
     def response_generator(self, user_input: str, retrieved_text: str):
-        print(retrieved_text)
+        
         return self.llm.chat.completions.create(
             messages=[
                 {
@@ -84,6 +84,6 @@ class Rag:
                     "content": user_input,
                 }
             ],
-            model="unsloth/Llama-3.2-11B-Vision-Instruct",
+            model="llama3.2-vision:90b",
             stream=True
         )
