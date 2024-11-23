@@ -40,11 +40,14 @@ st.markdown(
         div[data-testid="stChatInput"] {
             background-color: #D9E8F1 !important; /* Set the background color */
             border-radius: 10px; /* Optional rounded corners */
-            padding: 0px; /* Optional padding for spacing */
         }
         /* Styling for select boxes */
         div[data-baseweb="select"] > div {
             background-color: #D9E8F1 !important;
+        }
+        /* Change sidebar background color */
+        [data-testid="stSidebar"] {
+            background-color: #0071BD; /* Light blue background */
         }
     </style>
     """,
@@ -145,8 +148,9 @@ def execute_python_code(code, code_type):
     exec(code)
     sys.stdout = sys.__stdout__
     sys.stderr = sys.__stderr__
+
     with st.container(border=True):
-        st.markdown(f"#### Code Output (Experimentatl)")
+        st.markdown(f"#### Code Output")
         st.write(codeErr.getvalue())
         st.write(codeOut.getvalue())
     codeOut.close()
