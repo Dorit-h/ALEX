@@ -27,8 +27,10 @@ from llama_index.core.llms import ChatMessage, MessageRole
 
 class Rag:
     def __init__(self):
-        self.llm = Ollama(base_url="https://095kiew15yzv2e-8000.proxy.runpod.net",
-            model="llama3.2-vision:90b")
+        # self.llm = OpenAILike(api_base="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/",
+            # model="unsloth/Llama-3.2-11B-Vision-Instruct", api_key="volker123")
+        self.llm = OpenAI(api_key="volker123", base_url="https://095kiew15yzv2e-8000.proxy.runpod.net/v1/")
+
     
     def load_transcript(self, timestamp: timedelta, lecture: str, lecture_id: str):
         transcript = pd.read_csv(f"data/{lecture}/{lecture_id}/transcripts/transcript.tsv", sep="\t")
@@ -84,19 +86,24 @@ class Rag:
 
 
     def response_generator(self, user_input: str, retrieved_text: str, current_slide: int, slide_text: str):
-        messages = [ChatMessage(role=MessageRole.USER, content=f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide. The lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}.")]
+        messages = [{"role": "system", "content": f"You are an assistant professor tasked with answering student questions based on the lecture transcript and slides given below. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide. The lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}."}]
         for m in st.session_state.messages:
             if m['role'] == "user":
-                messages.append(ChatMessage(role=MessageRole.USER, content=m['content']))
+                messages.append({"role": "user", "content": m['content']})
             else:
-                messages.append(ChatMessage(role=MessageRole.ASSISTANT, content=m['content']))
-        messages.append(ChatMessage(role=MessageRole.USER, content=user_input))
-        with st.expander("Query"):
-            st.write(messages)
-        return self.llm.chat(
+                messages.append({"role": "assistant", "content": m['content']})
+        messages.append({"role": "user", "content": user_input})
+        # with st.expander("Query"):
+        #     st.write(messages)
+        return self.llm.chat.completions.create(
             messages=messages,
-            num_ctx=30000,
-        ).message.content
+            model="unsloth/Llama-3.2-11B-Vision-Instruct",
+            max_tokens=1000
+        ).choices[0].message.content
+        # return self.llm.chat(
+        #     messages=messages,
+        #     max_tokens=1000
+        # ).message.content
     
 @st.cache_resource
 def get_embedding_model():

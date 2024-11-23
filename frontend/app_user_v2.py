@@ -1,10 +1,13 @@
 import datetime
+from io import StringIO
+import sys
 import streamlit as st
 st.set_page_config(page_title="Lecture Selector", layout="wide")
 import random
 from openai import OpenAI
 import time_keeper
 from rag import Rag
+from streamlit_ace import st_ace
 
 
 # Streamed response emulator
@@ -129,6 +132,24 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # Accept user input
+def execute_python_code(code, code_type):
+    print("CODE TYPE", code_type)
+    print("CODE", code)
+    print("executing code")
+    codeOut = StringIO()
+    codeErr = StringIO()
+    sys.stdout = codeOut
+    sys.stderr = codeErr
+    exec(code)
+    sys.stdout = sys.__stdout__
+    sys.stderr = sys.__stderr__
+    with st.container(border=True):
+        st.markdown(f"#### Code Output (Experimentatl)")
+        st.write(codeErr.getvalue())
+        st.write(codeOut.getvalue())
+    codeOut.close()
+    codeErr.close()
+
 if prompt := st.chat_input("Ask me anything."):
     # Add user message to chat history
     st.session_state.messages.append({"role": "user", "content": prompt})
@@ -142,5 +163,17 @@ if prompt := st.chat_input("Ask me anything."):
         with st.spinner("Getting your answer..."):
             response = response_generator(prompt)
         st.markdown(response)
+        if "```" in response:
+            print("FOUND CODE")
+            code_segment: str = response.split("```")[1]
+            code = code_segment.split("\n", 1)[1]
+            code_type = code_segment.split("\n")[0]
+            if code_type == "python":
+                execute_python_code(code, code_type)
+            else:
+                with st.container(border=True):
+                    st.markdown(f"#### Code Output (Experimentatl)")
+                    st.components.v1.html(code, height=800)
+        
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
