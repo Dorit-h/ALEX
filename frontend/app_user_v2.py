@@ -157,7 +157,6 @@ def execute_python_code(code, code_type):
 
 if prompt := st.chat_input("Nice to meet you. Ask me about your lecture."):
     # Add user message to chat history
-    st.session_state.messages.append({"role": "user", "content": prompt})
     with st.chat_message("user", avatar="frontend/icons/user.jpeg"):
         st.markdown(prompt)
 
