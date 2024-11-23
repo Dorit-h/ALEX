@@ -134,7 +134,7 @@ for message in st.session_state.messages:
         if message["role"] == "user"
         else "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"
     )
-    with st.chat_message(message["role"]):
+    with st.chat_message(message["role"], avatar=avatar):
         st.markdown(message["content"])
 
 # Accept user input
