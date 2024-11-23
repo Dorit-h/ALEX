@@ -1,15 +1,16 @@
 import streamlit as st
+st.set_page_config(page_title="Lecture Selector", layout="wide")
 import random
 from openai import OpenAI
 import time_keeper
 from rag import Rag
 
-st.set_page_config(page_title="Lecture Selector", layout="wide")
+
 # Streamed response emulator
 def response_generator(user_input: str):
 
     rag = Rag()
-    return rag.run(user_input, lecture="I2DL", lecture_id="l01")
+    return rag.run(user_input, lecture="I2DL", lecture_id="l02")
     
 
 
