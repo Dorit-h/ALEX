@@ -4,14 +4,17 @@ from openai import OpenAI
 import time_keeper
 from rag import Rag
 
+st.set_page_config(page_title="Lecture Selector", layout="wide")
 # Streamed response emulator
 def response_generator(user_input: str):
 
     rag = Rag()
     return rag.run(user_input, lecture="I2DL", lecture_id="l01")
     
-time_keeper.setup_lecture(120, 5)
-time_keeper.time_display()
+
+
+# Add the logo to the main page
+logo_url = "https://softwarecampus.de/wp-content/uploads/logo-partner-software-campus-tum.webp"
 
 # Inject custom CSS for blue sidebars
 st.markdown(
@@ -20,37 +23,33 @@ st.markdown(
         body {
             background: linear-gradient(to right, #FFFFFF 20%, white 20%, white 80%, #8ACEF1 80%);
         }
-        .block-container {
-            padding-top: 2rem;
-            padding-left: 5%;
-            padding-right: 5%;
-            background-color: #89A8C2;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+       
+        .sidebar-logo-container img {
+            width: 200px; /* Adjust the width */
+            border-radius: 10px; /* Optional rounded corners */
+            background-color: white; /* Optional background */
+            padding: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
         }
     </style>
     """,
     unsafe_allow_html=True
 )
 
-# Title and Subtitle
-st.title("ALEX")
-st.subheader("Augmented Lecture Explainer")
+## Sidebar
 
-# Initialize chat history
-if "messages" not in st.session_state:
-    st.session_state.messages = []
-
-# Display chat messages from history on app rerun
-for message in st.session_state.messages:
-    # Assign avatar based on role
-    avatar = (
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"
-        if message["role"] == "user"
-        else "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"
+with st.sidebar:
+    # Centered logo at the top
+    st.markdown(
+        f"""
+        <div class="sidebar-logo-container">
+            <img src="{logo_url}" alt="TUM Logo">
+        </div>
+        """,
+        unsafe_allow_html=True,
     )
-    with st.chat_message(message["role"], avatar=avatar):
-        st.markdown(message["content"])
+
+st.sidebar.markdown("***")
 
 # Add a session state to track whether live selection is active
 if "liveselection" not in st.session_state:
@@ -58,11 +57,11 @@ if "liveselection" not in st.session_state:
 
 # Top bar with dropdown and slider button
 col1, col2 = st.columns([4, 1])
-with col2:
+with st.sidebar:
     live_lecture = st.toggle("Live Lecture", value=True)
     st.session_state.liveselection = live_lecture
 
-with col1:
+with st.sidebar:
     selected_course = st.selectbox(
         "Select a Course:",
         [
@@ -85,6 +84,30 @@ with col1:
             "Select a lecture:", [f"Lecture {i}" for i in range(1, 13)]
         )
 
+
+
+## Main
+
+# Title and Subtitle
+st.title("ALEX")
+st.subheader("Augmented Lecture Explainer")
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Display chat messages from history on app rerun
+for message in st.session_state.messages:
+    # Assign avatar based on role
+    avatar = (
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxuutX8HduKl2eiBeqSWo1VdXcOS9UxzsKhQ&s"
+        if message["role"] == "user"
+        else "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRF9mciO08VZ5zdZbfLqlLarccmeMZLByJ_9w&s"
+    )
+    with st.chat_message(message["role"], avatar=avatar):
+        st.markdown(message["content"])
+
+
 # Accept user input
 if prompt := st.chat_input("Ask me anything."):
     # Add user message to chat history
@@ -99,3 +122,11 @@ if prompt := st.chat_input("Ask me anything."):
 
     # Add assistant response to chat history
     st.session_state.messages.append({"role": "assistant", "content": response})
+st.sidebar.markdown("\n\n\n\n\n\n")
+st.sidebar.markdown("\n\n\n\n\n\n")
+st.sidebar.markdown("\n\n\n\n\n\n")
+st.sidebar.markdown("\n\n\n\n\n\n")
+st.sidebar.markdown("***")
+with st.sidebar:
+    time_keeper.setup_lecture(120, 5)
+    time_keeper.time_display()   
