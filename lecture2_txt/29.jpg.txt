@@ -1,0 +1,1 @@
+**Text Content**: Machine Learning, Unsupervised learning, Supervised learning, Reinforcement learning, Agents, Environment, reward; **Images**: A cartoon detective in a green trench coat and hat holding a magnifying glass, and a teacher writing on a chalkboard with two children watching; **Formulas**: None detected.

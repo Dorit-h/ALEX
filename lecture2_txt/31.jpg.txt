@@ -1,0 +1,16 @@
+**Text Content:**
+
+* **Title**: Linear Decision Boundaries
+* **Subtitle**: Let's start with a simple linear Model!
+* **Question**: What are the pros and cons for using linear decision boundaries?
+
+**Images:**
+
+* A graph showing a yellow line (representing a linear decision boundary) intersecting with blue dots and red triangles.
+* The yellow line is diagonal, dividing the graph into two sections.
+* Blue dots are located on the left side of the line, while red triangles are on the right side.
+* The background of the graph is white.
+
+**Formulas:**
+
+* No formulas are detected in the image.

@@ -1,0 +1,9 @@
+**Text Content**: Back to Linear Regression; Canceling log and e; Matrix notation; -1/2 log(2πσ^2) - 1/2σ^2(y-Xθ)^T(y-Xθ)
+
+**Images**: There are no images in the given text.
+
+**Formulas**:
+
+*   $\sum_{i=1}^{n} \log [(2\pi \sigma^2)^{-\frac{1}{2}} e^{-\frac{1}{2\sigma^2}(y_i-x_i\theta)^2}]$
+*   $\sum_{i=1}^{n} -\frac{1}{2}\log (2\pi \sigma^2) + \sum_{i=1}^{n} (-\frac{1}{2\sigma^2})(y_i-x_i\theta)^2$
+*   $-\frac{1}{2} \log (2\pi \sigma^2) - \frac{1}{2\sigma^2}(y-X\theta)^T(y-X\theta)$

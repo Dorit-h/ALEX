@@ -1,0 +1,15 @@
+**Text Content**: Logistic Regression: Loss Function
+
+The text content is a mathematical equation for logistic regression loss function.
+
+**Images**: There are no images in the provided text.
+
+**Formulas**:
+
+$\mathcal{L}(\hat{y}_{i},y_{i}) = -[y_{i} \log \hat{y}_{i} + (1-y_{i}) \log (1-\hat{y}_{i})]$
+
+$\hat{y}_{i} = 1 \rightarrow \mathcal{L}(\hat{y}_{i},1) = \log \hat{y}_{i}$
+
+$\log \hat{y}_{i}$ large; since logarithm is a monotonically increasing function, we also want large $\hat{y}_{i}$
+
+(1 is the largest value our model's estimate can take!)

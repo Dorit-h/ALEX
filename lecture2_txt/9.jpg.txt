@@ -1,0 +1,5 @@
+The image displays a slide from a presentation, with the title "A Simple Classifier" in orange text at the center. The background is white, and there is a blue logo in the top-right corner that says "TUM". In the bottom-left corner, there is small gray text that reads "I2DL: Prof. Niessner". In the bottom-right corner, there is small gray text that reads "10".
+
+**Text Content**: A Simple Classifier
+**Images**: None
+**Formulas**: None

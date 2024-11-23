@@ -1,0 +1,18 @@
+The image presents a slide from a presentation on machine learning, specifically comparing regression and classification. The title, "Regression vs Classification," is prominently displayed at the top in blue text.
+
+**Text Content:**
+
+*   Regression: predict a continuous output value (e.g., temperature of a room)
+*   Classification: predict a discrete value - Binary classification: output is either 0 or 1 - Multi-class classification: set of N classes
+
+**Images:**
+
+*   A large orange arrow pointing to the right, indicating the direction of classification
+
+**Formulas:**
+
+*   None
+
+**Summary:**
+
+The slide provides a clear and concise comparison between regression and classification in machine learning, highlighting their differences in terms of output values and classification types. The use of an orange arrow effectively illustrates the direction of classification, making the information more engaging and memorable.

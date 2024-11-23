@@ -1,0 +1,18 @@
+**Text Content**: The image contains the following text:
+
+*   "How to Obtain the Model?"
+*   "Data points" (with an arrow pointing to the left)
+*   "Labels (ground truth)" (with an arrow pointing to the right)
+*   "Model parameters" (with an arrow pointing downwards)
+*   "Estimation" (with an arrow pointing to the right)
+*   "Optimization" (with an arrow pointing downwards)
+*   "Loss function" (with an arrow pointing upwards)
+
+**Images**: There are no images in the provided text.
+
+**Formulas**: The formulas present in the image are:
+
+*   $\theta$
+*   $\hat{y}$
+
+These formulas are used to represent the model parameters and the estimated output, respectively.

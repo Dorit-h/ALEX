@@ -1,0 +1,7 @@
+**Text Content**: Machine Learning; Supervised learning; Reinforcement learning; Agents; Environment
+
+**Images**: 
+1. A cartoon detective holding a magnifying glass in her right hand and wearing a green trench coat and hat.
+2. A teacher pointing to a chalkboard with math problems on it while two students look on.
+
+**Formulas**: There are no formulas present in the image.

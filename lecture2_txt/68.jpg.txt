@@ -1,0 +1,9 @@
+**Text Content**: Back to Linear Regression, Details in the exercise session!, How can we find the estimate of theta?
+
+**Images**: There are no images in the infographic.
+
+**Formulas**: 
+$\theta_{ML} = \arg \max_{\theta} \sum_{i=1}^{n} \log p_{\text{model}}\left(y_i | \mathbf{x}_i, \theta \right)$
+$-\frac{n}{2} \log \left(2\pi\sigma^2\right) - \frac{1}{2\sigma^2} (\mathbf{y}-\mathbf{X}\boldsymbol{\theta})^T (\mathbf{y}-\mathbf{X}\boldsymbol{\theta})$
+$\frac{\partial J(\boldsymbol{\theta})}{\partial \boldsymbol{\theta}} = 0$
+$\boldsymbol{\theta} = (\mathbf{X}^T \mathbf{X})^{-1} \mathbf{X}^T \mathbf{y}$

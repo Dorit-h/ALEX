@@ -1,0 +1,7 @@
+**Text Content**: Back to Linear Regression; Gaussian / Normal distribution; Assuming y_i = N(x_i θ, σ^2) = x_i θ + N(0, σ^2); Gaussian: p(y_i) = 1/√(2πσ^2) e^(-1/2σ^2(y_i-μ)^2); y_i ~ N(μ, σ^2)
+
+**Images**: There is no image in the document.
+
+**Formulas**: p(y_i | x_i, θ) = 1/√(2πσ^2) e^(-1/2σ^2(y_i-μ)^2) = 1/√(2πσ^2) e^(-1/2σ^2(y_i-θx_i)^2); y_i ~ N(μ, σ^2)
+
+**Answer**: Text Content: Back to Linear Regression; Gaussian / Normal distribution; Assuming y_i = N(x_i θ, σ^2) = x_i θ + N(0, σ^2); Gaussian: p(y_i) = 1/√(2πσ^2) e^(-1/2σ^2(y_i-μ)^2); y_i ~ N(μ, σ^2); Images: ; Formulas: p(y_i | x_i, θ) = 1/√(2πσ^2) e^(-1/2σ^2(y_i-μ)^2) = 1/√(2πσ^2) e^(-1/2σ^2(y_i-θx_i)^2); y_i ~ N(μ, σ^2)

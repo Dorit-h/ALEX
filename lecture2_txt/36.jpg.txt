@@ -1,0 +1,18 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**: The image is a slide from a presentation about linear prediction. The title of the slide is "Linear Prediction" in blue text at the top. Below that, there is a bullet point that reads, "A linear model is expressed in the form." Underneath this, there is an equation with symbols and variables, including Greek letters, arrows, and mathematical operators.
+
+**Images**: There are no images in this slide.
+
+**Formulas**: The formula for a linear model is:
+
+$$\hat{y}_i = \sum_{j=1}^d x_i \theta_j$$
+
+where:
+
+* $\hat{y}_i$ is the predicted value of the response variable
+* $x_i$ is the input data
+* $\theta_j$ are the model parameters
+* $d$ is the number of dimensions
+
+This formula represents a linear combination of the input data and model parameters, which is a common way to express linear models.

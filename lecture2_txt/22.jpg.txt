@@ -1,0 +1,5 @@
+**Text Content**: Machine Learning; How can we learn to perform image classification?; Task: Image classification; Performance measure: Accuracy; Experience: Data
+
+**Images**: There are no images in the provided source. 
+
+**Formulas**: There are no formulas in the provided source.

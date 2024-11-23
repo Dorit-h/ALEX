@@ -1,0 +1,5 @@
+**Text Content**: The image contains the title "Image Classification" in blue text, with the subtitle "Representation" in black text below it.
+
+**Images**: There are two images in the slide. The first image is a cartoon cat with orange fur, a pink nose, and a long tail. The second image shows three cats sitting on a tree branch surrounded by purple flowers. One of the cats is white, one is orange, and one is blue.
+
+**Formulas**: There are no formulas present in the image.

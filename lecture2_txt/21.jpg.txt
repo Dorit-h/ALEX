@@ -1,0 +1,5 @@
+**Text Content**: Basic Recipe for Machine Learning
+
+**Images**: A red triangle with an exclamation mark inside, a red box with rounded corners containing the text "Test set is only used once!" and a bar graph with three sections: 60% train, 20% validation, and 20% test.
+
+**Formulas**: There are no formulas present in the image.

@@ -1,0 +1,10 @@
+**Text Content**: Linear Prediction, How do we obtain the model?, Temperature of the building, Bias, Outside temperature, Humidity, Number people, Sun exposure (%), MODEL, 0.2, 0.64, 0.14
+
+**Images**:
+
+* A sun icon
+* A snowman icon
+
+**Formulas**:
+
+\[\begin{bmatrix} \hat{y}_1 \\ \hat{y}_2 \end{bmatrix} = \begin{bmatrix} 1 & 25 & 50 & 2 & 50 \\ 1 & -10 & 50 & 0 & 10 \end{bmatrix} \cdot \begin{bmatrix} x_1 \\ x_2 \\ x_3 \\ x_4 \\ x_5 \end{bmatrix}\]

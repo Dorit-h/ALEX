@@ -1,0 +1,13 @@
+**Text Content**: Optimization: Linear Least Squares
+
+**Images**:
+
+*   A red star
+*   A blue arrow pointing to the right
+*   An orange curve
+
+**Formulas**:
+
+*   $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 = \frac{1}{n} \sum_{i=1}^{n} (\mathbf{x}_i \boldsymbol{\theta} - y_i)^2$
+*   $\min_{\boldsymbol{\theta}} J(\boldsymbol{\theta}) = (\mathbf{X} \boldsymbol{\theta} - \mathbf{y})^T (\mathbf{X} \boldsymbol{\theta} - \mathbf{y})$
+*   $\frac{\partial J(\boldsymbol{\theta})}{\partial \boldsymbol{\theta}} = \mathbf{0}$

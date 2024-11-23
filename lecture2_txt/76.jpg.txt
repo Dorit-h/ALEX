@@ -1,0 +1,5 @@
+**Text Content**: Logistic Regression, Probability of a binary output, Model for coins, The prediction of our sigmoid
+
+**Images**: There is no image in the question.
+
+**Formulas**: $\hat{y} = p(\mathbf{y} = 1 | \mathbf{X}, \theta) = \frac{n}{p(\mathbf{y}_i = 1 | \mathbf{x}_i, \theta)}$, $p(z|\phi) = \phi^{z(1-\phi)}{(1-\phi)}^{1-z} = \frac{\phi}{1-\phi}, \text{ if } z = 1 \text{ and } \frac{1-\phi}{\phi}, \text{ if } z = 0$.

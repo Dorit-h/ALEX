@@ -1,0 +1,10 @@
+**Text Content**: Image Classification; Occlusions;
+
+**Images**:
+
+1. A cat wearing a red tie and glasses, sitting at a desk with a cupcake in front of it.
+2. A dog holding a bone in its mouth, looking directly at the camera.
+3. A cat peeking out from behind a cardboard box.
+4. A dog sitting on a table, looking up at the camera with its ears perked up.
+
+**Formulas**: None.

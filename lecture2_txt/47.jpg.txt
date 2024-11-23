@@ -1,0 +1,7 @@
+**Text Content**: Linear Regression: Loss Function
+
+**Images**: A graph with a blue regression line and orange data points, overlaid with green arrows indicating the direction of the loss function.
+
+**Formulas**: 
+\[ J(\theta) = \frac{1}{n} \sum_{i=1}^{n} (\hat{y}_i - y_i)^2 \]
+where $\theta$ is the parameter vector, $n$ is the number of data points, $\hat{y}_i$ is the predicted value for the $i^{th}$ data point, and $y_i$ is the actual value for the $i^{th}$ data point.

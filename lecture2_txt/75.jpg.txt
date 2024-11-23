@@ -1,0 +1,24 @@
+**Text Content**: Logistic Regression, Probability of a binary output, The prediction of our sigmoid, I2DL: Prof. Niessner, 85
+
+**Images**: There are two images in the slide. The first image is a diagram illustrating the concept of logistic regression, which shows how the probability of a binary output is calculated using a sigmoid function. The second image is an arrow pointing to the formula for the sigmoid function, which is y = σ(xiθ).
+
+**Formulas**: The formulas present in the image are:
+
+* y = p(y = 1|X, θ) = ∫[n] p(yi = 1|xi, θ) 
+* yi = σ(xiθ)
+
+where:
+
+* y is the binary output
+* X is the input data
+* θ is the model parameters
+* n is the number of data points
+* yi is the binary output for each data point
+* xi is the input data for each data point
+* σ is the sigmoid function
+
+The formula for the sigmoid function is:
+
+σ(xiθ) = 1 / (1 + exp(-xiθ))
+
+where exp is the exponential function.

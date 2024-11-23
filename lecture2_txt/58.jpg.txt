@@ -1,0 +1,6 @@
+**Text Content**: Maximum Likelihood Estimate; A method of estimating the parameters of a statistical model given observations, by finding the parameter values that maximize the likelihood of making the observations given the parameters. θML = arg max pmodel(ylx, θ)
+
+**Images**: There are no images in the document.
+
+**Formulas**: 
+* θML = arg max pmodel(ylx, θ)

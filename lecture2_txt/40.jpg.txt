@@ -1,0 +1,22 @@
+**Text Content**, **Images**, and **Formulas** extraction and description:
+
+**Text Content**: The image contains the following text content:
+* "Linear Prediction"
+* "Prediction"
+* "Input features (one sample has d features)"
+* "Model parameters (d weights and 1 bias)"
+* "y = Xθ"
+* "x11 ... x1d"
+* "Model parameters (d weights and 1 bias)"
+
+**Images**: There are no images in this document.
+
+**Formulas**:
+
+The following formula is present in the image:
+
+$$
+\hat{y}_1 = \begin{bmatrix} x_{11} & \dots & x_{1d} \end{bmatrix} \begin{bmatrix} \theta_0 \\ \theta_1 \\ \vdots \\ \theta_d \end{bmatrix}
+$$
+
+This formula represents a linear prediction model, where $\hat{y}_1$ is the predicted output, $x_{11} ... x_{1d}$ are the input features, and $\theta_0 ... \theta_d$ are the model parameters.

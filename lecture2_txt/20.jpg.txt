@@ -1,0 +1,5 @@
+**Text Content**: Basic Recipe for Machine Learning; Split your data 60% train, 20% validation, 20% test; Find your hyperparameters; Other splits are also possible (e.g., 80%/10%/10%)
+
+**Images**: No images are present in the text.
+
+**Formulas**: No formulas are present in the text.

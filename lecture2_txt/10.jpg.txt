@@ -1,0 +1,18 @@
+**Text Content**: Nearest Neighbor
+
+**Images**: 
+
+* A cat with an orange outline
+* A dog with a red question mark
+* A cat with an orange outline
+* A cat with a red tie
+* A dog with a bone
+* A cat with a brown and white face
+* A cat with a brown tail
+* A group of cats on a log
+* A black cat
+* A white dog
+* A cat with a green outline
+* A cat with a blue outline
+
+**Formulas**: None

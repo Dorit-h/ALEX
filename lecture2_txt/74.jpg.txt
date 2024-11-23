@@ -1,0 +1,26 @@
+**Text Content**: 
+Spoiler Alert: 1-Layer Neural Network
+
+**Images**:
+There is only one image in the document. It is a graph showing a sigmoid function. The graph has a blue curve that starts at the bottom left corner of the graph and approaches 1 as the input values increase. The x-axis ranges from -6 to 6, and the y-axis ranges from 0 to 1.
+
+**Formulas**:
+The formula for the sigmoid function is:
+
+$$\sigma(x) = \frac{1}{1+e^{-x}}$$
+
+where e is the base of the natural logarithm.
+
+In LaTeX format, the formula would be:
+
+$$\sigma(x) = \frac{1}{1+\text{e}^{-x}}$$
+
+Additionally, the formula for the probability of a binary classification problem is given as:
+
+$$p(y_i = 1 \mid x_i, \theta) = \sigma(x_i)$$
+
+In LaTeX format, the formula would be:
+
+$$p(y_i = 1 \mid x_i, \theta) = \sigma(x_i)$$
+
+**Answer**: The text content is "Spoiler Alert: 1-Layer Neural Network". There is one image which is a graph showing a sigmoid function. The formulas are the sigmoid function and the probability of a binary classification problem.

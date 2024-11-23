@@ -1,0 +1,5 @@
+**Text Content**: Machine Learning; Supervised learning; Unsupervised learning; I2DL: Prof. Niessner
+
+**Images**: The image is a slide from a presentation about machine learning. It has two columns, each with three images of animals (cats and dogs) and one image of a bone. The left column shows unsupervised learning, while the right column shows supervised learning. Each image is labeled with the type of animal or object it depicts.
+
+**Formulas**: There are no formulas in the image.

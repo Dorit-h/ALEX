@@ -1,0 +1,12 @@
+**Text Content**: "Back to Linear Regression"
+
+**Images**: There are no images in the image.
+
+**Formulas**:
+
+* p(y_i|x_i,θ) = (2πσ^2)^(-1/2) e^(-1/2σ^2(y_i-x_iθ)^2)
+* y_i = N(μ,σ^2) = x_iθ + N(0,σ^2)
+* p(y_i) = (1 / √(2πσ^2)) e^(-1/2σ^2(y_i-μ)^2)
+* y_i ~ N(μ,σ^2)
+
+These formulas are presented in a mathematical format, with Greek letters and superscripts, indicating a technical or scientific context. The first formula appears to be a probability density function for a normal distribution, while the second formula represents a linear regression equation with a normal distribution error term. The third formula is another probability density function, and the fourth formula represents a normal distribution with a mean (μ) and standard deviation (σ^2).

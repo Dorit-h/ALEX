@@ -1,0 +1,12 @@
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**:; **Images**:;**Formulas**:;
+
+**Text Content**
+The text in the image is: "Logistic Regression: Optimization" and "No closed-form solution" and "Make use of an iterative method → gradient descent" and "Gradient descent - later on!".
+
+**Images**
+There are no images in this slide.
+
+**Formulas**
+There are no formulas in this slide.

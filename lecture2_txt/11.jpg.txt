@@ -1,0 +1,20 @@
+**Text Content**
+
+* NN classifier = dog
+* distance
+
+**Images**
+
+* A dachshund puppy with a caption "NN classifier = dog"
+* A cat wearing glasses and a red tie
+* A white dog
+* A black cat
+* A cat with a bone in its mouth
+* A kitten meowing
+* A group of kittens sitting on a log
+* A cat looking at the camera
+* A cartoon cat
+
+**Formulas**
+
+No formulas are present in the image.

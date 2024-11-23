@@ -1,0 +1,13 @@
+**Text Content**: Linear Regression
+
+**Images**: There are two images in the diagram. The first image is a circle with the text "x1:n" inside it, and the second image is a circle with the text "y1:n" inside it. Both images have an orange outline.
+
+**Formulas**: The formula for linear regression is not explicitly stated in the diagram. However, based on the context, we can infer that the formula is:
+
+y = β0 + β1x + ε
+
+where y is the dependent variable, x is the independent variable, β0 is the intercept, β1 is the slope, and ε is the error term. This formula can be represented in LaTeX format as:
+
+y = β0 + β1x + ε
+
+**Answer**: **Text Content**: Linear Regression; **Images**: Two circles with orange outlines containing the text "x1:n" and "y1:n"; **Formulas**: y = β0 + β1x + ε

@@ -1,0 +1,25 @@
+The image shows a slide from a presentation on logistic regression and loss functions. The title of the slide is "Logistic Regression: Loss Function" in blue text at the top.
+
+**Text Content**: 
+The main text on the slide is in black font and reads:
+
+*   L(ȳi,yi) = -[yilogŷi + (1 - yi)log(1 - ŷi)]
+*   Referred to as binary cross-entropy loss (BCE)
+
+There is also a bullet point below the main text that reads:
+
+*   Related to the multi-class loss you will see in this course (also called softmax loss)
+
+**Images**: 
+There are no images on this slide.
+
+**Formulas**: 
+The formula on the slide is:
+
+L(ȳi,yi) = -[yilogŷi + (1 - yi)log(1 - ŷi)]
+
+This can be written in LaTeX format as:
+
+L(ȳi,yi) = -[y_i\log(\hat{y}_i) + (1 - y_i)\log(1 - \hat{y}_i)]
+
+Overall, the slide provides a clear explanation of the loss function used in logistic regression, specifically the binary cross-entropy loss. It also references the multi-class loss that will be covered in the course, which is related to the softmax loss.

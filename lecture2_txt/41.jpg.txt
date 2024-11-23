@@ -1,0 +1,21 @@
+The image presents a mathematical formula for linear prediction, accompanied by a list of variables and their corresponding values. The formula is:
+
+\[y_1 = \frac{1}{\hat{y}_1} = \frac{1}{\hat{y}_2} = \frac{1}{\hat{y}_3} = \frac{1}{\hat{y}_4} = \frac{1}{\hat{y}_5} = \frac{1}{\hat{y}_6} = \frac{1}{\hat{y}_7} = \frac{1}{\hat{y}_8} = \frac{1}{\hat{y}_9} = \frac{1}{\hat{y}_{10}}\]
+
+where:
+
+*   \(y_1\) represents the temperature of the building
+*   \(\hat{y}_1\) to \(\hat{y}_{10}\) represent the bias, outside temperature, humidity, number of people, sun exposure (%), and model values for each variable
+
+The variables and their corresponding values are listed below the formula, with each variable labeled and its value displayed to the right. The variables and their values are:
+
+*   Bias: 1
+*   Outside temperature: 25
+*   Humidity: 50
+*   Number of people: 2
+*   Sun exposure (%): 50
+*   Model: 0.2
+
+The image also includes a logo in the bottom-left corner, which reads "I2DL: Prof. Niessner".
+
+In summary, the image presents a mathematical formula for linear prediction, accompanied by a list of variables and their corresponding values. The formula and variables are displayed in a clear and organized manner, making it easy to understand and interpret.
