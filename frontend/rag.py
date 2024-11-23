@@ -79,19 +79,21 @@ class Rag:
         index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': lecture_id, 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in curr_transcript])
         # index.insert_nodes([TextNode(text=segment['text'], metadata={'lecture': 'l01', 'minute': segment['start_minutes'], 'type': 'transcript'}) for segment in old_transcript])
         query_engine = VectorIndexRetriever(index=index, similarity_top_k=5, embed_model=get_embedding_model())
-        chunks = query_engine.retrieve(prompt)
+        
 
         current_slide = max(int(self.get_current_slide(st.session_state.time_elapsed, lecture=lecture, lecture_id=lecture_id))-1, 0)
         with open(f"data/{lecture}/{lecture_id}/slides/text/{current_slide}.jpg.txt") as f:
             slide_text = f.read()
         
+        chunks = query_engine.retrieve(prompt) + [TextNode(text=slide_text, metadata={'lecture': lecture_id, 'slide': current_slide, 'type': 'slide'})]
+
         retrieved_text = "\n==========\n".join([chunk.get_content(metadata_mode="ALL") for chunk in chunks])
         
         return self.response_generator(user_input=prompt, retrieved_text = retrieved_text, current_slide=current_slide, slide_text=slide_text)
 
 
     def response_generator(self, user_input: str, retrieved_text: str, current_slide: int, slide_text: str):
-        messages = [{"role": "system", "content": f"You are Alex Plainer, an virtual TA tasked with answering student questions based on the lecture transcript and slides given below. When showing formulas you should use Latex. Additionally, if the user asks for it please provide a d3.js visualization to explain the concept. When providing a d3.js visualization it is important that you always provide a full html page. If possible, make it interactive. When providing code, always only provide a single code output that is fully working. For python code only use the stdout. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide, the lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}."}]
+        messages = [{"role": "system", "content": f"You are Alex Plainer, an virtual TA tasked with answering student questions based on the lecture transcript and slides given below. When showing formulas you should use Latex. Additionally, if the user asks for it please provide a d3.js visualization to explain the concept. When providing a d3.js visualization it is important that you always provide a full html page. If possible, make it interactive. When providing code, always only provide a single code output that is fully working. For python code only use the stdout. Always refer to the slide number and lecture minute. The slide number can be derived from the filename of the slide or maybe given explicitly, the lecture minute only from the transcript chunks. \n\nSLIDE {current_slide}: \n {slide_text} \n ======= \n{retrieved_text}\n\nThe professor is currently showing Slide {current_slide}. The current runtime is {st.session_state.time_elapsed}."}]
         for m in st.session_state.messages:
             if m['role'] == "user":
                 messages.append({"role": "user", "content": m['content']})
